@@ -1,0 +1,49 @@
+{
+  "id": "psychology-learning-memory",
+  "title": "Learning and Memory",
+  "description": "How memories form, fade and are strengthened.",
+  "tags": ["memory", "learning"],
+  "questions": [
+    {
+      "id": "spacing-effect",
+      "type": "single_choice",
+      "prompt": "What is the **spacing effect**?",
+      "options": [
+        "Spreading study over time improves long-term retention compared with massing it",
+        "Studying in a quiet room improves recall",
+        "Memory is better for items at the start of a list",
+        "Sleeping reduces forgetting"
+      ],
+      "answerIndex": 0,
+      "explanation": "Distributed practice beats cramming for long-term retention, one of the most robust findings in learning research."
+    },
+    {
+      "id": "long-term-memory-types",
+      "type": "multiple_choice",
+      "prompt": "Which are types of long-term memory?",
+      "options": ["Episodic", "Semantic", "Procedural", "Iconic"],
+      "answerIndices": [0, 1, 2],
+      "explanation": "Episodic (events), semantic (facts) and procedural (skills) are long-term memory types. Iconic memory is a brief visual sensory store."
+    },
+    {
+      "id": "testing-effect",
+      "type": "true_false",
+      "prompt": "Practicing retrieval (testing yourself) usually produces better long-term retention than simply re-reading the material.",
+      "answer": true,
+      "explanation": "Known as the testing effect or retrieval practice effect: pulling information out of memory strengthens it more than passive review."
+    },
+    {
+      "id": "forgetting-curve",
+      "type": "single_choice",
+      "prompt": "What shape does Ebbinghaus's forgetting curve typically have?",
+      "options": [
+        "Steep initial decline that gradually levels off",
+        "A straight line downward",
+        "Flat, then a sudden drop",
+        "An increase over time"
+      ],
+      "answerIndex": 0,
+      "explanation": "Most forgetting happens soon after learning, then slows. Reviewing at spaced intervals flattens the curve."
+    }
+  ]
+}
