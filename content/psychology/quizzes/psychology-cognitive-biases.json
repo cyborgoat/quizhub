@@ -1,0 +1,44 @@
+{
+  "id": "psychology-cognitive-biases",
+  "title": "Cognitive Biases",
+  "description": "Systematic patterns in how people judge and decide.",
+  "tags": ["cognition", "decision-making"],
+  "questions": [
+    {
+      "id": "confirmation-bias",
+      "type": "single_choice",
+      "prompt": "Which description best fits **confirmation bias**?",
+      "options": [
+        "Favoring information that supports existing beliefs",
+        "Overestimating how much others notice you",
+        "Judging a decision by its outcome alone",
+        "Relying on the first number you hear"
+      ],
+      "answerIndex": 0,
+      "explanation": "Confirmation bias is the tendency to seek, interpret and remember evidence in ways that confirm what we already believe."
+    },
+    {
+      "id": "bias-examples",
+      "type": "multiple_choice",
+      "prompt": "Which of these are cognitive biases or heuristics?",
+      "options": ["Anchoring", "Availability heuristic", "Sunk cost fallacy", "Classical conditioning"],
+      "answerIndices": [0, 1, 2],
+      "explanation": "Anchoring, the availability heuristic and the sunk cost fallacy all describe distortions in judgment. Classical conditioning is a learning process, not a judgment bias."
+    },
+    {
+      "id": "availability-example",
+      "type": "single_choice",
+      "prompt": "After seeing several news reports about plane crashes, a person rates flying as more dangerous than driving. Which mechanism is most likely at work?",
+      "options": ["Availability heuristic", "Halo effect", "Gambler's fallacy", "Self-serving bias"],
+      "answerIndex": 0,
+      "explanation": "Vivid, easily recalled examples make an event feel more frequent than it is, even though driving is statistically far riskier per mile."
+    },
+    {
+      "id": "sunk-cost",
+      "type": "true_false",
+      "prompt": "Under the sunk cost fallacy, people keep investing in something because of what they have already spent, even when future costs outweigh future benefits.",
+      "answer": true,
+      "explanation": "Past, unrecoverable costs should not affect a forward-looking decision, but they often do."
+    }
+  ]
+}

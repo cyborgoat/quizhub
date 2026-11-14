@@ -1,0 +1,26 @@
+{
+  "name": "quizhub",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Curated quizzes and knowledge notes for Quizzy, published as an Atom feed.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "build": "tsx scripts/build-feed.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.6.6",
+    "gray-matter": "^4.0.3",
+    "katex": "^0.19.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.12"
+  }
+}
