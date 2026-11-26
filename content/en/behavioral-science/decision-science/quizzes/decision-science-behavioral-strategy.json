@@ -1,0 +1,231 @@
+{
+  "id": "decision-science-behavioral-strategy",
+  "title": "Behavioral Strategy",
+  "description": "Behavioral insights for defaults, negotiation, and collective choices.",
+  "tags": [
+    "behavioral-strategy",
+    "negotiation"
+  ],
+  "questions": [
+    {
+      "id": "strategy-01",
+      "type": "single_choice",
+      "prompt": "A choice architecture is:",
+      "options": [
+        "The way options are organized and presented",
+        "A building for decision makers",
+        "A guarantee of compliance",
+        "A substitute for informed choice"
+      ],
+      "answerIndex": 0,
+      "explanation": "Choice architecture shapes the decision environment; transparent design preserves meaningful alternatives."
+    },
+    {
+      "id": "strategy-02",
+      "type": "true_false",
+      "prompt": "A default is ethically neutral because people can opt out.",
+      "answer": false,
+      "explanation": "Defaults can strongly steer behavior; legitimacy depends on transparency, welfare, and meaningful choice."
+    },
+    {
+      "id": "strategy-03",
+      "type": "multiple_choice",
+      "prompt": "Which are responsible default-design practices?",
+      "options": [
+        "Disclose the default and rationale",
+        "Make opting out practical",
+        "Check effects across affected groups",
+        "Hide the alternative path"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Transparent, accessible defaults should be evaluated for unequal or unintended effects."
+    },
+    {
+      "id": "strategy-04",
+      "type": "true_false",
+      "prompt": "People may value an item more after they own it than before acquiring it.",
+      "answer": true,
+      "explanation": "The endowment effect describes increased valuation associated with ownership in some settings."
+    },
+    {
+      "id": "strategy-05",
+      "type": "single_choice",
+      "prompt": "In negotiation, an underlying interest is:",
+      "options": [
+        "A need or concern behind a stated position",
+        "The first offer only",
+        "The final agreed price",
+        "A legal contract"
+      ],
+      "answerIndex": 0,
+      "explanation": "Interests explain why a party holds a position and can reveal options that meet both sides’ needs."
+    },
+    {
+      "id": "strategy-06",
+      "type": "true_false",
+      "prompt": "A first offer can anchor a negotiation, but its effect depends on information and context.",
+      "answer": true,
+      "explanation": "Anchors can influence counteroffers; preparation and objective reference points can temper them."
+    },
+    {
+      "id": "strategy-07",
+      "type": "multiple_choice",
+      "prompt": "Which help prepare for a negotiation?",
+      "options": [
+        "Clarify your alternatives",
+        "Identify interests and priorities",
+        "Research objective benchmarks",
+        "Assume the other party has identical goals"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Alternatives, interests, and benchmarks support informed choices without assuming preferences are shared."
+    },
+    {
+      "id": "strategy-08",
+      "type": "true_false",
+      "prompt": "A fair process can matter even when the final allocation is unchanged.",
+      "answer": true,
+      "explanation": "People respond to voice, consistency, and respectful treatment as well as outcomes."
+    },
+    {
+      "id": "strategy-09",
+      "type": "single_choice",
+      "prompt": "What is a useful way to reduce escalation of commitment?",
+      "options": [
+        "Predefine continuation and exit criteria",
+        "Emphasize how much has been spent",
+        "Avoid reviewing new evidence",
+        "Reward persistence regardless of results"
+      ],
+      "answerIndex": 0,
+      "explanation": "Prospective criteria focus attention on future evidence rather than sunk investment."
+    },
+    {
+      "id": "strategy-10",
+      "type": "true_false",
+      "prompt": "A consensus reached quickly necessarily reflects a well-informed group decision.",
+      "answer": false,
+      "explanation": "Speed may indicate agreement, but can also reflect conformity, missing information, or suppressed dissent."
+    },
+    {
+      "id": "strategy-11",
+      "type": "multiple_choice",
+      "prompt": "Which reduce conformity pressure?",
+      "options": [
+        "Collect private judgments first",
+        "Invite a rotating challenger",
+        "Separate idea evaluation from status",
+        "Ask the leader to announce a preference first"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Private judgments and structured dissent can protect independent thinking from hierarchy and social pressure."
+    },
+    {
+      "id": "strategy-12",
+      "type": "true_false",
+      "prompt": "Nudges should preserve options and avoid misleading people about material facts.",
+      "answer": true,
+      "explanation": "Ethical choice architecture supports decisions without deception or coercive elimination of alternatives."
+    },
+    {
+      "id": "strategy-13",
+      "type": "true_false",
+      "prompt": "A public commitment can increase follow-through but may also make changing course harder.",
+      "answer": true,
+      "explanation": "Commitment can motivate action, yet rigidity can prevent adapting when evidence changes."
+    },
+    {
+      "id": "strategy-14",
+      "type": "single_choice",
+      "prompt": "A \"red team\" is most directly tasked with:",
+      "options": [
+        "Testing a proposal’s assumptions and failure modes",
+        "Promoting the proposal",
+        "Making every final decision",
+        "Replacing outcome monitoring"
+      ],
+      "answerIndex": 0,
+      "explanation": "A red team provides structured challenge to expose weaknesses before implementation."
+    },
+    {
+      "id": "strategy-15",
+      "type": "multiple_choice",
+      "prompt": "Which can make collective resource allocation fairer?",
+      "options": [
+        "Publish criteria in advance",
+        "Explain exceptions",
+        "Provide an appeal mechanism",
+        "Use popularity as the only criterion"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Transparent criteria, justified exceptions, and review pathways improve procedural fairness."
+    },
+    {
+      "id": "strategy-16",
+      "type": "true_false",
+      "prompt": "A stakeholder map can help identify who bears costs as well as who receives benefits.",
+      "answer": true,
+      "explanation": "Mapping affected groups makes distributional consequences harder to overlook."
+    },
+    {
+      "id": "strategy-17",
+      "type": "true_false",
+      "prompt": "A behavioral intervention that works in one setting will work unchanged everywhere.",
+      "answer": false,
+      "explanation": "Context, incentives, population, and implementation can alter effects; local evaluation is needed."
+    },
+    {
+      "id": "strategy-18",
+      "type": "single_choice",
+      "prompt": "What is a useful way to evaluate a behavioral intervention?",
+      "options": [
+        "Measure outcomes and unintended effects against a comparison",
+        "Count only favorable testimonials",
+        "Assume uptake equals benefit",
+        "Avoid collecting baseline information"
+      ],
+      "answerIndex": 0,
+      "explanation": "A suitable comparison and broad outcome measures help distinguish intervention effects from other changes."
+    },
+    {
+      "id": "strategy-19",
+      "type": "multiple_choice",
+      "prompt": "Which improve accountability for a decision?",
+      "options": [
+        "Name the decision owner",
+        "Document evidence and assumptions",
+        "Set a review date",
+        "Keep criteria private"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Ownership, documentation, and scheduled review make decisions traceable and revisable."
+    },
+    {
+      "id": "strategy-20",
+      "type": "true_false",
+      "prompt": "Behavioral evidence should inform, not replace, deliberation about people’s goals and rights.",
+      "answer": true,
+      "explanation": "Evidence helps anticipate consequences, while ethical and social values still require explicit judgment."
+    }
+  ]
+}

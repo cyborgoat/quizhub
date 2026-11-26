@@ -1,0 +1,260 @@
+{
+  "id": "software-engineering-delivery-and-maintenance",
+  "title": "Software Delivery and Maintenance",
+  "description": "Version control, release engineering, operations, and secure maintenance.",
+  "tags": [
+    "version-control",
+    "ci-cd",
+    "maintenance"
+  ],
+  "questions": [
+    {
+      "id": "software-engineering-git-commit",
+      "type": "single_choice",
+      "prompt": "What does a Git commit represent?",
+      "options": [
+        "A recorded snapshot and metadata in a repository history",
+        "A remote server backup by itself",
+        "A deployment to production",
+        "A code review approval"
+      ],
+      "answerIndex": 0,
+      "explanation": "A commit records a tree state and parent history with metadata; it is not automatically deployed or backed up remotely."
+    },
+    {
+      "id": "software-engineering-git-branch",
+      "type": "single_choice",
+      "prompt": "What is a Git branch, conceptually?",
+      "options": [
+        "A movable reference to a commit",
+        "A copy of every file on another disk",
+        "A package manager lockfile",
+        "A network interface"
+      ],
+      "answerIndex": 0,
+      "explanation": "A branch name points to a commit and typically advances as new commits are made."
+    },
+    {
+      "id": "software-engineering-git-merge",
+      "type": "true_false",
+      "prompt": "A merge can combine histories while preserving the commits from both branches.",
+      "answer": true,
+      "explanation": "Git creates a merge commit when needed or may fast-forward a branch reference when histories permit."
+    },
+    {
+      "id": "software-engineering-git-rebase",
+      "type": "single_choice",
+      "prompt": "What does rebasing a branch generally do?",
+      "options": [
+        "Replay its commits on a different base commit",
+        "Delete the remote repository",
+        "Merge files without changing history",
+        "Run the test suite"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rebase rewrites commit ancestry by replaying changes onto a new base, so shared history should be handled carefully."
+    },
+    {
+      "id": "software-engineering-version-control-practices",
+      "type": "multiple_choice",
+      "prompt": "Which are good version-control practices?",
+      "options": [
+        "Commit focused changes",
+        "Use meaningful commit messages",
+        "Avoid committing secrets",
+        "Commit generated credentials for convenience"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Focused history, clear messages, and secret hygiene support collaboration and security."
+    },
+    {
+      "id": "software-engineering-semantic-versioning",
+      "type": "single_choice",
+      "prompt": "In semantic versioning, what does the major version commonly signal?",
+      "options": [
+        "Potentially incompatible public API changes",
+        "A patch with no behavior change",
+        "A documentation-only change always",
+        "The number of contributors"
+      ],
+      "answerIndex": 0,
+      "explanation": "Semantic versioning uses the major number for incompatible public API changes, subject to the project’s policy."
+    },
+    {
+      "id": "software-engineering-feature-flag",
+      "type": "single_choice",
+      "prompt": "What is a feature flag used for?",
+      "options": [
+        "Control whether a behavior is enabled without deploying separate code for each state",
+        "Encrypt all source files",
+        "Track database backups",
+        "Replace automated tests"
+      ],
+      "answerIndex": 0,
+      "explanation": "Feature flags separate deployment from activation, allowing staged rollout or quick disablement."
+    },
+    {
+      "id": "software-engineering-rollback",
+      "type": "true_false",
+      "prompt": "A rollback plan should be considered before a risky production release.",
+      "answer": true,
+      "explanation": "Planning recovery in advance reduces response time if the release causes unacceptable impact."
+    },
+    {
+      "id": "software-engineering-blue-green",
+      "type": "single_choice",
+      "prompt": "What is a blue-green deployment?",
+      "options": [
+        "Maintain two production-like environments and switch traffic between them",
+        "Deploy only to developer laptops",
+        "Release code without testing",
+        "Use two source-control providers"
+      ],
+      "answerIndex": 0,
+      "explanation": "One environment serves traffic while the other receives a candidate release, enabling a controlled switch or rollback."
+    },
+    {
+      "id": "software-engineering-canary-release",
+      "type": "single_choice",
+      "prompt": "What is the purpose of a canary release?",
+      "options": [
+        "Expose a new version to a limited audience before broad rollout",
+        "Prevent all users from accessing the service",
+        "Compile code on every client",
+        "Replace observability"
+      ],
+      "answerIndex": 0,
+      "explanation": "Limited exposure lets teams detect issues in production conditions before expanding release."
+    },
+    {
+      "id": "software-engineering-observability-signals",
+      "type": "multiple_choice",
+      "prompt": "Which are commonly called the three pillars of observability?",
+      "options": [
+        "Logs",
+        "Metrics",
+        "Traces",
+        "Source-code comments"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Logs, metrics, and traces provide complementary views of events, aggregate behavior, and request paths."
+    },
+    {
+      "id": "software-engineering-service-level-indicator",
+      "type": "single_choice",
+      "prompt": "What is a service-level indicator (SLI)?",
+      "options": [
+        "A measured quantitative aspect of service behavior",
+        "A contract penalty",
+        "A deployment branch",
+        "A list of source dependencies"
+      ],
+      "answerIndex": 0,
+      "explanation": "An SLI measures an aspect such as availability or latency for evaluating service performance."
+    },
+    {
+      "id": "software-engineering-service-level-objective",
+      "type": "single_choice",
+      "prompt": "What is a service-level objective (SLO)?",
+      "options": [
+        "A target value or range for a service-level indicator",
+        "A guarantee that no incident occurs",
+        "A database query plan",
+        "A programming-language standard"
+      ],
+      "answerIndex": 0,
+      "explanation": "An SLO sets a reliability target for an SLI over a defined period."
+    },
+    {
+      "id": "software-engineering-error-budget",
+      "type": "true_false",
+      "prompt": "An error budget represents the amount of unreliability allowed by an SLO over its measurement window.",
+      "answer": true,
+      "explanation": "The budget quantifies tolerated failures or downtime, helping balance reliability and release velocity."
+    },
+    {
+      "id": "software-engineering-incident-postmortem",
+      "type": "single_choice",
+      "prompt": "What is the goal of a blameless incident postmortem?",
+      "options": [
+        "Understand contributing conditions and identify system improvements",
+        "Find one person to punish",
+        "Hide outages from stakeholders",
+        "Prove the system cannot fail again"
+      ],
+      "answerIndex": 0,
+      "explanation": "Blameless analysis focuses on how systems and processes allowed an incident and how to reduce recurrence."
+    },
+    {
+      "id": "software-engineering-dependency-pinning",
+      "type": "single_choice",
+      "prompt": "Why pin or constrain dependency versions?",
+      "options": [
+        "Make builds more reproducible and control updates",
+        "Guarantee packages contain no vulnerabilities",
+        "Prevent future maintenance",
+        "Remove transitive dependencies automatically"
+      ],
+      "answerIndex": 0,
+      "explanation": "Version constraints improve repeatability and deliberate upgrades, but still require vulnerability monitoring."
+    },
+    {
+      "id": "software-engineering-secure-development",
+      "type": "multiple_choice",
+      "prompt": "Which practices support secure software development?",
+      "options": [
+        "Validate untrusted input",
+        "Keep dependencies updated and reviewed",
+        "Apply least privilege",
+        "Store plaintext secrets in source control"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Input validation, dependency management, and least privilege reduce risk; source-controlled plaintext secrets are unsafe."
+    },
+    {
+      "id": "software-engineering-threat-model",
+      "type": "single_choice",
+      "prompt": "What does threat modeling help a team do?",
+      "options": [
+        "Identify assets, trust boundaries, threats, and mitigations",
+        "Prove software has no vulnerabilities",
+        "Replace code review",
+        "Measure user satisfaction"
+      ],
+      "answerIndex": 0,
+      "explanation": "Threat modeling reasons systematically about potential attacks and design mitigations early."
+    },
+    {
+      "id": "software-engineering-patching",
+      "type": "true_false",
+      "prompt": "Applying a security patch should still be followed by appropriate verification.",
+      "answer": true,
+      "explanation": "Testing and monitoring help ensure the patch works and does not introduce regressions."
+    },
+    {
+      "id": "software-engineering-deprecation-policy",
+      "type": "single_choice",
+      "prompt": "Why communicate a deprecation policy for a public API?",
+      "options": [
+        "Give consumers notice and a migration path before removal",
+        "Force clients to upgrade without warning",
+        "Avoid documenting compatibility",
+        "Guarantee the old version never fails"
+      ],
+      "answerIndex": 0,
+      "explanation": "A clear timeline and migration guidance help consumers transition safely."
+    }
+  ]
+}

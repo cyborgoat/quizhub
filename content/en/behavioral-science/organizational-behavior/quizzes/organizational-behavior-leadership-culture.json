@@ -1,0 +1,221 @@
+{
+  "id": "organizational-behavior-leadership-culture",
+  "title": "Leadership and Culture",
+  "description": "How leadership, norms, and organizational culture shape work.",
+  "tags": [
+    "leadership",
+    "culture"
+  ],
+  "questions": [
+    {
+      "id": "culture-01",
+      "type": "true_false",
+      "prompt": "Leadership effectiveness depends partly on the situation and the needs of the group.",
+      "answer": true,
+      "explanation": "No one style fits every task; context, expertise, and uncertainty shape what leadership is useful."
+    },
+    {
+      "id": "culture-02",
+      "type": "single_choice",
+      "prompt": "Transformational leadership commonly emphasizes:",
+      "options": [
+        "A compelling purpose and development of followers",
+        "Only contingent punishment",
+        "Avoiding change under all conditions",
+        "Decisions made without communication"
+      ],
+      "answerIndex": 0,
+      "explanation": "Transformational approaches emphasize purpose, intellectual stimulation, and individualized development."
+    },
+    {
+      "id": "culture-03",
+      "type": "true_false",
+      "prompt": "Transactional leadership relies in part on clarifying expectations and linking performance to consequences.",
+      "answer": true,
+      "explanation": "Contingent reward and corrective action are central transactional mechanisms."
+    },
+    {
+      "id": "culture-04",
+      "type": "multiple_choice",
+      "prompt": "Which actions can strengthen ethical leadership?",
+      "options": [
+        "Explain the reasoning behind standards",
+        "Apply rules consistently",
+        "Invite concerns without retaliation",
+        "Reward results regardless of methods"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Ethical leadership combines clear standards, consistent practice, and safe channels for raising concerns."
+    },
+    {
+      "id": "culture-05",
+      "type": "true_false",
+      "prompt": "Organizational culture is fully captured by a company’s stated values.",
+      "answer": false,
+      "explanation": "Culture also includes shared assumptions, routines, incentives, and what behavior is actually rewarded."
+    },
+    {
+      "id": "culture-06",
+      "type": "single_choice",
+      "prompt": "A visible artifact of organizational culture might be:",
+      "options": [
+        "How meetings are run",
+        "An unspoken assumption",
+        "A private belief no one expresses",
+        "A statistical correlation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Artifacts are visible practices or symbols; deeper assumptions may be less directly observable."
+    },
+    {
+      "id": "culture-07",
+      "type": "true_false",
+      "prompt": "Leaders’ behavior can signal which stated values are genuinely prioritized.",
+      "answer": true,
+      "explanation": "Actions and resource decisions communicate priorities, sometimes more strongly than slogans."
+    },
+    {
+      "id": "culture-08",
+      "type": "true_false",
+      "prompt": "A leader should always centralize decisions to ensure accountability.",
+      "answer": false,
+      "explanation": "Decision rights should match expertise, risk, and reversibility; centralization can create bottlenecks."
+    },
+    {
+      "id": "culture-09",
+      "type": "single_choice",
+      "prompt": "When is participative decision-making especially useful?",
+      "options": [
+        "When local knowledge matters and people can contribute meaningfully",
+        "When there is no time for input in an emergency",
+        "When the decision is already irreversible",
+        "When consultation is only symbolic"
+      ],
+      "answerIndex": 0,
+      "explanation": "Participation can improve information and commitment when stakeholders possess relevant knowledge and time permits."
+    },
+    {
+      "id": "culture-10",
+      "type": "multiple_choice",
+      "prompt": "Which are signs of a learning-oriented culture?",
+      "options": [
+        "Errors are examined for system causes",
+        "People can raise concerns early",
+        "Lessons are shared across teams",
+        "All mistakes are hidden to protect reputation"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Learning cultures encourage reporting and system improvement rather than concealment or reflexive blame."
+    },
+    {
+      "id": "culture-11",
+      "type": "true_false",
+      "prompt": "A strong culture can create consistency while also making adaptation more difficult.",
+      "answer": true,
+      "explanation": "Shared norms coordinate action but may resist needed change or marginalize alternative approaches."
+    },
+    {
+      "id": "culture-12",
+      "type": "true_false",
+      "prompt": "Psychological safety means low standards and freedom from consequences.",
+      "answer": false,
+      "explanation": "It concerns interpersonal risk in speaking up; accountability and high performance expectations can coexist with it."
+    },
+    {
+      "id": "culture-13",
+      "type": "single_choice",
+      "prompt": "A useful way to examine an organization’s values is to compare them with:",
+      "options": [
+        "Actual incentives and resource allocation",
+        "The number of slogans",
+        "The age of its office",
+        "The number of meetings"
+      ],
+      "answerIndex": 0,
+      "explanation": "Incentives and resource choices reveal which behaviors receive practical support."
+    },
+    {
+      "id": "culture-14",
+      "type": "multiple_choice",
+      "prompt": "Which support responsible change leadership?",
+      "options": [
+        "Explain the reason for change",
+        "Acknowledge trade-offs and uncertainty",
+        "Offer channels for feedback",
+        "Promise every person will benefit"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Credible change communication is transparent about rationale, uncertainty, and avenues for input."
+    },
+    {
+      "id": "culture-15",
+      "type": "true_false",
+      "prompt": "Informal networks can influence how information and help move through an organization.",
+      "answer": true,
+      "explanation": "Relationships and informal norms often shape access to knowledge beyond the formal reporting chart."
+    },
+    {
+      "id": "culture-16",
+      "type": "true_false",
+      "prompt": "A leader’s confidence is sufficient evidence that a forecast is accurate.",
+      "answer": false,
+      "explanation": "Confidence should be evaluated against track records, evidence, and calibrated estimates."
+    },
+    {
+      "id": "culture-17",
+      "type": "single_choice",
+      "prompt": "What is a constructive response when a policy creates an unintended effect?",
+      "options": [
+        "Collect evidence and revise the policy if warranted",
+        "Blame the first person who reported it",
+        "Hide the outcome",
+        "Assume the original plan cannot change"
+      ],
+      "answerIndex": 0,
+      "explanation": "Monitoring outcomes and updating a policy supports adaptive governance and accountability."
+    },
+    {
+      "id": "culture-18",
+      "type": "multiple_choice",
+      "prompt": "Which reduce bias in promotion decisions?",
+      "options": [
+        "Use job-related criteria",
+        "Collect evidence across multiple work examples",
+        "Calibrate ratings across reviewers",
+        "Rely on informal similarity to the manager"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Structured criteria, multiple observations, and calibration reduce reliance on affinity or a single impression."
+    },
+    {
+      "id": "culture-19",
+      "type": "true_false",
+      "prompt": "Whistleblowing channels are useful only after harm has already occurred.",
+      "answer": false,
+      "explanation": "Accessible reporting can surface risks early and allow prevention, if concerns are handled fairly."
+    },
+    {
+      "id": "culture-20",
+      "type": "true_false",
+      "prompt": "Culture can vary across teams within the same organization.",
+      "answer": true,
+      "explanation": "Subcultures form around local tasks, leaders, histories, and professional communities."
+    }
+  ]
+}

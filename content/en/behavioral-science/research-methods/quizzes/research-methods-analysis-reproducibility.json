@@ -1,0 +1,231 @@
+{
+  "id": "research-methods-analysis-reproducibility",
+  "title": "Analysis and Reproducibility",
+  "description": "Interpret statistical evidence and make research auditable.",
+  "tags": [
+    "statistics",
+    "reproducibility"
+  ],
+  "questions": [
+    {
+      "id": "reproducibility-01",
+      "type": "single_choice",
+      "prompt": "A p-value is the probability of:",
+      "options": [
+        "Data at least this extreme under a specified null model",
+        "The null hypothesis being true",
+        "The result replicating",
+        "An effect being important"
+      ],
+      "answerIndex": 0,
+      "explanation": "It is conditional on the null model and assumptions, not the probability the hypothesis is true."
+    },
+    {
+      "id": "reproducibility-02",
+      "type": "true_false",
+      "prompt": "A p-value below .05 means the null hypothesis has only a 5% chance of being true.",
+      "answer": false,
+      "explanation": "That reverses conditional probability; p-values do not directly give posterior hypothesis probabilities."
+    },
+    {
+      "id": "reproducibility-03",
+      "type": "multiple_choice",
+      "prompt": "Which improve reproducibility?",
+      "options": [
+        "Share code where ethical",
+        "Document data-processing decisions",
+        "Record software and versions",
+        "Delete inconvenient results"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Code, decision records, and computational details help others inspect and reproduce analyses."
+    },
+    {
+      "id": "reproducibility-04",
+      "type": "true_false",
+      "prompt": "A confidence interval communicates estimate precision under a statistical procedure.",
+      "answer": true,
+      "explanation": "Interpretation depends on assumptions; it is not the probability that a fixed parameter lies in this interval."
+    },
+    {
+      "id": "reproducibility-05",
+      "type": "single_choice",
+      "prompt": "A type I error is:",
+      "options": [
+        "Rejecting a true null hypothesis",
+        "Failing to reject a false null",
+        "Measuring a variable twice",
+        "Selecting a random sample"
+      ],
+      "answerIndex": 0,
+      "explanation": "It is a false positive relative to the specified null and decision rule."
+    },
+    {
+      "id": "reproducibility-06",
+      "type": "true_false",
+      "prompt": "A nonsignificant result proves two conditions are exactly equivalent.",
+      "answer": false,
+      "explanation": "Failure to reject a difference does not establish equivalence; that requires margins and an appropriate design."
+    },
+    {
+      "id": "reproducibility-07",
+      "type": "multiple_choice",
+      "prompt": "Which can inflate false-positive risk?",
+      "options": [
+        "Testing many outcomes without adjustment",
+        "Selective reporting",
+        "Repeated significance checks with opportunistic stopping",
+        "Preregistering an analysis"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Unaccounted multiplicity and selective choices increase false-positive risk; preregistration discloses plans."
+    },
+    {
+      "id": "reproducibility-08",
+      "type": "true_false",
+      "prompt": "Effect size describes the magnitude of an observed difference or association.",
+      "answer": true,
+      "explanation": "Magnitude complements uncertainty and practical context; scale matters."
+    },
+    {
+      "id": "reproducibility-09",
+      "type": "single_choice",
+      "prompt": "A power analysis can help researchers:",
+      "options": [
+        "Plan sensitivity under specified assumptions",
+        "Guarantee significance",
+        "Choose a preferred conclusion",
+        "Replace a sampling plan"
+      ],
+      "answerIndex": 0,
+      "explanation": "Power analysis informs sample size and detectable effects but depends on assumptions and design."
+    },
+    {
+      "id": "reproducibility-10",
+      "type": "true_false",
+      "prompt": "A larger sample can improve precision but cannot repair a systematically biased measure.",
+      "answer": true,
+      "explanation": "More observations reduce random error, not systematic bias."
+    },
+    {
+      "id": "reproducibility-11",
+      "type": "multiple_choice",
+      "prompt": "Which support a transparent report?",
+      "options": [
+        "Report prespecified outcomes",
+        "Explain exclusions",
+        "Distinguish exploratory from confirmatory analysis",
+        "Show only favorable models"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Complete reporting helps readers evaluate analytic flexibility and selective disclosure."
+    },
+    {
+      "id": "reproducibility-12",
+      "type": "true_false",
+      "prompt": "Data-cleaning decisions should be documented because they can affect results.",
+      "answer": true,
+      "explanation": "Handling outliers, missingness, and coding can change estimates and should be traceable."
+    },
+    {
+      "id": "reproducibility-13",
+      "type": "single_choice",
+      "prompt": "A type II error is:",
+      "options": [
+        "Failing to detect an effect that exists",
+        "Rejecting a true null",
+        "Using a wrong variable label",
+        "Obtaining a high p-value only"
+      ],
+      "answerIndex": 0,
+      "explanation": "It is a false negative under a defined alternative and design."
+    },
+    {
+      "id": "reproducibility-14",
+      "type": "true_false",
+      "prompt": "Statistical significance alone establishes that a finding is replicable.",
+      "answer": false,
+      "explanation": "Replication depends on effect stability, design, measurement, and context."
+    },
+    {
+      "id": "reproducibility-15",
+      "type": "multiple_choice",
+      "prompt": "Which help manage missing data responsibly?",
+      "options": [
+        "Describe amount and patterns",
+        "Justify handling assumptions",
+        "Consider sensitivity analyses",
+        "Replace every missing value with zero"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Missingness patterns and assumptions matter; simplistic replacement can distort estimates."
+    },
+    {
+      "id": "reproducibility-16",
+      "type": "true_false",
+      "prompt": "Preregistration prevents all analytic flexibility.",
+      "answer": false,
+      "explanation": "Researchers may need justified changes; transparent documentation distinguishes deviations from plans."
+    },
+    {
+      "id": "reproducibility-17",
+      "type": "single_choice",
+      "prompt": "An outlier is:",
+      "options": [
+        "An observation unusually distant from others",
+        "Any inconvenient result",
+        "A value that must be removed",
+        "A known erroneous point"
+      ],
+      "answerIndex": 0,
+      "explanation": "Outliers need investigation; they may be valid cases, errors, or influential observations."
+    },
+    {
+      "id": "reproducibility-18",
+      "type": "multiple_choice",
+      "prompt": "Which promote computational reproducibility?",
+      "options": [
+        "Use version-controlled scripts",
+        "Keep a data dictionary",
+        "Specify random seeds when relevant",
+        "Rely on undocumented manual edits"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Versioning, data documentation, and controlled randomness make computations easier to recreate."
+    },
+    {
+      "id": "reproducibility-19",
+      "type": "true_false",
+      "prompt": "Open data should be shared even when it contains identifiable sensitive information.",
+      "answer": false,
+      "explanation": "Privacy, consent, and legal duties can limit sharing; de-identification or controlled access may be appropriate."
+    },
+    {
+      "id": "reproducibility-20",
+      "type": "true_false",
+      "prompt": "A statistically clear result can still be too uncertain or small to guide a practical decision.",
+      "answer": true,
+      "explanation": "Decision relevance depends on magnitude, uncertainty, costs, and context."
+    }
+  ]
+}

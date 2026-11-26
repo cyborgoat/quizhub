@@ -1,0 +1,236 @@
+{
+  "id": "psychology-foundations",
+  "title": "Psychology Foundations",
+  "description": "Core concepts in behavior, mind, and psychological evidence.",
+  "tags": [
+    "psychology",
+    "foundations"
+  ],
+  "questions": [
+    {
+      "id": "foundations-01",
+      "type": "single_choice",
+      "prompt": "Psychology is broadly the scientific study of:",
+      "options": [
+        "Behavior and mental processes",
+        "Only clinical treatment",
+        "Only conscious choices",
+        "A single universal theory"
+      ],
+      "answerIndex": 0,
+      "explanation": "Psychology includes varied scientific approaches to behavior and mental processes."
+    },
+    {
+      "id": "foundations-02",
+      "type": "true_false",
+      "prompt": "Correlation alone establishes that one variable caused another.",
+      "answer": false,
+      "explanation": "Associations may reflect reverse causation, confounding, or coincidence."
+    },
+    {
+      "id": "foundations-03",
+      "type": "single_choice",
+      "prompt": "In classical conditioning, a conditioned response is:",
+      "options": [
+        "A learned response to a cue after pairing",
+        "An unlearned reflex",
+        "A behavior strengthened by reward",
+        "A response that cannot change"
+      ],
+      "answerIndex": 0,
+      "explanation": "A previously neutral cue can elicit a learned response after becoming predictive."
+    },
+    {
+      "id": "foundations-04",
+      "type": "true_false",
+      "prompt": "In operant conditioning, reinforcement is defined by increasing a behavior’s future likelihood.",
+      "answer": true,
+      "explanation": "Reinforcement is defined by its effect, not whether an event seems pleasant."
+    },
+    {
+      "id": "foundations-05",
+      "type": "multiple_choice",
+      "prompt": "Which are examples of negative reinforcement?",
+      "options": [
+        "A warning stops when a seatbelt is fastened, increasing belt use",
+        "A student loses points for lateness",
+        "Pain eases after medicine, increasing use",
+        "A manager praises work"
+      ],
+      "answerIndices": [
+        0,
+        2
+      ],
+      "explanation": "Negative reinforcement increases behavior by removing or reducing an aversive condition."
+    },
+    {
+      "id": "foundations-06",
+      "type": "true_false",
+      "prompt": "Development reflects interacting biological, psychological, and social influences.",
+      "answer": true,
+      "explanation": "Development is shaped by interacting influences rather than a single nature-or-nurture cause."
+    },
+    {
+      "id": "foundations-07",
+      "type": "single_choice",
+      "prompt": "A placebo effect is a change linked to treatment context beyond the active ingredient.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answerIndex": 0,
+      "explanation": "Expectations and care context can affect experienced or reported outcomes; controls help separate effects."
+    },
+    {
+      "id": "foundations-08",
+      "type": "multiple_choice",
+      "prompt": "Which align with informed consent?",
+      "options": [
+        "Explain procedures and relevant risks",
+        "Make participation voluntary where feasible",
+        "Allow withdrawal without undue penalty",
+        "Hide all relevant information for convenience"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Consent requires understandable information and voluntary choice, subject to justified ethics-approved exceptions."
+    },
+    {
+      "id": "foundations-09",
+      "type": "single_choice",
+      "prompt": "Which brain structure helps regulate hunger and temperature?",
+      "options": [
+        "Hypothalamus",
+        "Cerebellum",
+        "Occipital cortex",
+        "Hippocampus"
+      ],
+      "answerIndex": 0,
+      "explanation": "The hypothalamus helps regulate homeostasis, including hunger and temperature."
+    },
+    {
+      "id": "foundations-10",
+      "type": "true_false",
+      "prompt": "A diagnosis completely explains a person’s difficulties.",
+      "answer": false,
+      "explanation": "Diagnosis can support communication and care but does not capture every cause, context, strength, or experience."
+    },
+    {
+      "id": "foundations-11",
+      "type": "single_choice",
+      "prompt": "An operational definition specifies:",
+      "options": [
+        "How a construct is measured or manipulated",
+        "A universally accepted theory",
+        "A randomly sampled population",
+        "A causal statistical test"
+      ],
+      "answerIndex": 0,
+      "explanation": "It makes an abstract construct observable in a study; different measures may capture different aspects."
+    },
+    {
+      "id": "foundations-12",
+      "type": "multiple_choice",
+      "prompt": "Which illustrate social influence?",
+      "options": [
+        "Changing a response to fit a group norm",
+        "Following an authority’s instruction",
+        "Solving alone without social input",
+        "Revising a belief after peers present evidence"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Normative and informational influence and responses to authority are social processes."
+    },
+    {
+      "id": "foundations-13",
+      "type": "true_false",
+      "prompt": "Random assignment can reduce systematic baseline differences between study groups on average.",
+      "answer": true,
+      "explanation": "Randomization balances factors probabilistically, not perfectly in every sample."
+    },
+    {
+      "id": "foundations-14",
+      "type": "true_false",
+      "prompt": "Psychological findings from one sample may not generalize to every population or setting.",
+      "answer": true,
+      "explanation": "Generalization depends on sampling, context, measures, and whether mechanisms transfer."
+    },
+    {
+      "id": "foundations-15",
+      "type": "single_choice",
+      "prompt": "A confound is a factor associated with both variables that can distort their observed relationship.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answerIndex": 0,
+      "explanation": "A common cause related to exposure and outcome can create or distort an association."
+    },
+    {
+      "id": "foundations-16",
+      "type": "multiple_choice",
+      "prompt": "Which claims about emotion are defensible?",
+      "options": [
+        "Emotions can involve physiological, cognitive, and behavioral components",
+        "A face always reveals exact internal state",
+        "Context shapes interpretation of emotional signals",
+        "People may experience mixed emotions"
+      ],
+      "answerIndices": [
+        0,
+        2,
+        3
+      ],
+      "explanation": "Emotion is multi-component and context-sensitive; expressions are not infallible readouts of private states."
+    },
+    {
+      "id": "foundations-17",
+      "type": "true_false",
+      "prompt": "The hippocampus is important to forming many new episodic memories.",
+      "answer": true,
+      "explanation": "It supports formation and organization of declarative memories alongside distributed brain networks."
+    },
+    {
+      "id": "foundations-18",
+      "type": "true_false",
+      "prompt": "A scientific psychological theory should connect to evidence that could challenge it.",
+      "answer": true,
+      "explanation": "Testable expectations allow evidence to refine or disfavor a theory."
+    },
+    {
+      "id": "foundations-19",
+      "type": "single_choice",
+      "prompt": "Replication is useful because it can assess whether findings recur across samples or methods.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answerIndex": 0,
+      "explanation": "Replications test robustness and generality; they need not repeat every detail identically."
+    },
+    {
+      "id": "foundations-20",
+      "type": "multiple_choice",
+      "prompt": "When evaluating a psychological claim, check:",
+      "options": [
+        "Study design and sample",
+        "Whether averages predict individuals",
+        "Alternative explanations",
+        "Whether publication guarantees universal truth"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Design, population, individual variability, and alternatives limit what evidence can support."
+    }
+  ]
+}

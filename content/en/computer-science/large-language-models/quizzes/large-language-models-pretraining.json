@@ -1,0 +1,263 @@
+{
+  "id": "large-language-models-pretraining",
+  "title": "LLM Pretraining and Adaptation",
+  "description": "How large language models are trained, adapted, and evaluated.",
+  "tags": [
+    "llm-pretraining",
+    "fine-tuning",
+    "evaluation"
+  ],
+  "questions": [
+    {
+      "id": "large-language-models-next-token-objective",
+      "type": "single_choice",
+      "prompt": "What is the standard next-token objective for a causal language model?",
+      "options": [
+        "Predict the next token from preceding context",
+        "Reconstruct each input pixel",
+        "Classify every token by sentiment",
+        "Sort tokens by frequency"
+      ],
+      "answerIndex": 0,
+      "explanation": "The model is trained to assign high probability to the observed next token given its prior context."
+    },
+    {
+      "id": "large-language-models-token-count",
+      "type": "single_choice",
+      "prompt": "Why can a token count differ substantially from a word count?",
+      "options": [
+        "Tokenizers split text into subword units and symbols",
+        "Every word always maps to two tokens",
+        "Tokens count only punctuation",
+        "A token is a sentence by definition"
+      ],
+      "answerIndex": 0,
+      "explanation": "A tokenizer may represent a word as one or several tokens; punctuation and whitespace patterns also affect tokenization."
+    },
+    {
+      "id": "large-language-models-pretraining-data",
+      "type": "true_false",
+      "prompt": "A pretrained language model’s behavior can be influenced by patterns and omissions in its training corpus.",
+      "answer": true,
+      "explanation": "Training data shapes learned associations, including useful information and potential biases or gaps."
+    },
+    {
+      "id": "large-language-models-context-window",
+      "type": "single_choice",
+      "prompt": "What is a context window?",
+      "options": [
+        "The maximum amount of token context a model can process in one input",
+        "A window in a user interface",
+        "The number of optimizer steps",
+        "The count of training documents"
+      ],
+      "answerIndex": 0,
+      "explanation": "Context length limits how many tokens the model can condition on in a given inference pass."
+    },
+    {
+      "id": "large-language-models-continued-pretraining",
+      "type": "multiple_choice",
+      "prompt": "What can continued pretraining on domain text do?",
+      "options": [
+        "Adapt language patterns toward that domain",
+        "Guarantee factual correctness",
+        "Expose the model to additional domain vocabulary",
+        "Replace downstream evaluation"
+      ],
+      "answerIndices": [
+        0,
+        2
+      ],
+      "explanation": "Continued pretraining can improve domain familiarity, but does not guarantee factuality or remove the need for evaluation."
+    },
+    {
+      "id": "large-language-models-instruction-tuning",
+      "type": "single_choice",
+      "prompt": "What is instruction tuning intended to teach a language model?",
+      "options": [
+        "Respond to natural-language task instructions",
+        "Use a different tokenizer for every prompt",
+        "Memorize the evaluation labels",
+        "Always decline uncertain questions"
+      ],
+      "answerIndex": 0,
+      "explanation": "Instruction tuning trains on instruction-response examples to improve task following."
+    },
+    {
+      "id": "large-language-models-preference-optimization",
+      "type": "single_choice",
+      "prompt": "What does preference-based optimization use as a training signal?",
+      "options": [
+        "Comparisons or rankings of candidate responses",
+        "Only token frequencies from a corpus",
+        "A list of model file sizes",
+        "Unlabeled image dimensions"
+      ],
+      "answerIndex": 0,
+      "explanation": "Preference methods use judgments about which outputs are preferred, directly or through a learned reward model."
+    },
+    {
+      "id": "large-language-models-reward-model",
+      "type": "true_false",
+      "prompt": "A reward model trained from human preferences is itself guaranteed to capture every user’s values.",
+      "answer": false,
+      "explanation": "Preference data reflects particular annotators and instructions, and its learned reward can be incomplete or misaligned."
+    },
+    {
+      "id": "large-language-models-perplexity",
+      "type": "single_choice",
+      "prompt": "What does perplexity measure for a language model on a text sequence?",
+      "options": [
+        "Exponentiated average negative log-likelihood per token",
+        "The number of parameters in a checkpoint",
+        "The number of generated paragraphs",
+        "The average response length in words"
+      ],
+      "answerIndex": 0,
+      "explanation": "Perplexity summarizes predictive likelihood, but tokenization and dataset differences affect comparisons."
+    },
+    {
+      "id": "large-language-models-llm-evaluation",
+      "type": "multiple_choice",
+      "prompt": "Which practices improve interpretation of an LLM evaluation?",
+      "options": [
+        "Use task-relevant examples",
+        "Report the prompt and evaluation setup",
+        "Inspect errors and subgroup behavior",
+        "Treat one benchmark score as a universal guarantee"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Evaluation context and error analysis matter; a single benchmark cannot establish universal capability."
+    },
+    {
+      "id": "large-language-models-few-shot-learning",
+      "type": "single_choice",
+      "prompt": "In few-shot prompting, what does the prompt contain?",
+      "options": [
+        "A small number of example input-output demonstrations",
+        "A full parameter update for each query",
+        "Only the model’s vocabulary",
+        "A replacement training corpus"
+      ],
+      "answerIndex": 0,
+      "explanation": "Few-shot prompting provides demonstrations in context without necessarily updating model weights."
+    },
+    {
+      "id": "large-language-models-in-context-learning",
+      "type": "true_false",
+      "prompt": "In-context learning generally changes a language model’s stored parameters for every new prompt.",
+      "answer": false,
+      "explanation": "The model conditions on prompt examples at inference; its parameters usually remain fixed."
+    },
+    {
+      "id": "large-language-models-temperature",
+      "type": "single_choice",
+      "prompt": "What does increasing sampling temperature generally do?",
+      "options": [
+        "Flatten the next-token distribution and increase randomness",
+        "Reduce context length",
+        "Change the tokenizer vocabulary",
+        "Make all tokens equally likely"
+      ],
+      "answerIndex": 0,
+      "explanation": "Temperature rescales logits before sampling; higher values usually make lower-ranked alternatives more likely."
+    },
+    {
+      "id": "large-language-models-decoding-controls",
+      "type": "multiple_choice",
+      "prompt": "Which are decoding strategies or controls?",
+      "options": [
+        "Top-k sampling",
+        "Nucleus (top-p) sampling",
+        "Beam search",
+        "Gradient descent on user input during ordinary generation"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Top-k, top-p, and beam search control sequence selection; gradient descent is not ordinary decoding."
+    },
+    {
+      "id": "large-language-models-beam-search",
+      "type": "single_choice",
+      "prompt": "What is a common limitation of beam search in open-ended text generation?",
+      "options": [
+        "It can favor generic outputs and does not guarantee human preference",
+        "It samples uniformly from all possible texts",
+        "It requires training a new tokenizer",
+        "It always returns the globally most factual response"
+      ],
+      "answerIndex": 0,
+      "explanation": "Beam search optimizes a sequence score and may produce bland outputs; likelihood is not the same as quality."
+    },
+    {
+      "id": "large-language-models-fine-tuning-data",
+      "type": "true_false",
+      "prompt": "Fine-tuning examples can introduce new behaviors and failure modes as well as improve task performance.",
+      "answer": true,
+      "explanation": "The adaptation dataset and objective can shift model behavior, so outcomes require evaluation."
+    },
+    {
+      "id": "large-language-models-catastrophic-forgetting",
+      "type": "single_choice",
+      "prompt": "What is catastrophic forgetting during model adaptation?",
+      "options": [
+        "Previously learned capabilities degrade while learning new data",
+        "The model forgets how to tokenize any word",
+        "A hard drive deletes the checkpoint",
+        "A prompt exceeds the context window"
+      ],
+      "answerIndex": 0,
+      "explanation": "Strong adaptation to new data can overwrite or degrade capabilities learned earlier."
+    },
+    {
+      "id": "large-language-models-parameter-efficient",
+      "type": "multiple_choice",
+      "prompt": "Which are parameter-efficient fine-tuning approaches?",
+      "options": [
+        "Low-rank adapters",
+        "Adapter modules",
+        "Updating a small subset of parameters",
+        "Retraining every base parameter as a requirement"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "PEFT updates small added or selected parameter sets rather than requiring full-model training."
+    },
+    {
+      "id": "large-language-models-data-contamination",
+      "type": "single_choice",
+      "prompt": "What is benchmark data contamination?",
+      "options": [
+        "Evaluation examples or answers appeared in training data",
+        "The prompt includes a typo",
+        "The model uses a large vocabulary",
+        "The benchmark has more than one metric"
+      ],
+      "answerIndex": 0,
+      "explanation": "Contamination can inflate scores because the model may have seen benchmark content during training."
+    },
+    {
+      "id": "large-language-models-capability-elicitation",
+      "type": "single_choice",
+      "prompt": "Why can prompting style affect an LLM capability evaluation?",
+      "options": [
+        "A task may require instructions or formats that elicit the capability",
+        "The model’s parameter count changes with wording",
+        "The tokenizer always changes randomly",
+        "Prompt wording alters the ground truth"
+      ],
+      "answerIndex": 0,
+      "explanation": "Poorly matched prompts can fail to elicit a capability, so evaluation protocols should be explicit and robust."
+    }
+  ]
+}

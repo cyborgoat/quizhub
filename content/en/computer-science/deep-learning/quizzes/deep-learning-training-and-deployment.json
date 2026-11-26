@@ -1,0 +1,264 @@
+{
+  "id": "deep-learning-training-and-deployment",
+  "title": "Deep Learning Systems and Practice",
+  "description": "Training strategies, efficient inference, and neural-model evaluation.",
+  "tags": [
+    "training-systems",
+    "inference",
+    "evaluation"
+  ],
+  "questions": [
+    {
+      "id": "deep-learning-mixed-precision",
+      "type": "single_choice",
+      "prompt": "What is a common benefit of mixed-precision training?",
+      "options": [
+        "Lower memory use and faster supported arithmetic",
+        "Eliminate all numerical error",
+        "Avoid gradient computation",
+        "Guarantee identical results on every device"
+      ],
+      "answerIndex": 0,
+      "explanation": "Lower-precision operations can improve throughput and memory use, often while retaining higher-precision accumulations."
+    },
+    {
+      "id": "deep-learning-numerical-stability",
+      "type": "true_false",
+      "prompt": "Numerically stable implementations can matter when evaluating exponentials and logarithms.",
+      "answer": true,
+      "explanation": "Extreme values can overflow or underflow; stable forms such as log-sum-exp reduce these risks."
+    },
+    {
+      "id": "deep-learning-gradient-accumulation",
+      "type": "single_choice",
+      "prompt": "What does gradient accumulation enable when memory is limited?",
+      "options": [
+        "Approximate a larger effective batch across several smaller batches",
+        "Fit a larger model without any compute",
+        "Remove the loss function",
+        "Increase the dataset size"
+      ],
+      "answerIndex": 0,
+      "explanation": "Accumulating gradients before an optimizer step combines multiple minibatches into a larger effective batch."
+    },
+    {
+      "id": "deep-learning-distributed-data-parallel",
+      "type": "single_choice",
+      "prompt": "In data-parallel training, what do multiple workers typically process?",
+      "options": [
+        "Different minibatches using replicas of the model",
+        "Different source-code branches only",
+        "One weight each with no synchronization",
+        "Only the validation set"
+      ],
+      "answerIndex": 0,
+      "explanation": "Workers compute gradients on separate data shards and synchronize updates or gradients."
+    },
+    {
+      "id": "deep-learning-distributed-bottlenecks",
+      "type": "multiple_choice",
+      "prompt": "Which can limit distributed training speedup?",
+      "options": [
+        "Communication overhead",
+        "Uneven work across workers",
+        "Input pipeline bottlenecks",
+        "Using more workers always reduces runtime"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Communication and imbalance can dominate; additional workers do not guarantee faster training."
+    },
+    {
+      "id": "deep-learning-input-pipeline",
+      "type": "single_choice",
+      "prompt": "Why optimize a deep-learning input pipeline?",
+      "options": [
+        "To keep accelerators supplied with data",
+        "To change the model’s labels at runtime",
+        "To avoid saving checkpoints",
+        "To replace numerical kernels"
+      ],
+      "answerIndex": 0,
+      "explanation": "A slow loader can leave expensive accelerators idle, limiting end-to-end throughput."
+    },
+    {
+      "id": "deep-learning-batch-latency-throughput",
+      "type": "single_choice",
+      "prompt": "What is throughput in inference serving?",
+      "options": [
+        "Number of requests or examples processed per unit time",
+        "Time to answer one request only",
+        "Model parameter count",
+        "Validation-set accuracy"
+      ],
+      "answerIndex": 0,
+      "explanation": "Throughput measures processing rate; it is distinct from individual request latency."
+    },
+    {
+      "id": "deep-learning-batching-latency",
+      "type": "true_false",
+      "prompt": "Dynamic batching can increase throughput but may add waiting time for individual requests.",
+      "answer": true,
+      "explanation": "Combining requests can use hardware efficiently, while waiting to form batches can increase latency."
+    },
+    {
+      "id": "deep-learning-quantization",
+      "type": "single_choice",
+      "prompt": "What does model quantization generally do?",
+      "options": [
+        "Represent weights or activations with lower-precision values",
+        "Increase the number of training labels",
+        "Convert inference into backpropagation",
+        "Guarantee no accuracy change"
+      ],
+      "answerIndex": 0,
+      "explanation": "Quantization reduces numerical precision to save storage or accelerate execution, with possible quality trade-offs."
+    },
+    {
+      "id": "deep-learning-pruning",
+      "type": "single_choice",
+      "prompt": "What is neural-network pruning?",
+      "options": [
+        "Removing or zeroing selected parameters or structures",
+        "Adding more training examples",
+        "Sorting classes by frequency",
+        "Converting all layers to recurrent ones"
+      ],
+      "answerIndex": 0,
+      "explanation": "Pruning removes less useful weights or structures; practical speedups depend on hardware and sparse-kernel support."
+    },
+    {
+      "id": "deep-learning-distillation",
+      "type": "multiple_choice",
+      "prompt": "In knowledge distillation, what is commonly transferred from teacher to student?",
+      "options": [
+        "Soft output distributions",
+        "Intermediate representations in some methods",
+        "A training signal from a larger model",
+        "The teacher’s source-code license as learned data"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Distillation uses teacher outputs and sometimes hidden features to train a smaller student."
+    },
+    {
+      "id": "deep-learning-serving-version",
+      "type": "single_choice",
+      "prompt": "Why pin a model and preprocessing version in a serving release?",
+      "options": [
+        "Ensure predictions use compatible artifacts and transformations",
+        "Make model updates impossible forever",
+        "Improve accuracy by changing identifiers",
+        "Hide model provenance"
+      ],
+      "answerIndex": 0,
+      "explanation": "Version alignment prevents an artifact from receiving inputs transformed under incompatible logic."
+    },
+    {
+      "id": "deep-learning-calibration-neural",
+      "type": "single_choice",
+      "prompt": "What does post-hoc calibration aim to improve?",
+      "options": [
+        "Agreement between predicted confidence and empirical correctness",
+        "The model’s parameter count",
+        "Image resolution",
+        "Training-set diversity"
+      ],
+      "answerIndex": 0,
+      "explanation": "Calibration adjusts confidence estimates to better reflect observed frequencies without necessarily changing ranking."
+    },
+    {
+      "id": "deep-learning-benchmark-representativeness",
+      "type": "true_false",
+      "prompt": "A high score on one benchmark proves a model will perform reliably in every deployment setting.",
+      "answer": false,
+      "explanation": "Benchmarks cover limited data and tasks; deployment conditions and failure modes may differ."
+    },
+    {
+      "id": "deep-learning-out-of-distribution",
+      "type": "single_choice",
+      "prompt": "What is an out-of-distribution input?",
+      "options": [
+        "An input unlike the data conditions represented during training",
+        "An example with a valid label",
+        "A model checkpoint saved outside the cloud",
+        "A minibatch with one sample"
+      ],
+      "answerIndex": 0,
+      "explanation": "Distributionally novel inputs can cause uncertain or unreliable predictions and may need separate handling."
+    },
+    {
+      "id": "deep-learning-robustness-tests",
+      "type": "multiple_choice",
+      "prompt": "Which tests can probe neural-model robustness?",
+      "options": [
+        "Perturb inputs within plausible bounds",
+        "Evaluate on shifted data",
+        "Test adversarial or worst-case examples where relevant",
+        "Only measure training-set loss"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Robustness testing explores perturbations and shifts; training loss alone says little about behavior under such changes."
+    },
+    {
+      "id": "deep-learning-explainability-method",
+      "type": "single_choice",
+      "prompt": "What does saliency analysis commonly attempt to show?",
+      "options": [
+        "Which input regions or features influence a prediction under a chosen method",
+        "A proof that the model is fair",
+        "The exact training data for every weight",
+        "The optimizer’s future trajectory"
+      ],
+      "answerIndex": 0,
+      "explanation": "Saliency methods estimate input sensitivity or attribution and should be interpreted with method-specific limitations."
+    },
+    {
+      "id": "deep-learning-determinism",
+      "type": "true_false",
+      "prompt": "Setting a random seed guarantees bit-for-bit identical results across all hardware and software versions.",
+      "answer": false,
+      "explanation": "Seeds improve repeatability, but kernels, hardware, parallelism, and library versions can still introduce variation."
+    },
+    {
+      "id": "deep-learning-model-serving-autoscale",
+      "type": "single_choice",
+      "prompt": "What should guide autoscaling for a neural inference service?",
+      "options": [
+        "Observed demand, latency objectives, and resource utilization",
+        "The number of model layers alone",
+        "A fixed maximum batch size only",
+        "The latest training loss"
+      ],
+      "answerIndex": 0,
+      "explanation": "Scaling policies should reflect request patterns and service-level targets as well as compute constraints."
+    },
+    {
+      "id": "deep-learning-deployment-observability",
+      "type": "multiple_choice",
+      "prompt": "Which telemetry is useful for a model-serving service?",
+      "options": [
+        "Request latency and error rate",
+        "Input and prediction distributions with privacy safeguards",
+        "Resource utilization",
+        "Raw sensitive inputs logged indefinitely"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Operational and model-behavior metrics support diagnosis; telemetry should avoid unnecessary sensitive-data retention."
+    }
+  ]
+}

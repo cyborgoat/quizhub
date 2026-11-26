@@ -2,13 +2,21 @@
   "id": "ai-ml-basics",
   "title": "Machine Learning Basics",
   "description": "Core ideas behind training and evaluating machine learning models.",
-  "tags": ["machine-learning", "fundamentals"],
+  "tags": [
+    "machine-learning",
+    "fundamentals"
+  ],
   "questions": [
     {
       "id": "supervised-data",
       "type": "single_choice",
       "prompt": "What does **supervised learning** require that unsupervised learning does not?",
-      "options": ["Labeled examples", "A GPU", "A neural network", "More than one feature"],
+      "options": [
+        "Labeled examples",
+        "A GPU",
+        "A neural network",
+        "More than one feature"
+      ],
       "answerIndex": 0,
       "explanation": "Supervised learning fits a mapping from inputs to known targets, so every training example needs a label. Unsupervised methods such as clustering find structure without labels."
     },
@@ -29,8 +37,17 @@
       "id": "regularization-techniques",
       "type": "multiple_choice",
       "prompt": "Which of these are common techniques for reducing overfitting?",
-      "options": ["L2 weight decay", "Dropout", "Early stopping", "Training for more epochs on the same data"],
-      "answerIndices": [0, 1, 2],
+      "options": [
+        "L2 weight decay",
+        "Dropout",
+        "Early stopping",
+        "Training for more epochs on the same data"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
       "explanation": "Weight decay, dropout and early stopping all limit how closely a model can fit noise in the training set. Training longer on the same data usually makes overfitting worse."
     },
     {
@@ -44,9 +61,203 @@
       "id": "bias-variance",
       "type": "single_choice",
       "prompt": "A model has low training error but much higher validation error. What is the most likely problem?",
-      "options": ["High variance (overfitting)", "High bias (underfitting)", "Too little regularization is impossible", "The labels are balanced"],
+      "options": [
+        "High variance (overfitting)",
+        "High bias (underfitting)",
+        "Too little regularization is impossible",
+        "The labels are balanced"
+      ],
       "answerIndex": 0,
       "explanation": "A large gap between training and validation error is the classic sign of high variance: the model memorized training specifics that do not generalize."
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is the primary purpose of a validation set?",
+      "options": [
+        "Choose model settings before final testing",
+        "Replace the training data",
+        "Estimate production latency",
+        "Store unlabeled examples"
+      ],
+      "answerIndex": 0,
+      "explanation": "Validation data guides model selection and hyperparameter tuning; a held-out test set is reserved for final evaluation.",
+      "id": "ai-ml-basics-validation-set"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which statements describe k-fold cross-validation?",
+      "options": [
+        "The data is split into k folds",
+        "Each fold serves as validation once",
+        "It provides multiple validation estimates",
+        "It guarantees an unbiased score after tuning on all folds"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Each fold takes a turn as validation while the others train the model. Repeated tuning can still overfit these estimates.",
+      "id": "ai-ml-basics-cross-validation"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "For a binary classifier, what does changing the decision threshold usually change?",
+      "options": [
+        "The precision-recall trade-off",
+        "The learned feature values",
+        "The number of training examples",
+        "The model architecture"
+      ],
+      "answerIndex": 0,
+      "explanation": "A threshold changes which scores are labeled positive, shifting precision and recall without retraining the model.",
+      "id": "ai-ml-basics-classification-threshold"
+    },
+    {
+      "type": "true_false",
+      "prompt": "A feature measured only after the outcome occurs can cause target leakage when used for prediction. ",
+      "answer": true,
+      "explanation": "Such a feature reveals information unavailable at prediction time, making offline performance misleading.",
+      "id": "ai-ml-basics-feature-leakage"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "For a rare positive class, which metric is often more informative than accuracy?",
+      "options": [
+        "Precision and recall",
+        "Training loss alone",
+        "Number of parameters",
+        "Input dimensionality"
+      ],
+      "answerIndex": 0,
+      "explanation": "Accuracy can look high by predicting only the majority class. Precision and recall expose performance on the rare class.",
+      "id": "ai-ml-basics-class-imbalance-metric"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What does standardization commonly do to a feature?",
+      "options": [
+        "Subtract its mean and divide by its standard deviation",
+        "Convert every value to a class label",
+        "Sort its values",
+        "Remove all outliers"
+      ],
+      "answerIndex": 0,
+      "explanation": "Z-score standardization centers a feature and scales it by its spread; it does not guarantee normality or remove outliers.",
+      "id": "ai-ml-basics-standardization"
+    },
+    {
+      "type": "true_false",
+      "prompt": "A strong correlation between two variables by itself proves that one causes the other.",
+      "answer": false,
+      "explanation": "Correlation can arise from confounding, coincidence, or reverse causality; causal claims need stronger designs or assumptions.",
+      "id": "ai-ml-basics-correlation-causation"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which approaches combine predictions from multiple models?",
+      "options": [
+        "Bagging",
+        "Boosting",
+        "Voting classifiers",
+        "Standardizing a single feature"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Bagging, boosting, and voting combine learners in different ways. Feature scaling alone does not create an ensemble.",
+      "id": "ai-ml-basics-ensemble-benefits"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What does ROC AUC summarize?",
+      "options": [
+        "Ranking ability across classification thresholds",
+        "Calibration at one fixed threshold",
+        "Average training time",
+        "Regression error in original units"
+      ],
+      "answerIndex": 0,
+      "explanation": "ROC AUC measures how well positive examples rank above negatives across thresholds; it does not directly assess calibration.",
+      "id": "ai-ml-basics-roc-auc"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is a typical goal of clustering?",
+      "options": [
+        "Group examples by similarity without provided class labels",
+        "Predict a known continuous target",
+        "Guarantee causal effects",
+        "Compress source code"
+      ],
+      "answerIndex": 0,
+      "explanation": "Clustering organizes unlabeled examples according to a chosen similarity or distance measure.",
+      "id": "ai-ml-basics-unsupervised-clustering"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which practices help prevent leakage when evaluating a model?",
+      "options": [
+        "Split before fitting preprocessing steps",
+        "Fit normalization using training data only",
+        "Keep related duplicate records in different splits",
+        "Use time-aware splits for future prediction"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Preprocessing must learn only from training data; related records should stay together, and temporal tasks need realistic chronological splits.",
+      "id": "ai-ml-basics-data-splitting"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What can happen when regularization is made excessively strong?",
+      "options": [
+        "The model may underfit",
+        "The test labels become available",
+        "The dataset gains more features",
+        "The optimizer becomes a classifier"
+      ],
+      "answerIndex": 0,
+      "explanation": "Strong constraints can prevent the model from capturing genuine patterns, causing high bias and underfitting.",
+      "id": "ai-ml-basics-regularization-strength"
+    },
+    {
+      "type": "true_false",
+      "prompt": "A calibrated model that predicts 0.8 for many cases should be correct on roughly 80% of those cases.",
+      "answer": true,
+      "explanation": "Calibration compares predicted probabilities with empirical frequencies among predictions of similar confidence.",
+      "id": "ai-ml-basics-probability-calibration"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "Compared with squared-error loss, what is a common property of mean absolute error?",
+      "options": [
+        "It is less sensitive to large residuals",
+        "It penalizes only positive residuals",
+        "It is always differentiable at zero",
+        "It requires class probabilities"
+      ],
+      "answerIndex": 0,
+      "explanation": "Absolute error grows linearly with residual magnitude, so extreme errors have less influence than under squared error.",
+      "id": "ai-ml-basics-mae-outliers"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is distribution shift in deployed machine learning?",
+      "options": [
+        "The input or target data distribution changes from training conditions",
+        "The model file is compressed",
+        "The training labels are sorted",
+        "A feature is renamed in documentation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Changing real-world data conditions can reduce performance even when the deployed model code is unchanged.",
+      "id": "ai-ml-basics-distribution-shift"
     }
   ]
 }

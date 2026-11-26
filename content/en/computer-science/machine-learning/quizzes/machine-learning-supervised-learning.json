@@ -1,0 +1,268 @@
+{
+  "id": "machine-learning-supervised-learning",
+  "title": "Supervised Learning Methods",
+  "description": "Models, objectives, and evaluation for labeled prediction tasks.",
+  "tags": [
+    "supervised-learning",
+    "classification",
+    "regression"
+  ],
+  "questions": [
+    {
+      "id": "machine-learning-target-variable",
+      "type": "single_choice",
+      "prompt": "In supervised learning, what is the target variable?",
+      "options": [
+        "The quantity or class the model is trained to predict",
+        "A random model parameter",
+        "The order in which rows are stored",
+        "The validation metric"
+      ],
+      "answerIndex": 0,
+      "explanation": "The target supplies the desired output for each labeled training example."
+    },
+    {
+      "id": "machine-learning-linear-regression-output",
+      "type": "single_choice",
+      "prompt": "What does ordinary linear regression predict?",
+      "options": [
+        "A weighted sum of input features",
+        "A nearest training example only",
+        "A probability distribution by definition",
+        "A cluster identifier"
+      ],
+      "answerIndex": 0,
+      "explanation": "Linear regression models a continuous response as a linear combination of features, often with an intercept."
+    },
+    {
+      "id": "machine-learning-logistic-regression-use",
+      "type": "multiple_choice",
+      "prompt": "Which statements about logistic regression are generally correct?",
+      "options": [
+        "It can model binary class probabilities",
+        "It uses a logistic link for its linear score",
+        "It is inherently a deep neural network",
+        "A decision threshold converts scores to classes"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Logistic regression maps a linear score to probabilities; thresholding can produce class labels."
+    },
+    {
+      "id": "machine-learning-nearest-neighbors-scale",
+      "type": "true_false",
+      "prompt": "Feature scaling can matter for distance-based k-nearest-neighbor models.",
+      "answer": true,
+      "explanation": "Features with larger numeric ranges can dominate distance calculations unless scales are considered."
+    },
+    {
+      "id": "machine-learning-tree-split",
+      "type": "single_choice",
+      "prompt": "A decision-tree classifier typically chooses a split to do what?",
+      "options": [
+        "Improve class purity or reduce an impurity measure",
+        "Maximize feature units",
+        "Minimize the number of labels in the dataset",
+        "Guarantee a linear boundary"
+      ],
+      "answerIndex": 0,
+      "explanation": "Tree splits are selected to reduce impurity, such as Gini impurity or entropy, in child nodes."
+    },
+    {
+      "id": "machine-learning-svm-margin",
+      "type": "single_choice",
+      "prompt": "What does a support vector machine seek to maximize in its basic classification form?",
+      "options": [
+        "The margin between separating classes",
+        "The number of support vectors",
+        "The training-set size",
+        "The entropy of class labels"
+      ],
+      "answerIndex": 0,
+      "explanation": "A maximum-margin classifier seeks a separating boundary with the largest margin, with regularization for violations."
+    },
+    {
+      "id": "machine-learning-classification-metrics",
+      "type": "multiple_choice",
+      "prompt": "Which metrics require predicted class labels at a chosen threshold?",
+      "options": [
+        "Precision",
+        "Recall",
+        "F1 score",
+        "ROC AUC in its usual score-based form"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Precision, recall, and F1 use thresholded predictions. ROC AUC normally uses ranking scores across thresholds."
+    },
+    {
+      "id": "machine-learning-specificity",
+      "type": "single_choice",
+      "prompt": "What does specificity measure?",
+      "options": [
+        "The fraction of actual negatives predicted negative",
+        "The fraction of predicted positives that are correct",
+        "The fraction of all predictions correct",
+        "The average absolute residual"
+      ],
+      "answerIndex": 0,
+      "explanation": "Specificity is true-negative rate: TN/(TN+FP)."
+    },
+    {
+      "id": "machine-learning-regression-r2",
+      "type": "true_false",
+      "prompt": "An R-squared value of 0.9 means the model is correct on exactly 90% of examples.",
+      "answer": false,
+      "explanation": "R-squared is a variance-based goodness-of-fit statistic, not a classification accuracy percentage."
+    },
+    {
+      "id": "machine-learning-mae-units",
+      "type": "single_choice",
+      "prompt": "If a regression target is measured in seconds, what units does mean absolute error have?",
+      "options": [
+        "Seconds",
+        "Seconds squared",
+        "No units under any scaling",
+        "Examples per second"
+      ],
+      "answerIndex": 0,
+      "explanation": "Absolute errors retain the target units, making MAE directly interpretable in the original scale."
+    },
+    {
+      "id": "machine-learning-one-hot-encoding",
+      "type": "multiple_choice",
+      "prompt": "What are common properties of one-hot encoding a nominal category?",
+      "options": [
+        "It creates indicator columns",
+        "It avoids imposing a numeric order on categories",
+        "It may create many columns for high-cardinality features",
+        "It always preserves a compact representation"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "One-hot indicators avoid ordinal assumptions but can be wide when a feature has many distinct categories."
+    },
+    {
+      "id": "machine-learning-ordinal-encoding",
+      "type": "single_choice",
+      "prompt": "When is ordinal encoding most defensible?",
+      "options": [
+        "Categories have a meaningful order",
+        "Categories are arbitrary colors",
+        "The target is always numeric",
+        "The model requires images"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ordinal codes are meaningful when category order is real; otherwise the values may imply a false ordering."
+    },
+    {
+      "id": "machine-learning-stratified-split",
+      "type": "true_false",
+      "prompt": "A stratified classification split aims to preserve class proportions across partitions.",
+      "answer": true,
+      "explanation": "Stratification helps each split represent the overall class distribution, especially with imbalanced labels."
+    },
+    {
+      "id": "machine-learning-macro-average",
+      "type": "single_choice",
+      "prompt": "What does macro-averaged recall do across classes?",
+      "options": [
+        "Compute recall per class, then give each class equal weight",
+        "Pool all examples before computing one recall",
+        "Weight classes by their training frequency only",
+        "Ignore rare classes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Macro averaging gives each class equal contribution regardless of how many examples it contains."
+    },
+    {
+      "id": "machine-learning-multicollinearity",
+      "type": "single_choice",
+      "prompt": "Why can strong multicollinearity be problematic for interpreting linear-model coefficients?",
+      "options": [
+        "Individual coefficient estimates can become unstable",
+        "It necessarily lowers predictive performance to zero",
+        "It makes labels categorical",
+        "It prevents gradient computation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Correlated predictors make it harder to attribute effects uniquely, increasing coefficient uncertainty."
+    },
+    {
+      "id": "machine-learning-missingness-strategies",
+      "type": "multiple_choice",
+      "prompt": "Which are reasonable options for handling missing feature values?",
+      "options": [
+        "Impute using training data statistics",
+        "Add a missingness indicator when informative",
+        "Use a model that supports missing values",
+        "Replace all missing values with the target label"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Imputation, indicators, or capable models are possible; target values must never be copied into features."
+    },
+    {
+      "id": "machine-learning-learning-curve",
+      "type": "single_choice",
+      "prompt": "What can a learning curve help diagnose?",
+      "options": [
+        "How training and validation performance change with data or training size",
+        "The order of source-code imports",
+        "Whether labels were entered alphabetically",
+        "The network packet route"
+      ],
+      "answerIndex": 0,
+      "explanation": "Learning curves reveal patterns such as high bias, high variance, and whether more data may help."
+    },
+    {
+      "id": "machine-learning-random-forest-independence",
+      "type": "true_false",
+      "prompt": "All trees in a random forest are trained on exactly the same examples and feature set.",
+      "answer": false,
+      "explanation": "Random forests introduce randomness through bootstrap samples and feature subsampling to diversify trees."
+    },
+    {
+      "id": "machine-learning-probability-logloss",
+      "type": "single_choice",
+      "prompt": "What does log loss penalize especially strongly?",
+      "options": [
+        "Assigning very low probability to the true class",
+        "Choosing a short feature name",
+        "Having more than two classes",
+        "Using a validation set"
+      ],
+      "answerIndex": 0,
+      "explanation": "Log loss becomes large when the model gives the observed class a probability near zero."
+    },
+    {
+      "id": "machine-learning-threshold-selection",
+      "type": "multiple_choice",
+      "prompt": "What should guide selection of a classifier decision threshold?",
+      "options": [
+        "The relative costs of false positives and false negatives",
+        "Validation data representative of deployment",
+        "The operational objective",
+        "The test labels repeatedly"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Choose thresholds using validation evidence and the application’s error costs; repeated test-set tuning contaminates final evaluation."
+    }
+  ]
+}

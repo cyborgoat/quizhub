@@ -22,7 +22,8 @@ Quizzy will connect to the feed URLs below and sync quizzes and notes automatica
 
 - Quizzes in the [Quizzy quiz format](https://github.com/cyborgoat/quizzy/blob/main/docs/quiz-format.md): single choice, multiple choice and true/false, with Markdown, code and KaTeX.
 - Knowledge notes in the [Quizzy knowledge format](https://github.com/cyborgoat/quizzy/blob/main/docs/knowledge-format.md), each linked to the quiz questions it explains.
-- **Artificial Intelligence** in Computer Science and **Psychology** in Behavioral Science, with four quizzes and six notes per language.
+- Topic-focused quizzes across machine learning, deep learning, large language models, natural-language processing, computer systems and networks, and software engineering. Behavioral-science topics include psychology, organizational behavior, decision-making, learning, research methods, and professional practice.
+- New quiz content is authored in English first; Chinese and Spanish editions can follow.
 - An Atom feed for each language and category, with a JSON manifest per language so a client can download only what changed. See [the feed specification](docs/feed-spec.md).
 - A validator that applies Quizzy's rules, checks KaTeX, and checks that note links resolve.
 
@@ -69,7 +70,7 @@ npm run build      # write the feed and content to dist/
 `npm run validate` ends with a summary like this:
 
 ```text
-12 quizzes, 18 notes, 0 errors, 0 warnings
+50 quizzes, 18 notes, 0 errors, 0 warnings
 ```
 
 ## Repository layout

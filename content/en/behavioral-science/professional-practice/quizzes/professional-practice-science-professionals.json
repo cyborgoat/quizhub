@@ -1,0 +1,231 @@
+{
+  "id": "professional-practice-science-professionals",
+  "title": "Behavioral Science for Science Professionals",
+  "description": "Communicate evidence and make sound decisions in scientific workplaces.",
+  "tags": [
+    "science-professionals",
+    "science-communication"
+  ],
+  "questions": [
+    {
+      "id": "professionals-01",
+      "type": "single_choice",
+      "prompt": "When a stakeholder asks for a definitive answer but evidence is mixed, a professional should:",
+      "options": [
+        "Explain what is known, uncertain, and decision-relevant",
+        "Select the strongest-sounding study",
+        "Hide disagreement among studies",
+        "Offer certainty to preserve trust"
+      ],
+      "answerIndex": 0,
+      "explanation": "Calibrated communication preserves trust by distinguishing evidence strength from remaining uncertainty."
+    },
+    {
+      "id": "professionals-02",
+      "type": "true_false",
+      "prompt": "Explaining uncertainty necessarily makes scientific communication less credible.",
+      "answer": false,
+      "explanation": "Clear uncertainty can improve credibility when paired with evidence, scope, and practical implications."
+    },
+    {
+      "id": "professionals-03",
+      "type": "multiple_choice",
+      "prompt": "Which improve a public explanation of a risk?",
+      "options": [
+        "Use absolute numbers and a clear denominator",
+        "State the timeframe",
+        "Explain what the evidence cannot establish",
+        "Use relative change alone"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Contextual numbers and transparent limits help audiences understand magnitude and scope."
+    },
+    {
+      "id": "professionals-04",
+      "type": "true_false",
+      "prompt": "A single study is usually sufficient to settle a complex scientific question.",
+      "answer": false,
+      "explanation": "A single result may be informative, but synthesis, replication, and study quality shape confidence."
+    },
+    {
+      "id": "professionals-05",
+      "type": "single_choice",
+      "prompt": "A conflict of interest should be:",
+      "options": [
+        "Disclosed and managed under applicable policy",
+        "Ignored if the professional feels impartial",
+        "Hidden unless challenged",
+        "Treated as automatic proof of misconduct"
+      ],
+      "answerIndex": 0,
+      "explanation": "Disclosure enables appropriate management; a conflict is a risk to assess, not proof of wrongdoing."
+    },
+    {
+      "id": "professionals-06",
+      "type": "true_false",
+      "prompt": "Professional expertise does not remove the need to check assumptions and evidence.",
+      "answer": true,
+      "explanation": "Expertise helps interpretation but remains vulnerable to uncertainty and motivated reasoning."
+    },
+    {
+      "id": "professionals-07",
+      "type": "multiple_choice",
+      "prompt": "Which support respectful science communication?",
+      "options": [
+        "Ask what the audience needs to decide",
+        "Use plain language without distorting meaning",
+        "Invite questions",
+        "Assume disagreement means bad faith"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Audience-centered explanation and dialogue support understanding without caricaturing disagreement."
+    },
+    {
+      "id": "professionals-08",
+      "type": "true_false",
+      "prompt": "A professional should distinguish a personal value judgment from an empirical result.",
+      "answer": true,
+      "explanation": "Evidence can inform choices, while values determine how outcomes and trade-offs are judged."
+    },
+    {
+      "id": "professionals-09",
+      "type": "single_choice",
+      "prompt": "When a result cannot yet be replicated, the most careful description is:",
+      "options": [
+        "Promising but not yet robustly established",
+        "Definitely false",
+        "Proven universal truth",
+        "Impossible to evaluate"
+      ],
+      "answerIndex": 0,
+      "explanation": "Replication status should calibrate confidence, not force a premature true-or-false conclusion."
+    },
+    {
+      "id": "professionals-10",
+      "type": "true_false",
+      "prompt": "Consensus statements should communicate the basis and scope of agreement.",
+      "answer": true,
+      "explanation": "Explaining evidence and boundaries makes consensus informative rather than an appeal to authority alone."
+    },
+    {
+      "id": "professionals-11",
+      "type": "multiple_choice",
+      "prompt": "Which are useful ways to handle uncertainty in recommendations?",
+      "options": [
+        "Offer conditional scenarios",
+        "Name evidence gaps",
+        "Identify what future evidence could change the advice",
+        "Remove caveats for simplicity"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Conditional guidance and update triggers make advice transparent and responsive to new information."
+    },
+    {
+      "id": "professionals-12",
+      "type": "true_false",
+      "prompt": "A professional’s social status is itself evidence that a claim is correct.",
+      "answer": false,
+      "explanation": "Claims should be evaluated using relevant evidence and reasoning, not prestige alone."
+    },
+    {
+      "id": "professionals-13",
+      "type": "single_choice",
+      "prompt": "What should a public-facing chart include?",
+      "options": [
+        "Units and a clear scale",
+        "Only a dramatic title",
+        "Truncated axes without explanation",
+        "Unlabeled categories"
+      ],
+      "answerIndex": 0,
+      "explanation": "Units and scales help viewers interpret values; visual choices should not exaggerate differences."
+    },
+    {
+      "id": "professionals-14",
+      "type": "true_false",
+      "prompt": "Communicating a relative risk change without its baseline can mislead.",
+      "answer": true,
+      "explanation": "A large relative change can correspond to a small or large absolute difference depending on baseline risk."
+    },
+    {
+      "id": "professionals-15",
+      "type": "multiple_choice",
+      "prompt": "Which support ethical use of behavioral evidence in an organization?",
+      "options": [
+        "Check who benefits and who bears costs",
+        "Monitor unintended effects",
+        "Provide a way to challenge decisions",
+        "Treat uptake as proof of benefit"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Distributional impact, monitoring, and contestability matter beyond simple adoption rates."
+    },
+    {
+      "id": "professionals-16",
+      "type": "true_false",
+      "prompt": "A professional recommendation should acknowledge when evidence comes from a different population or setting.",
+      "answer": true,
+      "explanation": "Differences in context may limit how directly findings apply to the current decision."
+    },
+    {
+      "id": "professionals-17",
+      "type": "single_choice",
+      "prompt": "When a colleague makes a factual error in a high-visibility report, a constructive first step is to:",
+      "options": [
+        "Verify the claim and raise a specific correction promptly",
+        "Publicly shame the colleague",
+        "Ignore it because the report is popular",
+        "Replace the report without notifying anyone"
+      ],
+      "answerIndex": 0,
+      "explanation": "Prompt, evidence-based correction protects the record while allowing an orderly response."
+    },
+    {
+      "id": "professionals-18",
+      "type": "multiple_choice",
+      "prompt": "Which help maintain scientific integrity in team communication?",
+      "options": [
+        "Separate observation from interpretation",
+        "Record uncertainty and assumptions",
+        "Correct material errors openly",
+        "Remove inconvenient findings from summaries"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Traceable reasoning and correction prevent selective presentation from distorting evidence."
+    },
+    {
+      "id": "professionals-19",
+      "type": "true_false",
+      "prompt": "Accessible communication can improve participation without diluting scientific accuracy.",
+      "answer": true,
+      "explanation": "Plain language, captions, and alternate formats broaden access while preserving meaning."
+    },
+    {
+      "id": "professionals-20",
+      "type": "true_false",
+      "prompt": "Recommendations should be updated when important new evidence changes their assumptions.",
+      "answer": true,
+      "explanation": "Responsive guidance makes uncertainty actionable and avoids treating earlier conclusions as permanent."
+    }
+  ]
+}

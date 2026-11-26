@@ -1,0 +1,231 @@
+{
+  "id": "learning-science-learner-variability",
+  "title": "Learner Variability and Transfer",
+  "description": "Understand learner differences and support application beyond practice.",
+  "tags": [
+    "learner-variability",
+    "transfer"
+  ],
+  "questions": [
+    {
+      "id": "variability-01",
+      "type": "true_false",
+      "prompt": "Learners can differ in prior knowledge even when they share the same age or course.",
+      "answer": true,
+      "explanation": "Background and opportunity vary; instruction should diagnose relevant knowledge rather than assume uniform starting points."
+    },
+    {
+      "id": "variability-02",
+      "type": "single_choice",
+      "prompt": "Which is a better basis for adapting instruction?",
+      "options": [
+        "Evidence of current understanding",
+        "A fixed label about learning style",
+        "A guess from appearance",
+        "Assuming every learner needs identical support"
+      ],
+      "answerIndex": 0,
+      "explanation": "Observed work and learner input are more useful than unsupported categories or stereotypes."
+    },
+    {
+      "id": "variability-03",
+      "type": "true_false",
+      "prompt": "Matching instruction to a claimed visual or auditory learning style reliably improves learning.",
+      "answer": false,
+      "explanation": "Evidence does not support routine matching by fixed learning-style categories; match representations to content and accessibility needs."
+    },
+    {
+      "id": "variability-04",
+      "type": "multiple_choice",
+      "prompt": "Which can support learners with varied backgrounds?",
+      "options": [
+        "Activate relevant prior knowledge",
+        "Explain unfamiliar vocabulary",
+        "Offer structured choices where appropriate",
+        "Assume all learners share the same references"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Prior-knowledge support, vocabulary, and bounded choice can reduce unnecessary barriers without stereotyping."
+    },
+    {
+      "id": "variability-05",
+      "type": "true_false",
+      "prompt": "Universal design aims to anticipate variability rather than wait for learners to fail.",
+      "answer": true,
+      "explanation": "Proactive design offers flexible access and participation while retaining meaningful learning goals."
+    },
+    {
+      "id": "variability-06",
+      "type": "single_choice",
+      "prompt": "Why teach key vocabulary explicitly?",
+      "options": [
+        "It reduces barriers to understanding domain explanations",
+        "It guarantees expertise",
+        "It replaces conceptual learning",
+        "It is useful only for young learners"
+      ],
+      "answerIndex": 0,
+      "explanation": "Explicit vocabulary instruction helps learners access the concepts and texts that use specialized terms."
+    },
+    {
+      "id": "variability-07",
+      "type": "true_false",
+      "prompt": "Background knowledge can help learners infer omitted steps, but can also create misconceptions.",
+      "answer": true,
+      "explanation": "Prior schemas guide interpretation and should be checked when they conflict with new evidence."
+    },
+    {
+      "id": "variability-08",
+      "type": "true_false",
+      "prompt": "Transfer automatically occurs whenever a learner succeeds on a practice problem.",
+      "answer": false,
+      "explanation": "Transfer depends on recognizing relevant structure and applying knowledge under changed conditions."
+    },
+    {
+      "id": "variability-09",
+      "type": "multiple_choice",
+      "prompt": "Which can promote transfer?",
+      "options": [
+        "Practice across varied contexts",
+        "Compare examples to identify common structure",
+        "Ask learners to explain why a strategy applies",
+        "Repeat one surface form only"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Variation and comparison help learners abstract principles from superficial features."
+    },
+    {
+      "id": "variability-10",
+      "type": "single_choice",
+      "prompt": "Near transfer refers to applying learning to:",
+      "options": [
+        "A context similar to the practice context",
+        "Any unrelated life problem",
+        "Only a memorized definition",
+        "A task requiring no prior learning"
+      ],
+      "answerIndex": 0,
+      "explanation": "Near transfer involves relatively similar situations; far transfer to distant contexts is more difficult to achieve."
+    },
+    {
+      "id": "variability-11",
+      "type": "true_false",
+      "prompt": "Far transfer is generally guaranteed by teaching abstract principles alone.",
+      "answer": false,
+      "explanation": "Generalization to distant contexts is challenging; abstraction needs practice and explicit bridging."
+    },
+    {
+      "id": "variability-12",
+      "type": "multiple_choice",
+      "prompt": "Which can improve access for multilingual learners?",
+      "options": [
+        "Preteach essential terms",
+        "Use visuals that clarify meaning",
+        "Allow planning time for complex responses",
+        "Treat language proficiency as content mastery"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Language scaffolds can support access while keeping language demands distinct from the target content when appropriate."
+    },
+    {
+      "id": "variability-13",
+      "type": "true_false",
+      "prompt": "A learner’s performance can vary with fatigue, context, and task demands.",
+      "answer": true,
+      "explanation": "Performance is not a fixed trait; interpreting evidence requires attention to conditions."
+    },
+    {
+      "id": "variability-14",
+      "type": "single_choice",
+      "prompt": "What is an effective way to identify a misconception?",
+      "options": [
+        "Ask learners to explain their reasoning",
+        "Count how quickly they finish",
+        "Infer from their demographic group",
+        "Repeat the same explanation louder"
+      ],
+      "answerIndex": 0,
+      "explanation": "Explanations expose the model behind an answer and point to a targeted response."
+    },
+    {
+      "id": "variability-15",
+      "type": "true_false",
+      "prompt": "Providing choices can increase autonomy when choices are meaningful and manageable.",
+      "answer": true,
+      "explanation": "Bounded, relevant choice supports agency; too many options can add unnecessary burden."
+    },
+    {
+      "id": "variability-16",
+      "type": "multiple_choice",
+      "prompt": "Which help learners regulate their own study?",
+      "options": [
+        "Set a specific goal",
+        "Monitor retrieval accuracy",
+        "Change strategy when evidence shows a gap",
+        "Study longer without checking progress"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Goal setting, monitoring, and evidence-based adjustment support self-regulated learning."
+    },
+    {
+      "id": "variability-17",
+      "type": "true_false",
+      "prompt": "A learner’s temporary difficulty proves they lack ability.",
+      "answer": false,
+      "explanation": "Performance reflects knowledge, support, opportunity, and context; one difficulty is not a fixed ability measure."
+    },
+    {
+      "id": "variability-18",
+      "type": "single_choice",
+      "prompt": "What does a transfer prompt ask learners to do?",
+      "options": [
+        "Apply a principle in a new but relevant situation",
+        "Repeat a worked example verbatim",
+        "Recall only the lesson title",
+        "Rate how enjoyable a class was"
+      ],
+      "answerIndex": 0,
+      "explanation": "A novel scenario tests whether learners can recognize when and how knowledge applies."
+    },
+    {
+      "id": "variability-19",
+      "type": "multiple_choice",
+      "prompt": "Which can help learners notice when a strategy is appropriate?",
+      "options": [
+        "Contrast cases where it works and fails",
+        "Discuss the features that matter",
+        "Practice choosing among strategies",
+        "Present a rule without examples"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Contrasts and strategy selection make conditions of use explicit."
+    },
+    {
+      "id": "variability-20",
+      "type": "true_false",
+      "prompt": "Equitable instruction can maintain high expectations while varying supports.",
+      "answer": true,
+      "explanation": "Equity means removing irrelevant barriers and providing appropriate resources, not lowering worthwhile goals."
+    }
+  ]
+}

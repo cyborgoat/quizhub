@@ -2,7 +2,10 @@
   "id": "psychology-learning-memory",
   "title": "Learning and Memory",
   "description": "How memories form, fade and are strengthened.",
-  "tags": ["memory", "learning"],
+  "tags": [
+    "memory",
+    "learning"
+  ],
   "questions": [
     {
       "id": "spacing-effect",
@@ -21,8 +24,17 @@
       "id": "long-term-memory-types",
       "type": "multiple_choice",
       "prompt": "Which are types of long-term memory?",
-      "options": ["Episodic", "Semantic", "Procedural", "Iconic"],
-      "answerIndices": [0, 1, 2],
+      "options": [
+        "Episodic",
+        "Semantic",
+        "Procedural",
+        "Iconic"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
       "explanation": "Episodic (events), semantic (facts) and procedural (skills) are long-term memory types. Iconic memory is a brief visual sensory store."
     },
     {
@@ -44,6 +56,176 @@
       ],
       "answerIndex": 0,
       "explanation": "Most forgetting happens soon after learning, then slows. Reviewing at spaced intervals flattens the curve."
+    },
+    {
+      "id": "memory-practice-01",
+      "type": "true_false",
+      "prompt": "Proactive interference occurs when older learning makes newer, similar information harder to remember.",
+      "answer": true,
+      "explanation": "Earlier memories can compete with retrieval of later learning."
+    },
+    {
+      "id": "memory-practice-02",
+      "type": "true_false",
+      "prompt": "Retroactive interference occurs when new learning makes earlier, similar information harder to recall.",
+      "answer": true,
+      "explanation": "Later material can interfere with access to previously learned information."
+    },
+    {
+      "id": "memory-practice-03",
+      "type": "multiple_choice",
+      "prompt": "Which generally support durable learning?",
+      "options": [
+        "Spacing sessions",
+        "Retrieving answers from memory",
+        "Purposefully interleaving related problem types",
+        "Rereading fluently and assuming mastery"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Spacing, retrieval practice, and purposeful interleaving have evidence for long-term learning; fluency can mislead."
+    },
+    {
+      "id": "memory-practice-04",
+      "type": "true_false",
+      "prompt": "Recognition can be easier than free recall because answer options provide retrieval cues.",
+      "answer": true,
+      "explanation": "Recognition supplies cues; free recall requires generating information with less external support."
+    },
+    {
+      "id": "memory-practice-05",
+      "type": "single_choice",
+      "prompt": "The testing effect refers to:",
+      "options": [
+        "Retrieval practice improving later retention",
+        "Any exam raising intelligence",
+        "Testing being useful only for grading",
+        "Multiple-choice always beating recall"
+      ],
+      "answerIndex": 0,
+      "explanation": "Attempting to retrieve learned material can strengthen later access, especially with corrective feedback."
+    },
+    {
+      "id": "memory-practice-06",
+      "type": "true_false",
+      "prompt": "Recall can improve when retrieval cues overlap with how information was learned.",
+      "answer": true,
+      "explanation": "Encoding specificity describes the benefit of cues connected to the original learning context."
+    },
+    {
+      "id": "memory-practice-07",
+      "type": "true_false",
+      "prompt": "A vivid, confidently held memory is necessarily accurate.",
+      "answer": false,
+      "explanation": "Confidence and vividness do not guarantee accuracy; memory is reconstructive."
+    },
+    {
+      "id": "memory-practice-08",
+      "type": "multiple_choice",
+      "prompt": "Which show metacognitive calibration?",
+      "options": [
+        "Compare confidence with actual accuracy",
+        "Use retrieval errors to adjust study plans",
+        "Assume familiarity means recall",
+        "Track performance across topics"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Calibration uses observed performance to align confidence and direct further study."
+    },
+    {
+      "id": "memory-practice-09",
+      "type": "true_false",
+      "prompt": "The serial-position effect can include an advantage for early and late list items.",
+      "answer": true,
+      "explanation": "Primacy and recency effects produce a characteristic curve under some test conditions."
+    },
+    {
+      "id": "memory-practice-10",
+      "type": "true_false",
+      "prompt": "Distributing the same amount of practice can improve delayed retention versus massing it.",
+      "answer": true,
+      "explanation": "Distributed practice usually aids long-term retention; ideal spacing depends on the later test."
+    },
+    {
+      "id": "memory-practice-11",
+      "type": "single_choice",
+      "prompt": "Working memory is best characterized as:",
+      "options": [
+        "Limited-capacity active maintenance and processing",
+        "A permanent record of experience",
+        "The same as sensory memory",
+        "Unlimited when familiar"
+      ],
+      "answerIndex": 0,
+      "explanation": "Working memory temporarily maintains and manipulates information; prior knowledge can help manage its limits."
+    },
+    {
+      "id": "memory-practice-12",
+      "type": "multiple_choice",
+      "prompt": "Which make retrieval practice more useful?",
+      "options": [
+        "Try recalling before checking notes",
+        "Use feedback after errors",
+        "Revisit material after some forgetting",
+        "Repeat only mastered items"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Effortful retrieval, feedback, and spaced revisiting support learning and reveal gaps."
+    },
+    {
+      "id": "memory-practice-13",
+      "type": "true_false",
+      "prompt": "A retrieval cue can help access a stored memory without guaranteeing its accuracy.",
+      "answer": true,
+      "explanation": "Cues support access, but retrieved information may still be incomplete or distorted."
+    },
+    {
+      "id": "memory-practice-14",
+      "type": "true_false",
+      "prompt": "Sleep can support memory consolidation but does not replace learning and practice.",
+      "answer": true,
+      "explanation": "Sleep contributes to consolidation; learners still need effective encoding and retrieval."
+    },
+    {
+      "id": "memory-practice-15",
+      "type": "single_choice",
+      "prompt": "Interleaving is most useful when learners need to:",
+      "options": [
+        "Discriminate among related problem types",
+        "Repeat one identical procedure",
+        "Avoid all retrieval effort",
+        "Mix only unrelated topics"
+      ],
+      "answerIndex": 0,
+      "explanation": "Mixing related examples can help learners identify which strategy applies, though blocked practice may aid early acquisition."
+    },
+    {
+      "id": "memory-practice-16",
+      "type": "multiple_choice",
+      "prompt": "Which claims about forgetting are reasonable?",
+      "options": [
+        "It can reflect retrieval difficulty, not only lost storage",
+        "Similar memories can interfere",
+        "One failed recall proves permanent loss",
+        "Useful cues may restore access"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "A failure to recall does not establish permanent loss; interference and missing cues can limit access."
     }
   ]
 }

@@ -1,0 +1,220 @@
+{
+  "id": "decision-science-probability-risk",
+  "title": "Probability and Risk",
+  "description": "Reasoning with uncertainty, probabilities, and risk.",
+  "tags": [
+    "probability",
+    "risk"
+  ],
+  "questions": [
+    {
+      "id": "risk-01",
+      "type": "single_choice",
+      "prompt": "A test has 95% sensitivity and 90% specificity. Why can a positive result still have a modest chance of being true?",
+      "options": [
+        "The condition may be rare, so false positives can be numerous",
+        "Sensitivity equals prevalence",
+        "Specificity eliminates all false positives",
+        "Positive results are always correct"
+      ],
+      "answerIndex": 0,
+      "explanation": "Predictive value depends on prevalence as well as test accuracy; base rates matter."
+    },
+    {
+      "id": "risk-02",
+      "type": "true_false",
+      "prompt": "A 1% risk and a 1-in-100 risk express the same probability.",
+      "answer": true,
+      "explanation": "Both represent one chance in one hundred, though natural frequencies may be easier to interpret."
+    },
+    {
+      "id": "risk-03",
+      "type": "true_false",
+      "prompt": "If two events are independent, learning one occurred changes the probability of the other.",
+      "answer": false,
+      "explanation": "Independence means the occurrence of one event does not alter the probability of the other."
+    },
+    {
+      "id": "risk-04",
+      "type": "single_choice",
+      "prompt": "For a fair six-sided die, what is the chance of rolling above 4?",
+      "options": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "5/6"
+      ],
+      "answerIndex": 0,
+      "explanation": "Outcomes 5 and 6 qualify, so two of six equally likely outcomes give 1/3."
+    },
+    {
+      "id": "risk-05",
+      "type": "true_false",
+      "prompt": "Expected value is a probability-weighted average of possible outcomes.",
+      "answer": true,
+      "explanation": "It summarizes average outcome over repeated comparable trials, not what must happen in one trial."
+    },
+    {
+      "id": "risk-06",
+      "type": "multiple_choice",
+      "prompt": "Which help communicate a risk clearly?",
+      "options": [
+        "Give absolute as well as relative change",
+        "Specify the time period",
+        "State the denominator or reference population",
+        "Use only a dramatic percentage increase"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Absolute values, timeframe, and denominator let audiences interpret magnitude and compare fairly."
+    },
+    {
+      "id": "risk-07",
+      "type": "true_false",
+      "prompt": "A 50% relative risk reduction always means the absolute risk falls by 50 percentage points.",
+      "answer": false,
+      "explanation": "Relative and absolute changes differ; the absolute reduction depends on baseline risk."
+    },
+    {
+      "id": "risk-08",
+      "type": "true_false",
+      "prompt": "A confidence interval represents uncertainty about an estimate under a statistical model.",
+      "answer": true,
+      "explanation": "Its interpretation depends on the procedure and assumptions; it is not a probability that a fixed parameter lies in this one interval."
+    },
+    {
+      "id": "risk-09",
+      "type": "single_choice",
+      "prompt": "A decision tree is especially useful for:",
+      "options": [
+        "Mapping choices, uncertain events, and consequences",
+        "Proving which option is morally right",
+        "Removing uncertainty",
+        "Guaranteeing a forecast"
+      ],
+      "answerIndex": 0,
+      "explanation": "Decision trees make alternatives and conditional outcomes explicit but rely on inputs and assumptions."
+    },
+    {
+      "id": "risk-10",
+      "type": "true_false",
+      "prompt": "A low-probability event can still deserve attention when its consequences are severe.",
+      "answer": true,
+      "explanation": "Risk management considers both likelihood and impact, along with mitigation and tolerability."
+    },
+    {
+      "id": "risk-11",
+      "type": "multiple_choice",
+      "prompt": "Which are ways to stress-test a forecast?",
+      "options": [
+        "Vary key assumptions",
+        "Compare with base rates",
+        "Consider plausible scenarios",
+        "Report only the most favorable case"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sensitivity analysis, reference classes, and scenarios expose dependence on assumptions."
+    },
+    {
+      "id": "risk-12",
+      "type": "true_false",
+      "prompt": "A probability estimate of 0.7 guarantees an event will happen in a single case.",
+      "answer": false,
+      "explanation": "It expresses uncertainty, not certainty; calibration is assessed across many forecasts."
+    },
+    {
+      "id": "risk-13",
+      "type": "single_choice",
+      "prompt": "In Bayesian reasoning, the posterior is updated using:",
+      "options": [
+        "Prior beliefs and the likelihood of evidence",
+        "Only the sample size",
+        "A p-value alone",
+        "The most vivid explanation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Bayes’ rule combines prior odds with how likely the evidence is under competing hypotheses."
+    },
+    {
+      "id": "risk-14",
+      "type": "true_false",
+      "prompt": "For mutually exclusive events, their probabilities can be added to find the probability that either occurs.",
+      "answer": true,
+      "explanation": "The addition rule applies when the events cannot occur together; overlapping events require subtracting overlap."
+    },
+    {
+      "id": "risk-15",
+      "type": "multiple_choice",
+      "prompt": "Which describe risk aversion in a simple choice?",
+      "options": [
+        "Preferring a sure amount to a fair gamble with equal expected value",
+        "Valuing certainty beyond its expected value",
+        "Always choosing the highest possible outcome",
+        "Ignoring all probabilities"
+      ],
+      "answerIndices": [
+        0,
+        1
+      ],
+      "explanation": "Risk aversion is a preference for certainty relative to a fair gamble in the relevant range, not a universal behavior."
+    },
+    {
+      "id": "risk-16",
+      "type": "true_false",
+      "prompt": "A forecast should record its reference class and time horizon.",
+      "answer": true,
+      "explanation": "Clear scope makes estimates interpretable and later calibration meaningful."
+    },
+    {
+      "id": "risk-17",
+      "type": "true_false",
+      "prompt": "Two risks with equal expected loss must be equally acceptable to every decision maker.",
+      "answer": false,
+      "explanation": "Risk tolerance, tail outcomes, distribution, fairness, and reversibility can matter beyond expected value."
+    },
+    {
+      "id": "risk-18",
+      "type": "single_choice",
+      "prompt": "What is a base rate?",
+      "options": [
+        "The underlying frequency of an event in a relevant population",
+        "A guaranteed outcome",
+        "The largest observed value",
+        "A measure of confidence only"
+      ],
+      "answerIndex": 0,
+      "explanation": "Base rates provide prior context for interpreting case-specific evidence."
+    },
+    {
+      "id": "risk-19",
+      "type": "multiple_choice",
+      "prompt": "Which improve probability estimates?",
+      "options": [
+        "Break a question into components",
+        "Use frequencies from comparable cases",
+        "Track calibration over time",
+        "Change estimates to match confidence alone"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Decomposition, reference classes, and feedback help estimates become more consistent and calibrated."
+    },
+    {
+      "id": "risk-20",
+      "type": "true_false",
+      "prompt": "A risk estimate is only as useful as its definition, assumptions, and decision context.",
+      "answer": true,
+      "explanation": "A probability without a clearly defined outcome or timeframe can mislead decision makers."
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "id": "computer-networks-routing-and-applications",
+  "title": "Routing and Internet Applications",
+  "description": "Understand path selection, web protocols, and name resolution behavior.",
+  "tags": [
+    "routing",
+    "http",
+    "dns"
+  ],
+  "questions": [
+    {
+      "id": "computer-networks-routing-table",
+      "type": "single_choice",
+      "prompt": "What does a router consult to forward an IP packet?",
+      "options": [
+        "A routing table and the destination address",
+        "The application’s source code",
+        "The packet’s user name",
+        "A list of DNS passwords"
+      ],
+      "answerIndex": 0,
+      "explanation": "Routers select a next hop using destination prefixes in their forwarding information."
+    },
+    {
+      "id": "computer-networks-longest-prefix",
+      "type": "single_choice",
+      "prompt": "What is the longest-prefix match rule?",
+      "options": [
+        "Choose the most specific matching route prefix",
+        "Choose the oldest route",
+        "Choose the route with the shortest hostname",
+        "Choose a random interface"
+      ],
+      "answerIndex": 0,
+      "explanation": "Among matching routes, the longest prefix is the most specific destination range."
+    },
+    {
+      "id": "computer-networks-router-learning",
+      "type": "true_false",
+      "prompt": "Every router on the Internet has a complete, identical map of all end hosts.",
+      "answer": false,
+      "explanation": "Routers exchange reachability information and use summarized routes; they do not maintain a complete host-by-host map."
+    },
+    {
+      "id": "computer-networks-bgp",
+      "type": "single_choice",
+      "prompt": "What is BGP primarily used to exchange?",
+      "options": [
+        "Reachability information between autonomous systems",
+        "Local Ethernet MAC addresses",
+        "User passwords between browsers",
+        "Disk blocks between servers"
+      ],
+      "answerIndex": 0,
+      "explanation": "BGP is an inter-domain routing protocol used to advertise IP prefixes and routing policies."
+    },
+    {
+      "id": "computer-networks-routing-metrics",
+      "type": "multiple_choice",
+      "prompt": "Which factors can routing protocols use when choosing routes?",
+      "options": [
+        "Administrative policy",
+        "Path cost or metric",
+        "Reachability information",
+        "The color of a server rack"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Protocols select routes using metrics and policy while accounting for learned reachability."
+    },
+    {
+      "id": "computer-networks-http-method-get",
+      "type": "single_choice",
+      "prompt": "What is the intended semantics of HTTP GET?",
+      "options": [
+        "Retrieve a representation of a resource",
+        "Delete the server process",
+        "Create a new resource unconditionally",
+        "Negotiate a network route"
+      ],
+      "answerIndex": 0,
+      "explanation": "GET requests a representation and is defined as a safe method with respect to intended server state changes."
+    },
+    {
+      "id": "computer-networks-http-method-post",
+      "type": "single_choice",
+      "prompt": "What is POST commonly used for?",
+      "options": [
+        "Submit data for processing or resource creation",
+        "Read an IP route only",
+        "Resolve a MAC address",
+        "Request a TLS handshake"
+      ],
+      "answerIndex": 0,
+      "explanation": "POST asks the target resource to process submitted data; exact behavior depends on the application."
+    },
+    {
+      "id": "computer-networks-http-stateless",
+      "type": "true_false",
+      "prompt": "HTTP is stateless at the protocol level, so applications often use cookies or tokens to maintain session context.",
+      "answer": true,
+      "explanation": "Each request is independent by default; session mechanisms associate requests when needed."
+    },
+    {
+      "id": "computer-networks-https",
+      "type": "single_choice",
+      "prompt": "What does HTTPS provide when correctly configured?",
+      "options": [
+        "HTTP over TLS with confidentiality and server authentication",
+        "An assurance that a website’s content is harmless",
+        "A guarantee of zero packet loss",
+        "A private IP address"
+      ],
+      "answerIndex": 0,
+      "explanation": "TLS can encrypt traffic and authenticate the server identity, but cannot establish content trustworthiness."
+    },
+    {
+      "id": "computer-networks-tls-certificate",
+      "type": "single_choice",
+      "prompt": "What does a browser primarily check in a TLS server certificate?",
+      "options": [
+        "That the certificate is valid for the requested host and chains to a trusted authority",
+        "That the website has no bugs",
+        "That the server is physically nearby",
+        "That all page content is accurate"
+      ],
+      "answerIndex": 0,
+      "explanation": "Certificate validation binds a public key to a hostname through a trusted chain and validity checks."
+    },
+    {
+      "id": "computer-networks-dns-recursive-resolver",
+      "type": "single_choice",
+      "prompt": "What does a recursive DNS resolver do for a client?",
+      "options": [
+        "Finds or retrieves the requested answer on the client’s behalf",
+        "Encrypts the web page body",
+        "Assigns a TCP sequence number",
+        "Stores all Internet routes"
+      ],
+      "answerIndex": 0,
+      "explanation": "The resolver queries DNS infrastructure, may follow referrals, and returns a cached or newly obtained answer."
+    },
+    {
+      "id": "computer-networks-dns-records",
+      "type": "multiple_choice",
+      "prompt": "Which are common DNS record types?",
+      "options": [
+        "A",
+        "AAAA",
+        "MX",
+        "TCP"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "A maps a name to IPv4, AAAA to IPv6, and MX identifies mail exchangers; TCP is a transport protocol."
+    },
+    {
+      "id": "computer-networks-dns-ttl",
+      "type": "single_choice",
+      "prompt": "What does a DNS record TTL influence?",
+      "options": [
+        "How long a resolver may cache the record",
+        "The lifetime of a TCP connection only",
+        "The number of IP address bits",
+        "The encryption key length"
+      ],
+      "answerIndex": 0,
+      "explanation": "TTL indicates a caching duration, balancing lookup load against how quickly changes are observed."
+    },
+    {
+      "id": "computer-networks-dns-cache",
+      "type": "true_false",
+      "prompt": "A cached DNS response can remain in use until its TTL expires.",
+      "answer": true,
+      "explanation": "Resolvers generally retain a cached record for its remaining TTL unless other policies intervene."
+    },
+    {
+      "id": "computer-networks-cdn",
+      "type": "single_choice",
+      "prompt": "Why use a content delivery network?",
+      "options": [
+        "Serve content from distributed locations closer to users",
+        "Replace all origin servers with DNS",
+        "Guarantee that content never changes",
+        "Eliminate application security needs"
+      ],
+      "answerIndex": 0,
+      "explanation": "CDNs cache or deliver content at distributed edge locations, often reducing latency and origin load."
+    },
+    {
+      "id": "computer-networks-load-balancer",
+      "type": "single_choice",
+      "prompt": "What is a load balancer’s common role?",
+      "options": [
+        "Distribute requests across multiple backend instances",
+        "Assign users an IP address via DHCP",
+        "Compile source code",
+        "Encrypt files at rest"
+      ],
+      "answerIndex": 0,
+      "explanation": "Load balancers route traffic across backends for scalability and availability."
+    },
+    {
+      "id": "computer-networks-http-caching",
+      "type": "multiple_choice",
+      "prompt": "Which HTTP mechanisms can influence caching?",
+      "options": [
+        "Cache-Control",
+        "ETag",
+        "Expires",
+        "ARP"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cache-Control and Expires set freshness behavior; ETag supports validation. ARP is unrelated."
+    },
+    {
+      "id": "computer-networks-websocket",
+      "type": "single_choice",
+      "prompt": "What is a common reason to use WebSocket?",
+      "options": [
+        "Maintain a bidirectional connection for interactive updates",
+        "Transfer a DNS zone only",
+        "Encrypt data without TLS",
+        "Assign a permanent IP address"
+      ],
+      "answerIndex": 0,
+      "explanation": "WebSocket supports full-duplex communication over a persistent connection, useful for interactive applications."
+    },
+    {
+      "id": "computer-networks-quic",
+      "type": "true_false",
+      "prompt": "QUIC runs over UDP and provides transport features used by HTTP/3.",
+      "answer": true,
+      "explanation": "QUIC implements secure multiplexed transport over UDP, and HTTP/3 maps HTTP semantics onto it."
+    },
+    {
+      "id": "computer-networks-http3-head-of-line",
+      "type": "single_choice",
+      "prompt": "What connection-level issue does HTTP/3 help avoid compared with multiple HTTP/2 streams over TCP?",
+      "options": [
+        "TCP-level head-of-line blocking between independent streams",
+        "All packet loss",
+        "DNS lookup delay",
+        "Server certificate validation"
+      ],
+      "answerIndex": 0,
+      "explanation": "QUIC streams are independently delivered, so loss affecting one stream need not stall unrelated streams at the transport layer."
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "id": "research-methods-causal-inference",
+  "title": "Causal Inference",
+  "description": "Interpret experiments and observational evidence responsibly.",
+  "tags": [
+    "causal-inference",
+    "experiments"
+  ],
+  "questions": [
+    {
+      "id": "inference-01",
+      "type": "single_choice",
+      "prompt": "Why does random assignment help estimate a treatment effect?",
+      "options": [
+        "It balances confounders in expectation",
+        "It ensures equal outcomes",
+        "It removes attrition",
+        "It guarantees generalization"
+      ],
+      "answerIndex": 0,
+      "explanation": "Randomization makes assignment independent of baseline factors in expectation, not by guarantee in every study."
+    },
+    {
+      "id": "inference-02",
+      "type": "true_false",
+      "prompt": "Random assignment is the same as random sampling.",
+      "answer": false,
+      "explanation": "Assignment allocates participants to conditions; sampling selects who enters the study."
+    },
+    {
+      "id": "inference-03",
+      "type": "true_false",
+      "prompt": "A confounder can create an apparent relationship between an exposure and outcome.",
+      "answer": true,
+      "explanation": "A common cause of both variables can bias an observed association."
+    },
+    {
+      "id": "inference-04",
+      "type": "multiple_choice",
+      "prompt": "Which support causal inference in an observational study?",
+      "options": [
+        "Measure plausible confounders",
+        "Use a credible comparison group",
+        "State identification assumptions",
+        "Call every association causal"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Design and assumptions, not statistical adjustment alone, justify causal interpretation."
+    },
+    {
+      "id": "inference-05",
+      "type": "single_choice",
+      "prompt": "In an intention-to-treat analysis, people are compared by:",
+      "options": [
+        "Their original assigned groups",
+        "The treatment completed",
+        "Their final outcome",
+        "Their preference"
+      ],
+      "answerIndex": 0,
+      "explanation": "Intention-to-treat preserves randomization and estimates the effect of assignment."
+    },
+    {
+      "id": "inference-06",
+      "type": "true_false",
+      "prompt": "A statistically significant result proves the effect is practically important.",
+      "answer": false,
+      "explanation": "Significance does not convey effect magnitude or decision relevance."
+    },
+    {
+      "id": "inference-07",
+      "type": "multiple_choice",
+      "prompt": "Which can threaten an experiment’s validity?",
+      "options": [
+        "Differential attrition",
+        "Contamination between groups",
+        "Unmeasured changes over time",
+        "A clearly specified outcome"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Attrition, spillovers, and history can weaken comparisons; clear outcomes improve transparency."
+    },
+    {
+      "id": "inference-08",
+      "type": "true_false",
+      "prompt": "A control group helps estimate what might have happened without an intervention.",
+      "answer": true,
+      "explanation": "A well-chosen comparison approximates the counterfactual, subject to design assumptions."
+    },
+    {
+      "id": "inference-09",
+      "type": "single_choice",
+      "prompt": "Difference-in-differences relies on which key assumption?",
+      "options": [
+        "Parallel untreated trends",
+        "No measurement of time",
+        "Identical sample sizes",
+        "No treatment exposure"
+      ],
+      "answerIndex": 0,
+      "explanation": "Treated and comparison groups should have followed parallel trends without treatment."
+    },
+    {
+      "id": "inference-10",
+      "type": "true_false",
+      "prompt": "A before-and-after improvement by itself isolates the intervention effect.",
+      "answer": false,
+      "explanation": "Time trends, regression to the mean, and concurrent events can explain a change."
+    },
+    {
+      "id": "inference-11",
+      "type": "multiple_choice",
+      "prompt": "Which are potential sources of observational-study bias?",
+      "options": [
+        "Confounding",
+        "Selection into exposure",
+        "Measurement error",
+        "Preregistering the study"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Confounding, selection, and measurement can distort associations; preregistration improves transparency."
+    },
+    {
+      "id": "inference-12",
+      "type": "true_false",
+      "prompt": "Mediation analysis asks whether an effect operates through an intermediate variable.",
+      "answer": true,
+      "explanation": "A mediator is on a proposed causal pathway; estimating mediated effects needs additional assumptions."
+    },
+    {
+      "id": "inference-13",
+      "type": "single_choice",
+      "prompt": "A causal diagram helps researchers:",
+      "options": [
+        "Make assumptions about relationships explicit",
+        "Prove assumptions true",
+        "Select the largest p-value",
+        "Replace study design"
+      ],
+      "answerIndex": 0,
+      "explanation": "Directed acyclic graphs clarify hypothesized structure and can guide confounder adjustment."
+    },
+    {
+      "id": "inference-14",
+      "type": "true_false",
+      "prompt": "Adjusting for every measured variable always reduces bias.",
+      "answer": false,
+      "explanation": "Conditioning on colliders or mediators can introduce bias or change the estimand."
+    },
+    {
+      "id": "inference-15",
+      "type": "multiple_choice",
+      "prompt": "Which strengthen a quasi-experimental argument?",
+      "options": [
+        "Show pre-intervention trends",
+        "Test alternative explanations",
+        "Explain assignment mechanism",
+        "Omit assumptions"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Evidence about trends and mechanisms makes assumptions inspectable, though it cannot prove them."
+    },
+    {
+      "id": "inference-16",
+      "type": "true_false",
+      "prompt": "A natural experiment can exploit an external event that changes exposure for some units.",
+      "answer": true,
+      "explanation": "Causal analysis requires that exposure differences are plausibly exogenous and assumptions are assessed."
+    },
+    {
+      "id": "inference-17",
+      "type": "true_false",
+      "prompt": "If a confidence interval includes zero, the study proves there is no effect.",
+      "answer": false,
+      "explanation": "Data may be compatible with a range of effects; precision determines what can be ruled out."
+    },
+    {
+      "id": "inference-18",
+      "type": "single_choice",
+      "prompt": "Reverse causation occurs when:",
+      "options": [
+        "The outcome influences the supposed cause",
+        "Treatment is randomly assigned",
+        "The sample is too large",
+        "A measure is reliable"
+      ],
+      "answerIndex": 0,
+      "explanation": "The outcome may affect exposure, making the direction of an observed association unclear."
+    },
+    {
+      "id": "inference-19",
+      "type": "multiple_choice",
+      "prompt": "A causal claim should report:",
+      "options": [
+        "Population and intervention",
+        "Comparison and timeframe",
+        "Key assumptions and uncertainty",
+        "Only estimate direction"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Scope, counterfactual comparison, timing, assumptions, and uncertainty shape causal conclusions."
+    },
+    {
+      "id": "inference-20",
+      "type": "true_false",
+      "prompt": "Causal conclusions should be limited to populations and settings justified by evidence.",
+      "answer": true,
+      "explanation": "External validity depends on mechanisms, implementation, and context."
+    }
+  ]
+}

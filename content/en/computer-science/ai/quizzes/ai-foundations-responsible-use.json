@@ -1,0 +1,264 @@
+{
+  "id": "ai-foundations-responsible-use",
+  "title": "AI Foundations and Responsible Use",
+  "description": "Core AI concepts, limitations, and practices for responsible deployment.",
+  "tags": [
+    "ai-foundations",
+    "responsible-ai",
+    "ethics"
+  ],
+  "questions": [
+    {
+      "type": "single_choice",
+      "prompt": "Which description best captures artificial intelligence as a field?",
+      "options": [
+        "Building systems that perform tasks associated with intelligent behavior",
+        "Writing only rule-based expert systems",
+        "Making every program learn from data",
+        "Automating hardware manufacturing only"
+      ],
+      "answerIndex": 0,
+      "explanation": "AI studies computational systems for tasks such as perception, reasoning, learning, and language; not every AI system learns.",
+      "id": "ai-foundations-responsible-use-ai-definition"
+    },
+    {
+      "type": "true_false",
+      "prompt": "Every artificial-intelligence system must use machine learning.",
+      "answer": false,
+      "explanation": "AI also includes approaches such as search, planning, and hand-authored rules.",
+      "id": "ai-foundations-responsible-use-ai-and-ml"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "In informed search, what does a heuristic estimate?",
+      "options": [
+        "Remaining cost or distance from a state to a goal",
+        "The exact runtime of the program",
+        "The number of training labels",
+        "The probability that code compiles"
+      ],
+      "answerIndex": 0,
+      "explanation": "A heuristic guides search by estimating progress toward a goal; its properties affect guarantees such as optimality.",
+      "id": "ai-foundations-responsible-use-search-heuristic"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "In reinforcement learning, what signal does an agent commonly receive from its environment?",
+      "options": [
+        "Rewards associated with states or actions",
+        "A correct label for every possible action",
+        "A complete future trajectory in advance",
+        "A proof that its policy is safe"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rewards provide evaluative feedback; they may be delayed or sparse and are not necessarily action-by-action labels.",
+      "id": "ai-foundations-responsible-use-reinforcement-feedback"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which are common components in an intelligent agent formulation?",
+      "options": [
+        "An environment",
+        "Percepts or observations",
+        "Actions",
+        "A utility bill"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "An agent observes an environment and selects actions; a utility bill is not a standard component of the formal model.",
+      "id": "ai-foundations-responsible-use-agent-components"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What does a generative model aim to do?",
+      "options": [
+        "Model or produce samples resembling data from a learned distribution",
+        "Only assign a fixed class to each input",
+        "Guarantee factual truth in every output",
+        "Replace data governance"
+      ],
+      "answerIndex": 0,
+      "explanation": "Generative models learn patterns in data and can sample from them, but resemblance is not proof of factual accuracy.",
+      "id": "ai-foundations-responsible-use-generative-model"
+    },
+    {
+      "type": "true_false",
+      "prompt": "A fluent answer from a generative AI system is necessarily factually correct.",
+      "answer": false,
+      "explanation": "Fluency reflects learned patterns and does not guarantee factual grounding or correctness.",
+      "id": "ai-foundations-responsible-use-hallucination"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "When is human review especially important for an AI-assisted decision?",
+      "options": [
+        "When errors can materially affect people or rights",
+        "Only when the model is open source",
+        "Only for low-risk formatting tasks",
+        "Never if a confidence score is shown"
+      ],
+      "answerIndex": 0,
+      "explanation": "High-impact decisions need proportionate oversight, appeal paths, and accountability beyond a model confidence score.",
+      "id": "ai-foundations-responsible-use-human-oversight"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which practices support responsible handling of personal data in AI projects?",
+      "options": [
+        "Collect only data needed for a defined purpose",
+        "Restrict access to sensitive records",
+        "Set retention limits",
+        "Assume public data has no privacy implications"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Data minimization, access controls, and retention limits reduce privacy risk; publicly accessible data can still be sensitive.",
+      "id": "ai-foundations-responsible-use-data-privacy"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "How can bias enter an AI system?",
+      "options": [
+        "Through unrepresentative data or design choices",
+        "Only through explicit malicious code",
+        "Only after deployment",
+        "Only when the model is small"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sampling, labels, objectives, and deployment context can all encode or amplify inequities.",
+      "id": "ai-foundations-responsible-use-bias-source"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is a sound interpretation of an explanation produced for a complex model?",
+      "options": [
+        "It is evidence about behavior, not automatically a causal proof",
+        "It always reveals the model’s full internal computation",
+        "It guarantees fairness",
+        "It replaces performance testing"
+      ],
+      "answerIndex": 0,
+      "explanation": "Many explanation methods are approximations or feature attributions; they should be validated and not treated as causal proof.",
+      "id": "ai-foundations-responsible-use-explainability-limits"
+    },
+    {
+      "type": "true_false",
+      "prompt": "A high model confidence score alone establishes that an AI system is safe for deployment.",
+      "answer": false,
+      "explanation": "Safety requires evidence across relevant scenarios, failure modes, mitigations, and monitoring—not just confidence.",
+      "id": "ai-foundations-responsible-use-confidence-safety"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is automation bias?",
+      "options": [
+        "People over-rely on automated recommendations despite contrary evidence",
+        "A model’s weights become more accurate automatically",
+        "A processor schedules AI workloads",
+        "A dataset contains duplicate rows"
+      ],
+      "answerIndex": 0,
+      "explanation": "Automation bias can lead users to accept machine recommendations uncritically, so interface and workflow design matter.",
+      "id": "ai-foundations-responsible-use-automation-bias"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which are useful parts of a pre-deployment AI risk assessment?",
+      "options": [
+        "Identify affected people and contexts",
+        "Test foreseeable misuse and failure cases",
+        "Plan monitoring and response",
+        "Assume benchmark accuracy covers every risk"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Risk review considers impacts, misuse, and post-deployment response; benchmark accuracy is only one part of evidence.",
+      "id": "ai-foundations-responsible-use-risk-assessment"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What can retrieval-augmented generation provide to a language model?",
+      "options": [
+        "Relevant external passages as context for a response",
+        "A guarantee that retrieved sources are unbiased",
+        "Automatic deletion of stale documents",
+        "Proof that every generated citation supports its claim"
+      ],
+      "answerIndex": 0,
+      "explanation": "Retrieval supplies context from a corpus, but source quality, relevance, and citation support still need checking.",
+      "id": "ai-foundations-responsible-use-retrieval-grounding"
+    },
+    {
+      "type": "true_false",
+      "prompt": "Documenting a dataset’s provenance and intended use can help users assess its limitations.",
+      "answer": true,
+      "explanation": "Dataset documentation makes collection context, known gaps, and suitable uses more visible.",
+      "id": "ai-foundations-responsible-use-dataset-documentation"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "Why evaluate model performance on meaningful subgroups or slices?",
+      "options": [
+        "Aggregate scores can hide uneven error rates",
+        "It always increases accuracy",
+        "It eliminates the need for consent",
+        "It makes training deterministic"
+      ],
+      "answerIndex": 0,
+      "explanation": "Slice-based evaluation can uncover failures or disparities obscured by a single overall average.",
+      "id": "ai-foundations-responsible-use-evaluation-slices"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is a prompt-injection risk for an AI application using retrieved documents?",
+      "options": [
+        "Untrusted text may try to override instructions or trigger unintended actions",
+        "The tokenizer always changes the system prompt",
+        "A source document guarantees secure execution",
+        "The model cannot read retrieved text"
+      ],
+      "answerIndex": 0,
+      "explanation": "Retrieved content is untrusted input and may contain adversarial instructions; systems should separate data from authority and constrain actions.",
+      "id": "ai-foundations-responsible-use-security-prompt-injection"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "What should post-deployment AI monitoring track?",
+      "options": [
+        "Data or behavior drift",
+        "Errors and user reports",
+        "Changes in operating context",
+        "Only server uptime"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Monitoring should include model quality and context changes as well as operational availability.",
+      "id": "ai-foundations-responsible-use-deployment-monitoring"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is the best response when an AI tool is outside its validated use case?",
+      "options": [
+        "Do not rely on it for that decision; seek a suitable method or qualified review",
+        "Trust it if its response is concise",
+        "Increase its temperature",
+        "Hide the limitation from users"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use should stay within evaluated boundaries; unsupported use requires an alternative or additional qualified review.",
+      "id": "ai-foundations-responsible-use-appropriate-use"
+    }
+  ]
+}

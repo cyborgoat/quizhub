@@ -1,0 +1,258 @@
+{
+  "id": "machine-learning-practice",
+  "title": "Machine Learning in Practice",
+  "description": "Data preparation, experiment design, deployment, and monitoring essentials.",
+  "tags": [
+    "data-quality",
+    "deployment",
+    "ml-practice"
+  ],
+  "questions": [
+    {
+      "id": "machine-learning-data-schema",
+      "type": "single_choice",
+      "prompt": "Why define a feature schema for a production model?",
+      "options": [
+        "To specify expected names, types, and constraints",
+        "To encode hidden target labels",
+        "To guarantee fairness automatically",
+        "To prevent all distribution shift"
+      ],
+      "answerIndex": 0,
+      "explanation": "A schema lets systems catch malformed or incompatible inputs before they silently affect predictions."
+    },
+    {
+      "id": "machine-learning-train-serve-skew",
+      "type": "true_false",
+      "prompt": "Train-serving skew occurs when training-time and prediction-time data processing differ.",
+      "answer": true,
+      "explanation": "Different transformations or feature definitions can make production inputs unlike what the model learned."
+    },
+    {
+      "id": "machine-learning-pipeline-fit",
+      "type": "single_choice",
+      "prompt": "Where should a learned imputation value be fit in a train-validation pipeline?",
+      "options": [
+        "On the training partition only",
+        "On the entire dataset before splitting",
+        "On the test partition only",
+        "On future production labels"
+      ],
+      "answerIndex": 0,
+      "explanation": "Fitting preprocessing on training data prevents information from validation or test partitions leaking into the pipeline."
+    },
+    {
+      "id": "machine-learning-data-quality-checks",
+      "type": "multiple_choice",
+      "prompt": "Which are useful input-data quality checks?",
+      "options": [
+        "Validate type and range constraints",
+        "Monitor missing-value rates",
+        "Check category values against allowed sets",
+        "Assume schema-valid data is always accurate"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Schema and distribution checks catch many defects, though they cannot prove values are semantically correct."
+    },
+    {
+      "id": "machine-learning-concept-drift",
+      "type": "single_choice",
+      "prompt": "What is concept drift?",
+      "options": [
+        "A change over time in the relationship between inputs and the target",
+        "A change in a model’s source-code license",
+        "A database index rebuild",
+        "A fixed random seed"
+      ],
+      "answerIndex": 0,
+      "explanation": "Concept drift concerns changes in P(target|input); it differs from input-only distribution changes."
+    },
+    {
+      "id": "machine-learning-monitoring-label-delay",
+      "type": "true_false",
+      "prompt": "Production model quality can be difficult to measure immediately when ground-truth labels arrive late.",
+      "answer": true,
+      "explanation": "Delayed outcomes require proxy monitoring or waiting for labels before calculating direct quality metrics."
+    },
+    {
+      "id": "machine-learning-canary-release",
+      "type": "single_choice",
+      "prompt": "What is a canary model deployment?",
+      "options": [
+        "Route a limited amount of traffic to a new version before wider rollout",
+        "Train the model on one class only",
+        "Remove all monitoring",
+        "Replace version control with logs"
+      ],
+      "answerIndex": 0,
+      "explanation": "A canary limits exposure while operators compare behavior and detect regressions before full release."
+    },
+    {
+      "id": "machine-learning-rollback-readiness",
+      "type": "multiple_choice",
+      "prompt": "What supports a safe model rollback?",
+      "options": [
+        "Retain a known-good model artifact",
+        "Version feature and serving code",
+        "Define conditions for rollback",
+        "Overwrite the previous model without record"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "A reproducible prior version and explicit criteria enable recovery if a new release causes problems."
+    },
+    {
+      "id": "machine-learning-batch-inference",
+      "type": "single_choice",
+      "prompt": "What is batch inference?",
+      "options": [
+        "Scoring a collection of examples in a scheduled or grouped job",
+        "Updating model weights after each user click",
+        "A method for balancing labels",
+        "A network transport protocol"
+      ],
+      "answerIndex": 0,
+      "explanation": "Batch inference processes many inputs together, often when immediate per-request results are unnecessary."
+    },
+    {
+      "id": "machine-learning-online-inference",
+      "type": "single_choice",
+      "prompt": "When is online inference especially appropriate?",
+      "options": [
+        "A prediction is needed promptly for an individual request",
+        "All predictions can wait for a nightly job",
+        "The model has no input features",
+        "The dataset is stored offline only"
+      ],
+      "answerIndex": 0,
+      "explanation": "Online inference serves predictions with low latency during an interactive or real-time workflow."
+    },
+    {
+      "id": "machine-learning-model-versioning",
+      "type": "true_false",
+      "prompt": "Model versioning should include enough metadata to connect an artifact to its training data and configuration.",
+      "answer": true,
+      "explanation": "Lineage helps reproduce, audit, and compare model versions."
+    },
+    {
+      "id": "machine-learning-feature-importance",
+      "type": "single_choice",
+      "prompt": "Why should feature-importance rankings be interpreted cautiously?",
+      "options": [
+        "They may be model- and data-dependent and do not prove causation",
+        "They always show causal effects",
+        "They are identical across algorithms",
+        "They eliminate the need for validation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Importance measures describe associations under a method’s assumptions; they are not automatically causal explanations."
+    },
+    {
+      "id": "machine-learning-drift-response",
+      "type": "multiple_choice",
+      "prompt": "After detecting input drift, what are sensible actions?",
+      "options": [
+        "Investigate the affected feature and population",
+        "Check for upstream data-pipeline changes",
+        "Evaluate performance when labels become available",
+        "Retrain immediately without investigation"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Drift merits diagnosis and performance checks; automatic retraining without understanding can amplify problems."
+    },
+    {
+      "id": "machine-learning-privacy-preserving-data",
+      "type": "single_choice",
+      "prompt": "What is data minimization?",
+      "options": [
+        "Collect and retain only data needed for a defined purpose",
+        "Keep every available field forever",
+        "Remove the target column from all datasets",
+        "Publish raw records for review"
+      ],
+      "answerIndex": 0,
+      "explanation": "Minimization reduces exposure by limiting personal data to what the task requires."
+    },
+    {
+      "id": "machine-learning-fairness-metric",
+      "type": "true_false",
+      "prompt": "There is one fairness metric that is appropriate for every model and decision context.",
+      "answer": false,
+      "explanation": "Fairness criteria can conflict and depend on context, affected groups, and consequences."
+    },
+    {
+      "id": "machine-learning-shadow-deployment",
+      "type": "single_choice",
+      "prompt": "What is a shadow deployment often used for?",
+      "options": [
+        "Run a candidate model on live inputs without using its outputs for decisions",
+        "Allow a model to rewrite its own source code",
+        "Remove the current production model",
+        "Train exclusively on test labels"
+      ],
+      "answerIndex": 0,
+      "explanation": "Shadow mode gathers real-input behavior for comparison while keeping the existing decision path in control."
+    },
+    {
+      "id": "machine-learning-incident-response",
+      "type": "multiple_choice",
+      "prompt": "Which belong in a model incident response plan?",
+      "options": [
+        "A way to disable or fall back from the model",
+        "Owners and escalation contacts",
+        "Logging sufficient to investigate failures",
+        "A promise that incidents cannot happen"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Operational plans need recovery options, clear ownership, and evidence for investigation."
+    },
+    {
+      "id": "machine-learning-data-contract",
+      "type": "single_choice",
+      "prompt": "What is the purpose of a data contract between a producer and model service?",
+      "options": [
+        "Make expectations about fields and changes explicit",
+        "Guarantee that the model is unbiased",
+        "Replace model monitoring",
+        "Specify neural-network depth only"
+      ],
+      "answerIndex": 0,
+      "explanation": "Contracts coordinate schema and compatibility expectations between systems exchanging model inputs."
+    },
+    {
+      "id": "machine-learning-retraining-trigger",
+      "type": "true_false",
+      "prompt": "A calendar schedule alone is always sufficient to decide when a deployed model should be retrained.",
+      "answer": false,
+      "explanation": "Retraining may depend on drift, label evidence, business changes, and evaluation—not merely elapsed time."
+    },
+    {
+      "id": "machine-learning-model-card",
+      "type": "single_choice",
+      "prompt": "What information is useful in a model card?",
+      "options": [
+        "Intended uses, evaluation context, limitations, and known risks",
+        "Only the model’s marketing name",
+        "A guarantee of future performance",
+        "Private training records"
+      ],
+      "answerIndex": 0,
+      "explanation": "A model card communicates scope and evidence so users can judge where a model may be suitable."
+    }
+  ]
+}

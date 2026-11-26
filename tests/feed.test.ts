@@ -21,10 +21,36 @@ describe("build-feed", () => {
       { id: "zh", name: "简体中文", feed: "zh/atom.xml", manifest: "zh/manifest.json" },
       { id: "es", name: "Español", feed: "es/atom.xml", manifest: "es/manifest.json" },
     ] as const;
-    const titles = {
-      en: ["Computer Science", "Behavioral Science", "Artificial Intelligence", "Psychology"],
-      zh: ["计算机科学", "行为科学", "人工智能", "心理学"],
-      es: ["Ciencias de la computación", "Ciencias del comportamiento", "Inteligencia artificial", "Psicología"],
+    const domainTitles = {
+      en: ["Computer Science", "Behavioral Science"],
+      zh: ["计算机科学", "行为科学"],
+      es: ["Ciencias de la computación", "Ciencias del comportamiento"],
+    };
+    const categories = {
+      en: [
+        ["ai", "Artificial Intelligence", "computer-science"],
+        ["machine-learning", "Machine Learning", "computer-science"],
+        ["deep-learning", "Deep Learning", "computer-science"],
+        ["large-language-models", "Large Language Models", "computer-science"],
+        ["natural-language-processing", "Natural Language Processing", "computer-science"],
+        ["software-engineering", "Software Engineering", "computer-science"],
+        ["computer-systems", "Computer Systems", "computer-science"],
+        ["computer-networks", "Computer Networks", "computer-science"],
+        ["psychology", "Psychology", "behavioral-science"],
+        ["organizational-behavior", "Organizational Behavior", "behavioral-science"],
+        ["decision-science", "Decision Science", "behavioral-science"],
+        ["learning-science", "Learning Science", "behavioral-science"],
+        ["research-methods", "Research Methods", "behavioral-science"],
+        ["professional-practice", "Professional Practice", "behavioral-science"],
+      ],
+      zh: [
+        ["ai", "人工智能", "computer-science"],
+        ["psychology", "心理学", "behavioral-science"],
+      ],
+      es: [
+        ["ai", "Inteligencia artificial", "computer-science"],
+        ["psychology", "Psicología", "behavioral-science"],
+      ],
     };
     const build = () => {
       execFileSync("npx", ["tsx", join(repo, "scripts/build-feed.ts"), root], {
@@ -46,16 +72,16 @@ describe("build-feed", () => {
       expect(atom).toContain("<author><name>QuizHub contributors</name></author>");
       expect(atom).toContain(`href="${baseUrl}${locale.feed}"`);
       expect(manifest.schemaVersion).toBe(1);
-      const [computerScience, behavioralScience, ai, psychology] = titles[locale.id];
+      const [computerScience, behavioralScience] = domainTitles[locale.id];
       expect(manifest.domains).toEqual([
         { id: "computer-science", title: computerScience },
         { id: "behavioral-science", title: behavioralScience },
       ]);
-      expect(manifest.categories).toEqual([
-        { id: "ai", title: ai, domain: "computer-science", feed: "ai/atom.xml" },
-        { id: "psychology", title: psychology, domain: "behavioral-science", feed: "psychology/atom.xml" },
-      ]);
-      expect(manifest.items.filter((item: { kind: string }) => item.kind === "quiz")).toHaveLength(4);
+      expect(manifest.categories).toEqual(categories[locale.id].map(([id, title, domain]) => ({
+        id, title, domain, feed: `${id}/atom.xml`,
+      })));
+      expect(manifest.items.filter((item: { kind: string }) => item.kind === "quiz"))
+        .toHaveLength(locale.id === "en" ? 42 : 4);
       expect(manifest.items.filter((item: { kind: string }) => item.kind === "note")).toHaveLength(6);
       for (const category of manifest.categories) {
         const categoryAtom = read(join(dirname(locale.manifest), category.feed));

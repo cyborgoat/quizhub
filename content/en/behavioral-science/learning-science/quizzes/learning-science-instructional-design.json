@@ -1,0 +1,221 @@
+{
+  "id": "learning-science-instructional-design",
+  "title": "Instructional Design",
+  "description": "Design learning experiences around goals, practice, and evidence.",
+  "tags": [
+    "instructional-design",
+    "teaching"
+  ],
+  "questions": [
+    {
+      "id": "design-01",
+      "type": "single_choice",
+      "prompt": "What should guide the choice of an instructional activity?",
+      "options": [
+        "The intended learning outcome",
+        "What is easiest to prepare",
+        "The latest teaching trend",
+        "The length of the textbook"
+      ],
+      "answerIndex": 0,
+      "explanation": "Activities should give learners practice with the knowledge or skill specified in the learning goal."
+    },
+    {
+      "id": "design-02",
+      "type": "true_false",
+      "prompt": "Learning objectives are more useful when they describe observable performances.",
+      "answer": true,
+      "explanation": "Observable outcomes help align instruction and assessment; not every meaningful goal is reducible to a simple score."
+    },
+    {
+      "id": "design-03",
+      "type": "true_false",
+      "prompt": "A lecture is ineffective for every learning objective.",
+      "answer": false,
+      "explanation": "Direct explanation can efficiently introduce ideas, but learners also need appropriate practice and feedback."
+    },
+    {
+      "id": "design-04",
+      "type": "multiple_choice",
+      "prompt": "Which practices can reduce extraneous cognitive load?",
+      "options": [
+        "Remove irrelevant decoration",
+        "Segment complex explanations",
+        "Signal important relationships",
+        "Present competing instructions simultaneously"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Reducing irrelevant demands and structuring information frees limited working-memory resources for learning."
+    },
+    {
+      "id": "design-05",
+      "type": "true_false",
+      "prompt": "Prior knowledge can change how difficult new material feels.",
+      "answer": true,
+      "explanation": "Existing schemas support integration but misconceptions can also interfere with new learning."
+    },
+    {
+      "id": "design-06",
+      "type": "single_choice",
+      "prompt": "A worked example is especially helpful when learners:",
+      "options": [
+        "Are new to a complex procedure",
+        "Already perform it fluently",
+        "Need no explanation of steps",
+        "Must avoid seeing solutions"
+      ],
+      "answerIndex": 0,
+      "explanation": "Worked examples reduce unguided search for novices; support can fade as expertise grows."
+    },
+    {
+      "id": "design-07",
+      "type": "true_false",
+      "prompt": "Learners benefit from support that is adjusted as competence develops.",
+      "answer": true,
+      "explanation": "Scaffolding should respond to current performance and gradually shift responsibility to learners."
+    },
+    {
+      "id": "design-08",
+      "type": "single_choice",
+      "prompt": "What is constructive alignment?",
+      "options": [
+        "Matching outcomes, learning activities, and assessments",
+        "Using the same textbook in every course",
+        "Teaching only what is easiest to test",
+        "Aligning classroom furniture"
+      ],
+      "answerIndex": 0,
+      "explanation": "Alignment makes practice and assessment reflect the intended learning outcomes."
+    },
+    {
+      "id": "design-09",
+      "type": "true_false",
+      "prompt": "More content coverage always produces more learning.",
+      "answer": false,
+      "explanation": "Overloading content can crowd out practice, feedback, and time for durable understanding."
+    },
+    {
+      "id": "design-10",
+      "type": "multiple_choice",
+      "prompt": "Which can make an explanation easier to follow?",
+      "options": [
+        "Connect new ideas to relevant prior knowledge",
+        "Break a process into meaningful steps",
+        "Use a diagram when it clarifies structure",
+        "Add details unrelated to the learning goal"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Coherent sequencing and relevant representations support understanding; irrelevant detail adds load."
+    },
+    {
+      "id": "design-11",
+      "type": "true_false",
+      "prompt": "An instructional scaffold should remain fixed regardless of learners’ progress.",
+      "answer": false,
+      "explanation": "Support should be responsive; excessive help can become unnecessary as learners gain expertise."
+    },
+    {
+      "id": "design-12",
+      "type": "single_choice",
+      "prompt": "Why include examples and non-examples?",
+      "options": [
+        "They clarify category boundaries",
+        "They remove the need for practice",
+        "They guarantee transfer",
+        "They make assessment unnecessary"
+      ],
+      "answerIndex": 0,
+      "explanation": "Contrasting examples can help learners identify defining and non-defining features."
+    },
+    {
+      "id": "design-13",
+      "type": "true_false",
+      "prompt": "Transfer is more likely when learners practice applying knowledge in varied, relevant contexts.",
+      "answer": true,
+      "explanation": "Variation can help learners recognize underlying principles beyond a single example."
+    },
+    {
+      "id": "design-14",
+      "type": "multiple_choice",
+      "prompt": "Which help make instruction accessible?",
+      "options": [
+        "Use clear structure and headings",
+        "Provide captions or transcripts where appropriate",
+        "Offer more than one way to engage",
+        "Rely on color alone to convey meaning"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Multiple accessible representations and clear organization support learners with differing needs."
+    },
+    {
+      "id": "design-15",
+      "type": "true_false",
+      "prompt": "A memorable activity is necessarily an effective learning activity.",
+      "answer": false,
+      "explanation": "Engagement can support learning, but activity quality depends on alignment, practice, and resulting understanding."
+    },
+    {
+      "id": "design-16",
+      "type": "single_choice",
+      "prompt": "When should a teacher check for understanding?",
+      "options": [
+        "During instruction, before misconceptions compound",
+        "Only at the end of the course",
+        "Only when learners volunteer",
+        "After final grades are submitted"
+      ],
+      "answerIndex": 0,
+      "explanation": "Frequent low-stakes checks reveal misunderstandings while there is still time to respond."
+    },
+    {
+      "id": "design-17",
+      "type": "true_false",
+      "prompt": "Retrieval practice can be incorporated as a low-stakes classroom activity.",
+      "answer": true,
+      "explanation": "Brief recall prompts help learners strengthen memory and help instructors identify gaps."
+    },
+    {
+      "id": "design-18",
+      "type": "multiple_choice",
+      "prompt": "Which are signs of an aligned assessment?",
+      "options": [
+        "It samples the stated skill",
+        "Its directions are clear",
+        "Scoring criteria match the goal",
+        "It rewards unrelated speed"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Assessments should measure the intended outcome with transparent criteria, not irrelevant advantages."
+    },
+    {
+      "id": "design-19",
+      "type": "true_false",
+      "prompt": "A single instructional method is optimal for every learner and every topic.",
+      "answer": false,
+      "explanation": "Effective design depends on goals, learners’ prior knowledge, content, and context."
+    },
+    {
+      "id": "design-20",
+      "type": "true_false",
+      "prompt": "Designing a course includes planning how evidence will inform later revisions.",
+      "answer": true,
+      "explanation": "Reviewing learner work and outcomes can reveal where instruction needs adjustment."
+    }
+  ]
+}

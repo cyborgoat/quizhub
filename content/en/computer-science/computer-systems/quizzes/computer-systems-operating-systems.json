@@ -1,0 +1,261 @@
+{
+  "id": "computer-systems-operating-systems",
+  "title": "Operating Systems and Concurrency",
+  "description": "Processes, scheduling, synchronization, and system-call concepts.",
+  "tags": [
+    "operating-systems",
+    "processes",
+    "concurrency"
+  ],
+  "questions": [
+    {
+      "id": "computer-systems-process",
+      "type": "single_choice",
+      "prompt": "What is a process?",
+      "options": [
+        "A running program together with its execution state and resources",
+        "A CPU instruction format",
+        "A physical network connection",
+        "A disk sector"
+      ],
+      "answerIndex": 0,
+      "explanation": "An operating system represents a process with an address space and execution context, among other resources."
+    },
+    {
+      "id": "computer-systems-thread",
+      "type": "single_choice",
+      "prompt": "What do threads in one process commonly share?",
+      "options": [
+        "The process address space and open resources",
+        "Their own separate copies of every global variable",
+        "Different executable files by necessity",
+        "No memory at all"
+      ],
+      "answerIndex": 0,
+      "explanation": "Threads share process resources while retaining their own execution stacks and register state."
+    },
+    {
+      "id": "computer-systems-context-switch",
+      "type": "true_false",
+      "prompt": "A context switch can add overhead because the processor must save and restore execution state.",
+      "answer": true,
+      "explanation": "Switching tasks consumes time and can affect caches and translation structures."
+    },
+    {
+      "id": "computer-systems-system-call",
+      "type": "single_choice",
+      "prompt": "What is a system call?",
+      "options": [
+        "A controlled request from a program to an operating-system service",
+        "A function call that always stays in user mode",
+        "A hardware cache line",
+        "A network protocol header"
+      ],
+      "answerIndex": 0,
+      "explanation": "System calls provide an interface to privileged services such as file I/O and process management."
+    },
+    {
+      "id": "computer-systems-user-kernel-mode",
+      "type": "single_choice",
+      "prompt": "Why do processors distinguish user and kernel modes?",
+      "options": [
+        "Restrict privileged operations to trusted operating-system code",
+        "Make all applications run at equal privilege",
+        "Remove the need for memory protection",
+        "Ensure every process has one thread"
+      ],
+      "answerIndex": 0,
+      "explanation": "Privilege modes let the OS protect critical hardware and system state from ordinary application code."
+    },
+    {
+      "id": "computer-systems-preemptive-scheduling",
+      "type": "single_choice",
+      "prompt": "What does preemptive scheduling allow an operating system to do?",
+      "options": [
+        "Interrupt a running task to schedule another",
+        "Run only one process forever",
+        "Skip all timer interrupts",
+        "Make every task complete in one time slice"
+      ],
+      "answerIndex": 0,
+      "explanation": "The scheduler can reclaim the CPU, for example when a time slice expires or a higher-priority task becomes ready."
+    },
+    {
+      "id": "computer-systems-scheduling-goals",
+      "type": "multiple_choice",
+      "prompt": "Which goals can influence CPU scheduling policy?",
+      "options": [
+        "Responsiveness",
+        "Throughput",
+        "Fairness",
+        "Minimizing the number of source files"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Scheduling balances interactive response, useful work completed, and fair access among tasks."
+    },
+    {
+      "id": "computer-systems-race-condition",
+      "type": "single_choice",
+      "prompt": "What is a race condition?",
+      "options": [
+        "Behavior depends on the timing or interleaving of concurrent operations",
+        "A process uses too much disk",
+        "A program has a syntax error",
+        "A network link changes speed"
+      ],
+      "answerIndex": 0,
+      "explanation": "Unsynchronized access to shared state can produce results that vary with execution order."
+    },
+    {
+      "id": "computer-systems-mutex",
+      "type": "single_choice",
+      "prompt": "What is the primary purpose of a mutex?",
+      "options": [
+        "Provide mutual exclusion around a critical section",
+        "Store immutable files",
+        "Schedule network routes",
+        "Allocate virtual addresses"
+      ],
+      "answerIndex": 0,
+      "explanation": "A mutex allows at most one owner into a protected region at a time."
+    },
+    {
+      "id": "computer-systems-deadlock-necessary",
+      "type": "true_false",
+      "prompt": "A deadlock requires a circular wait among processes or resources.",
+      "answer": true,
+      "explanation": "Circular wait is one of the four Coffman conditions required for deadlock."
+    },
+    {
+      "id": "computer-systems-deadlock-conditions",
+      "type": "multiple_choice",
+      "prompt": "Which are Coffman conditions associated with deadlock?",
+      "options": [
+        "Mutual exclusion",
+        "Hold and wait",
+        "No preemption",
+        "Circular wait"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Deadlock requires all four conditions: mutual exclusion, hold-and-wait, no preemption, and circular wait."
+    },
+    {
+      "id": "computer-systems-semaphore",
+      "type": "single_choice",
+      "prompt": "What can a counting semaphore represent?",
+      "options": [
+        "A count of available instances of a resource",
+        "A process’s virtual address",
+        "A permanent disk file",
+        "The order of CPU bytes"
+      ],
+      "answerIndex": 0,
+      "explanation": "A counting semaphore tracks permits and coordinates access to a bounded number of resources."
+    },
+    {
+      "id": "computer-systems-condition-variable",
+      "type": "single_choice",
+      "prompt": "How should a thread typically use a condition variable?",
+      "options": [
+        "Wait in a loop that checks a shared predicate under the associated lock",
+        "Assume a signal cannot be missed",
+        "Use it without synchronization",
+        "Treat it as a persistent message queue"
+      ],
+      "answerIndex": 0,
+      "explanation": "Spurious wakeups and races are possible, so a waiter rechecks its condition while holding the lock."
+    },
+    {
+      "id": "computer-systems-atomic-operation",
+      "type": "true_false",
+      "prompt": "An atomic operation appears indivisible with respect to concurrent observers.",
+      "answer": true,
+      "explanation": "Atomicity means other threads cannot observe a partially completed operation, though memory ordering may also matter."
+    },
+    {
+      "id": "computer-systems-priority-inversion",
+      "type": "single_choice",
+      "prompt": "What is priority inversion?",
+      "options": [
+        "A high-priority task waits on a resource held by a lower-priority task",
+        "A scheduler runs all tasks alphabetically",
+        "A process changes its PID",
+        "A thread swaps byte order"
+      ],
+      "answerIndex": 0,
+      "explanation": "A lower-priority lock holder can block a higher-priority task; priority inheritance can mitigate this."
+    },
+    {
+      "id": "computer-systems-virtual-address-space",
+      "type": "single_choice",
+      "prompt": "Why isolate process address spaces?",
+      "options": [
+        "Limit unintended access between processes",
+        "Make all pointers globally identical",
+        "Eliminate system calls",
+        "Guarantee software is bug-free"
+      ],
+      "answerIndex": 0,
+      "explanation": "Address-space isolation protects processes from accidental or unauthorized memory access by others."
+    },
+    {
+      "id": "computer-systems-file-descriptor",
+      "type": "multiple_choice",
+      "prompt": "What can a Unix-like file descriptor refer to?",
+      "options": [
+        "An open regular file",
+        "A pipe",
+        "A socket",
+        "Only a directory name in source code"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "File descriptors are process-local handles for open files and many other I/O objects, including pipes and sockets."
+    },
+    {
+      "id": "computer-systems-copy-on-write",
+      "type": "single_choice",
+      "prompt": "What does copy-on-write defer?",
+      "options": [
+        "Copying shared memory pages until a write occurs",
+        "Saving files until power loss",
+        "Loading an executable until it exits",
+        "Scheduling threads until they block"
+      ],
+      "answerIndex": 0,
+      "explanation": "Processes can initially share pages; a write triggers a private copy where needed."
+    },
+    {
+      "id": "computer-systems-user-thread",
+      "type": "true_false",
+      "prompt": "A user-space thread library can switch between threads without a kernel transition in some designs.",
+      "answer": true,
+      "explanation": "User-level scheduling can perform context switches in user space, though blocking and multicore behavior depend on implementation."
+    },
+    {
+      "id": "computer-systems-signal-handler",
+      "type": "single_choice",
+      "prompt": "Why should asynchronous signal handlers be kept limited?",
+      "options": [
+        "They may interrupt code at arbitrary points and allow only safe operations",
+        "They run only after the process exits",
+        "They are guaranteed to execute on a new process",
+        "They replace all mutexes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Handlers can interrupt inconsistent program state, so only async-signal-safe operations should be used."
+    }
+  ]
+}

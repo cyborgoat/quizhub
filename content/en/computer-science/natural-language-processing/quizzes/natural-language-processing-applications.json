@@ -1,0 +1,260 @@
+{
+  "id": "natural-language-processing-applications",
+  "title": "NLP Tasks and Evaluation",
+  "description": "Measure language systems and understand translation, retrieval, and dialogue tasks.",
+  "tags": [
+    "nlp-evaluation",
+    "machine-translation",
+    "dialogue-systems"
+  ],
+  "questions": [
+    {
+      "id": "natural-language-processing-bleu-purpose",
+      "type": "single_choice",
+      "prompt": "What does BLEU primarily compare in machine translation evaluation?",
+      "options": [
+        "N-gram overlap with reference translations",
+        "Exact semantic truth",
+        "The model’s parameter count",
+        "Speech-waveform frequency"
+      ],
+      "answerIndex": 0,
+      "explanation": "BLEU uses modified n-gram precision and a brevity penalty; it does not fully capture meaning or fluency."
+    },
+    {
+      "id": "natural-language-processing-bleu-semantic",
+      "type": "true_false",
+      "prompt": "A high BLEU score guarantees that a translation preserves the intended meaning.",
+      "answer": false,
+      "explanation": "Overlap metrics can miss semantic errors and may penalize valid paraphrases."
+    },
+    {
+      "id": "natural-language-processing-rouge-purpose",
+      "type": "single_choice",
+      "prompt": "ROUGE is commonly used to compare generated summaries with references using what?",
+      "options": [
+        "Overlap-based recall-oriented measures",
+        "Word-sense labels only",
+        "Network latency",
+        "Audio pitch"
+      ],
+      "answerIndex": 0,
+      "explanation": "ROUGE variants measure overlap such as n-grams or longest common subsequences, but have known limitations."
+    },
+    {
+      "id": "natural-language-processing-exact-match",
+      "type": "single_choice",
+      "prompt": "What does exact match measure in a question-answering evaluation?",
+      "options": [
+        "Whether the normalized prediction matches a reference exactly",
+        "Whether any answer token overlaps",
+        "The model’s confidence calibration",
+        "The number of retrieved documents"
+      ],
+      "answerIndex": 0,
+      "explanation": "Exact match is strict and easy to interpret but can score valid paraphrases as incorrect."
+    },
+    {
+      "id": "natural-language-processing-nlp-error-analysis",
+      "type": "multiple_choice",
+      "prompt": "Which are useful ways to analyze an NLP model’s errors?",
+      "options": [
+        "Group failures by linguistic phenomenon",
+        "Inspect examples across subgroups",
+        "Check annotation ambiguity",
+        "Review only aggregate accuracy"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Slice-based and qualitative review reveals failure patterns hidden by a single aggregate score."
+    },
+    {
+      "id": "natural-language-processing-data-split-by-document",
+      "type": "single_choice",
+      "prompt": "Why split NLP data by document or source when leakage is possible?",
+      "options": [
+        "Near-duplicate text can otherwise appear in both train and test",
+        "It guarantees balanced classes",
+        "It makes tokenization deterministic",
+        "It removes all annotation errors"
+      ],
+      "answerIndex": 0,
+      "explanation": "Grouping related or duplicated documents prevents overly optimistic evaluation from shared content."
+    },
+    {
+      "id": "natural-language-processing-machine-translation-alignment",
+      "type": "single_choice",
+      "prompt": "What is word alignment in machine translation?",
+      "options": [
+        "Associate source-language units with corresponding target-language units",
+        "Rank documents by click rate",
+        "Map words to audio pitch",
+        "Assign a language family"
+      ],
+      "answerIndex": 0,
+      "explanation": "Alignment identifies approximate correspondences between words or phrases across parallel text."
+    },
+    {
+      "id": "natural-language-processing-parallel-corpus",
+      "type": "true_false",
+      "prompt": "A parallel corpus contains texts that are translations of one another.",
+      "answer": true,
+      "explanation": "Parallel corpora pair source text with target-language translations and support translation learning or evaluation."
+    },
+    {
+      "id": "natural-language-processing-retrieval-ranking",
+      "type": "single_choice",
+      "prompt": "In information retrieval, what is a ranking function used for?",
+      "options": [
+        "Order candidate documents by estimated relevance to a query",
+        "Generate a cryptographic key",
+        "Assign parts of speech",
+        "Translate a query into speech"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ranking functions score candidates so likely relevant documents appear earlier in results."
+    },
+    {
+      "id": "natural-language-processing-ndcg",
+      "type": "single_choice",
+      "prompt": "What does normalized discounted cumulative gain account for?",
+      "options": [
+        "Graded relevance and the position of results in a ranking",
+        "Only whether the first result is exactly correct",
+        "The training loss of a classifier",
+        "The size of a vocabulary"
+      ],
+      "answerIndex": 0,
+      "explanation": "NDCG gives more credit to relevant results near the top and can handle graded relevance."
+    },
+    {
+      "id": "natural-language-processing-retrieval-metrics",
+      "type": "multiple_choice",
+      "prompt": "Which metrics can evaluate ranked retrieval results?",
+      "options": [
+        "Precision at k",
+        "Mean reciprocal rank",
+        "Normalized discounted cumulative gain",
+        "BLEU score as a default ranking metric"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Precision@k, MRR, and NDCG evaluate ranked results in different ways; BLEU is for text generation comparison."
+    },
+    {
+      "id": "natural-language-processing-dialogue-state",
+      "type": "single_choice",
+      "prompt": "What does dialogue-state tracking estimate?",
+      "options": [
+        "The current relevant entities, intents, or slot values in a conversation",
+        "The speaker’s exact identity",
+        "The next network packet",
+        "The vocabulary’s size"
+      ],
+      "answerIndex": 0,
+      "explanation": "Dialogue state summarizes task-relevant information accumulated from prior turns."
+    },
+    {
+      "id": "natural-language-processing-intent-classification",
+      "type": "single_choice",
+      "prompt": "In a task-oriented assistant, intent classification predicts what?",
+      "options": [
+        "The user’s goal, such as booking or checking status",
+        "The number of words in a response",
+        "The user’s hidden password",
+        "The sentiment of every entity"
+      ],
+      "answerIndex": 0,
+      "explanation": "Intent labels capture the action or purpose expressed by a user utterance."
+    },
+    {
+      "id": "natural-language-processing-slot-filling",
+      "type": "true_false",
+      "prompt": "Slot filling extracts structured values such as a date or destination from an utterance.",
+      "answer": true,
+      "explanation": "A dialogue system can populate slots from recognized entities and attributes in user text."
+    },
+    {
+      "id": "natural-language-processing-text-summarization",
+      "type": "single_choice",
+      "prompt": "What is abstractive summarization?",
+      "options": [
+        "Generate a concise summary that may use wording absent from the source",
+        "Select only unchanged source sentences",
+        "Classify each source token by part of speech",
+        "Translate a summary into the same language"
+      ],
+      "answerIndex": 0,
+      "explanation": "Abstractive systems compose new text, unlike extractive methods that select source spans."
+    },
+    {
+      "id": "natural-language-processing-summarization-evaluation",
+      "type": "multiple_choice",
+      "prompt": "What makes automatic summary evaluation challenging?",
+      "options": [
+        "Multiple valid summaries can express the same content",
+        "Lexical overlap can miss factual errors",
+        "A reference set may cover only some valid wording",
+        "Summary length is the only quality dimension"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Meaning, factuality, and valid paraphrase are not captured by a single overlap score or length."
+    },
+    {
+      "id": "natural-language-processing-speech-nlp-boundary",
+      "type": "single_choice",
+      "prompt": "Which task is usually part of spoken-language processing rather than text-only NLP?",
+      "options": [
+        "Automatic speech recognition from audio",
+        "Named-entity typing in text",
+        "Document topic classification",
+        "Sentence-level textual entailment"
+      ],
+      "answerIndex": 0,
+      "explanation": "Speech recognition converts an audio signal into text; downstream NLP may then analyze the transcript."
+    },
+    {
+      "id": "natural-language-processing-human-evaluation",
+      "type": "single_choice",
+      "prompt": "When is human evaluation especially useful for language generation?",
+      "options": [
+        "When qualities such as helpfulness or factual support are hard to capture automatically",
+        "Only when there is no reference text",
+        "To avoid reporting test procedures",
+        "To replace all automated checks"
+      ],
+      "answerIndex": 0,
+      "explanation": "Human judgments can assess nuanced qualities, though protocols need clear rubrics and reliability checks."
+    },
+    {
+      "id": "natural-language-processing-inter-annotator",
+      "type": "true_false",
+      "prompt": "Inter-annotator agreement can help reveal ambiguity or inconsistency in labeling guidelines.",
+      "answer": true,
+      "explanation": "Agreement statistics and disagreement review help assess how consistently annotators apply a scheme."
+    },
+    {
+      "id": "natural-language-processing-multilingual-evaluation",
+      "type": "single_choice",
+      "prompt": "Why evaluate NLP systems separately across languages?",
+      "options": [
+        "Data, scripts, morphology, and performance can vary by language",
+        "All languages use the same token distribution",
+        "One language’s score proves all others",
+        "Translation removes every cultural difference"
+      ],
+      "answerIndex": 0,
+      "explanation": "Language-specific resources and properties can produce uneven quality, requiring appropriate per-language evaluation."
+    }
+  ]
+}

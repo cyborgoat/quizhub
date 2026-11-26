@@ -1,0 +1,231 @@
+{
+  "id": "organizational-behavior-work-design",
+  "title": "Work Design and Change",
+  "description": "Job design, organizational systems, conflict, and change.",
+  "tags": [
+    "work-design",
+    "change"
+  ],
+  "questions": [
+    {
+      "id": "design-01",
+      "type": "single_choice",
+      "prompt": "Job autonomy refers most directly to:",
+      "options": [
+        "Discretion over how and when work is performed",
+        "The number of tasks assigned",
+        "A high salary",
+        "Working without goals"
+      ],
+      "answerIndex": 0,
+      "explanation": "Autonomy is discretion in work methods, scheduling, or decisions; it does not mean lack of accountability."
+    },
+    {
+      "id": "design-02",
+      "type": "true_false",
+      "prompt": "Adding tasks to a job necessarily makes the job more meaningful.",
+      "answer": false,
+      "explanation": "More tasks may increase variety, but meaning also depends on significance, autonomy, identity, and context."
+    },
+    {
+      "id": "design-03",
+      "type": "true_false",
+      "prompt": "Role ambiguity can increase stress when people lack clarity about expectations or authority.",
+      "answer": true,
+      "explanation": "Unclear expectations make it harder to prioritize work and assess whether it is complete."
+    },
+    {
+      "id": "design-04",
+      "type": "multiple_choice",
+      "prompt": "Which are useful ways to manage organizational change?",
+      "options": [
+        "Pilot and learn where feasible",
+        "Identify affected stakeholders",
+        "Monitor intended and unintended outcomes",
+        "Assume communication is unnecessary"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pilots, stakeholder engagement, and monitoring support adjustment and reduce avoidable implementation problems."
+    },
+    {
+      "id": "design-05",
+      "type": "true_false",
+      "prompt": "Resistance to change can reflect legitimate concerns as well as habit or uncertainty.",
+      "answer": true,
+      "explanation": "People may identify real risks, resource constraints, or losses that leaders have not considered."
+    },
+    {
+      "id": "design-06",
+      "type": "single_choice",
+      "prompt": "In a conflict, an integrative approach seeks to:",
+      "options": [
+        "Address underlying interests and find mutual gains",
+        "Win regardless of relationship",
+        "Avoid every disagreement",
+        "Split all differences equally"
+      ],
+      "answerIndex": 0,
+      "explanation": "Integrative problem-solving looks for solutions that address core interests rather than only stated positions."
+    },
+    {
+      "id": "design-07",
+      "type": "true_false",
+      "prompt": "A fair conflict process should distinguish evidence about behavior from assumptions about intent.",
+      "answer": true,
+      "explanation": "Observable actions are easier to discuss and verify than claims about motives."
+    },
+    {
+      "id": "design-08",
+      "type": "true_false",
+      "prompt": "Remote work automatically eliminates communication costs.",
+      "answer": false,
+      "explanation": "Remote work can reduce some costs while increasing coordination, onboarding, or social connection challenges."
+    },
+    {
+      "id": "design-09",
+      "type": "multiple_choice",
+      "prompt": "Which can improve decision rights in a matrix organization?",
+      "options": [
+        "Name one accountable decision owner",
+        "Clarify who must be consulted",
+        "Specify escalation paths",
+        "Leave overlapping authority implicit"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Explicit ownership, consultation, and escalation reduce ambiguity across reporting lines."
+    },
+    {
+      "id": "design-10",
+      "type": "true_false",
+      "prompt": "Burnout is only an individual time-management problem.",
+      "answer": false,
+      "explanation": "Burnout is associated with chronic workplace stressors and organizational conditions, not just personal habits."
+    },
+    {
+      "id": "design-11",
+      "type": "single_choice",
+      "prompt": "A useful indicator of workload sustainability is:",
+      "options": [
+        "Demand relative to capacity over time",
+        "One busy afternoon",
+        "The number of emails alone",
+        "A worker’s willingness to skip breaks"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sustainable workload considers ongoing demands, resources, recovery, and work quality."
+    },
+    {
+      "id": "design-12",
+      "type": "multiple_choice",
+      "prompt": "Which design choices can support accessibility at work?",
+      "options": [
+        "Offer multiple ways to contribute",
+        "Provide clear advance materials",
+        "Ask about needed accommodations",
+        "Assume one work style fits everyone"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Flexible participation and accessible materials accommodate different needs; accommodations should be discussed respectfully."
+    },
+    {
+      "id": "design-13",
+      "type": "true_false",
+      "prompt": "Job crafting can involve employees changing aspects of tasks or relationships within role boundaries.",
+      "answer": true,
+      "explanation": "Job crafting is employee-initiated adjustment; it should remain compatible with responsibilities and team needs."
+    },
+    {
+      "id": "design-14",
+      "type": "single_choice",
+      "prompt": "A process bottleneck is best identified by examining:",
+      "options": [
+        "Where work accumulates or waits",
+        "Who speaks most in meetings",
+        "The org chart alone",
+        "A single complaint"
+      ],
+      "answerIndex": 0,
+      "explanation": "Flow data such as queues, handoffs, and cycle time can locate constraints in a process."
+    },
+    {
+      "id": "design-15",
+      "type": "true_false",
+      "prompt": "The number of people reporting a concern is the only measure of its seriousness.",
+      "answer": false,
+      "explanation": "Severity also depends on impact, exposure, likelihood, and evidence; low reporting can reflect barriers to speaking up."
+    },
+    {
+      "id": "design-16",
+      "type": "multiple_choice",
+      "prompt": "Which practices help prevent meeting overload?",
+      "options": [
+        "Use an agenda and clear decision goal",
+        "Invite only necessary participants",
+        "Share updates asynchronously when appropriate",
+        "Schedule meetings by default"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Purposeful agendas, attendance, and asynchronous updates protect time while keeping decisions inclusive."
+    },
+    {
+      "id": "design-17",
+      "type": "true_false",
+      "prompt": "Standardized procedures can improve reliability but may need exceptions for unusual cases.",
+      "answer": true,
+      "explanation": "Standardization reduces avoidable variation; clear escalation pathways handle cases the procedure did not anticipate."
+    },
+    {
+      "id": "design-18",
+      "type": "single_choice",
+      "prompt": "When work is highly interdependent, the team most needs:",
+      "options": [
+        "Reliable handoffs and shared visibility",
+        "Independent incentives only",
+        "No communication",
+        "Unchanging roles"
+      ],
+      "answerIndex": 0,
+      "explanation": "Interdependent work requires information about status, dependencies, and ownership."
+    },
+    {
+      "id": "design-19",
+      "type": "multiple_choice",
+      "prompt": "Which can make an organizational process more resilient?",
+      "options": [
+        "Reduce single points of failure",
+        "Document critical knowledge",
+        "Practice recovery plans",
+        "Hide known dependencies"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Redundancy, knowledge sharing, and rehearsal help organizations recover when conditions change."
+    },
+    {
+      "id": "design-20",
+      "type": "true_false",
+      "prompt": "A reorganization by itself guarantees improved collaboration.",
+      "answer": false,
+      "explanation": "Structure can change reporting lines, but collaboration also depends on incentives, processes, trust, and resources."
+    }
+  ]
+}

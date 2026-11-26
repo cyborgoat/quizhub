@@ -1,0 +1,231 @@
+{
+  "id": "professional-practice-researchers",
+  "title": "Behavioral Science for Researchers",
+  "description": "Strengthen research practice, collaboration, and responsible evidence use.",
+  "tags": [
+    "researchers",
+    "research-ethics"
+  ],
+  "questions": [
+    {
+      "id": "researchers-01",
+      "type": "single_choice",
+      "prompt": "When a protocol changes after data collection begins, a researcher should:",
+      "options": [
+        "Document and justify the change, following oversight requirements",
+        "Hide it to preserve the original plan",
+        "Rewrite the date of the protocol",
+        "Exclude every participant"
+      ],
+      "answerIndex": 0,
+      "explanation": "Transparent records and required ethics review let others assess deviations and participant protections."
+    },
+    {
+      "id": "researchers-02",
+      "type": "true_false",
+      "prompt": "Preregistration prevents researchers from conducting exploratory analyses.",
+      "answer": false,
+      "explanation": "Exploration remains useful; it should be distinguished from analyses specified in advance."
+    },
+    {
+      "id": "researchers-03",
+      "type": "multiple_choice",
+      "prompt": "Which support responsible data stewardship?",
+      "options": [
+        "Plan secure storage",
+        "Document variable definitions",
+        "Set retention and access rules",
+        "Collect identifiable details without purpose"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "A data-management plan anticipates security, documentation, access, and retention needs."
+    },
+    {
+      "id": "researchers-04",
+      "type": "true_false",
+      "prompt": "Authorship should reflect meaningful scholarly contribution and responsibility for the work.",
+      "answer": true,
+      "explanation": "Contributor roles and accountability should be discussed transparently, using relevant field standards."
+    },
+    {
+      "id": "researchers-05",
+      "type": "single_choice",
+      "prompt": "A reviewer who has a serious conflict of interest should:",
+      "options": [
+        "Disclose it to the editor and follow their guidance",
+        "Review secretly to avoid delay",
+        "Share the manuscript with colleagues",
+        "Use the review to advance a competing project"
+      ],
+      "answerIndex": 0,
+      "explanation": "Editors need disclosure to decide whether impartial review is possible."
+    },
+    {
+      "id": "researchers-06",
+      "type": "true_false",
+      "prompt": "Peer review guarantees that a published study is correct.",
+      "answer": false,
+      "explanation": "Peer review can improve work but cannot eliminate error, bias, or uncertainty."
+    },
+    {
+      "id": "researchers-07",
+      "type": "multiple_choice",
+      "prompt": "Which help prevent p-hacking?",
+      "options": [
+        "Preregister primary analyses",
+        "Report analytic decisions",
+        "Label exploratory tests",
+        "Try many specifications and report only one"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Transparency makes analytic flexibility visible; exploratory work can still generate hypotheses."
+    },
+    {
+      "id": "researchers-08",
+      "type": "true_false",
+      "prompt": "A null result can be scientifically useful when reported with methods and uncertainty.",
+      "answer": true,
+      "explanation": "Well-described null estimates can update evidence and inform future study design."
+    },
+    {
+      "id": "researchers-09",
+      "type": "single_choice",
+      "prompt": "When communicating a limitation, a researcher should:",
+      "options": [
+        "State what inference it constrains",
+        "Omit it to avoid confusion",
+        "Claim it has no consequence",
+        "Use jargon without explanation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Specific limitations help readers judge how far findings can reasonably be generalized."
+    },
+    {
+      "id": "researchers-10",
+      "type": "true_false",
+      "prompt": "A convenience sample can support every population-level claim if the sample is large.",
+      "answer": false,
+      "explanation": "Size does not remove selection bias; population inference needs a defensible sampling or transport argument."
+    },
+    {
+      "id": "researchers-11",
+      "type": "multiple_choice",
+      "prompt": "Which are good practices for collaborative projects?",
+      "options": [
+        "Agree on roles early",
+        "Keep decision and data records",
+        "Discuss authorship expectations",
+        "Assume all collaborators share the same priorities"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Explicit roles, records, and authorship conversations reduce preventable conflict."
+    },
+    {
+      "id": "researchers-12",
+      "type": "true_false",
+      "prompt": "A researcher should correct the record when a material error is discovered in published work.",
+      "answer": true,
+      "explanation": "Timely correction helps preserve the integrity of the scholarly record."
+    },
+    {
+      "id": "researchers-13",
+      "type": "single_choice",
+      "prompt": "An effect size is most useful when interpreted with:",
+      "options": [
+        "Uncertainty, measurement, and context",
+        "A p-value alone",
+        "The authors’ institution",
+        "A claim of universal importance"
+      ],
+      "answerIndex": 0,
+      "explanation": "Magnitude only becomes meaningful relative to scale, precision, and substantive context."
+    },
+    {
+      "id": "researchers-14",
+      "type": "true_false",
+      "prompt": "Sharing data is always required even when consent or privacy protections prohibit it.",
+      "answer": false,
+      "explanation": "Ethical and legal commitments can limit open sharing; controlled access or synthetic data may help."
+    },
+    {
+      "id": "researchers-15",
+      "type": "multiple_choice",
+      "prompt": "Which habits make a research analysis easier to reproduce?",
+      "options": [
+        "Preserve analysis scripts",
+        "Record software dependencies",
+        "Maintain a data dictionary",
+        "Rely on undocumented manual changes"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Code, computational environment, and data definitions help others reconstruct analysis."
+    },
+    {
+      "id": "researchers-16",
+      "type": "true_false",
+      "prompt": "A statistically significant finding should be interpreted in light of multiplicity and prior evidence.",
+      "answer": true,
+      "explanation": "Selective testing and publication can distort apparent certainty; cumulative evidence matters."
+    },
+    {
+      "id": "researchers-17",
+      "type": "single_choice",
+      "prompt": "When a collaborator raises a concern about research integrity, the best response is to:",
+      "options": [
+        "Preserve relevant records and use appropriate reporting channels",
+        "Delete drafts",
+        "Retaliate to deter disruption",
+        "Discuss identifiable details publicly"
+      ],
+      "answerIndex": 0,
+      "explanation": "Preserving evidence and following institutional procedures supports fair, confidential inquiry."
+    },
+    {
+      "id": "researchers-18",
+      "type": "multiple_choice",
+      "prompt": "Which support inclusive research participation?",
+      "options": [
+        "Accessible consent materials",
+        "Compensation that is fair and non-coercive",
+        "Recruitment that reaches relevant groups",
+        "Excluding groups without a scientific rationale"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Accessible communication and fair recruitment improve respect and relevance while preserving voluntary consent."
+    },
+    {
+      "id": "researchers-19",
+      "type": "true_false",
+      "prompt": "A limitation should be interpreted as a boundary on claims, not a reason to dismiss all findings.",
+      "answer": true,
+      "explanation": "Limitations constrain inference; their importance depends on the claim and design."
+    },
+    {
+      "id": "researchers-20",
+      "type": "true_false",
+      "prompt": "A citation should support the specific claim for which it is provided.",
+      "answer": true,
+      "explanation": "Accurate, relevant sourcing lets readers trace evidence and assess whether it warrants the statement."
+    }
+  ]
+}

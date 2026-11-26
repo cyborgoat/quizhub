@@ -1,0 +1,264 @@
+{
+  "id": "computer-networks-transport-and-security",
+  "title": "Transport, Reliability, and Network Security",
+  "description": "Congestion, secure communication, and practical network diagnostics.",
+  "tags": [
+    "transport",
+    "network-security",
+    "diagnostics"
+  ],
+  "questions": [
+    {
+      "id": "computer-networks-congestion-control",
+      "type": "single_choice",
+      "prompt": "What is TCP congestion control designed to prevent?",
+      "options": [
+        "Sending traffic faster than the network path can handle",
+        "All packet loss under every condition",
+        "Incorrect DNS names",
+        "An application reading too slowly"
+      ],
+      "answerIndex": 0,
+      "explanation": "Congestion control adjusts sender rate to reduce overload in the network."
+    },
+    {
+      "id": "computer-networks-flow-control",
+      "type": "single_choice",
+      "prompt": "What does TCP flow control protect against?",
+      "options": [
+        "Overwhelming the receiving host’s buffer",
+        "Overwhelming a distant router only",
+        "Invalid TLS certificates",
+        "Duplicate DNS records"
+      ],
+      "answerIndex": 0,
+      "explanation": "The receiver advertises available window capacity so a sender does not overrun its receive buffer."
+    },
+    {
+      "id": "computer-networks-flow-congestion",
+      "type": "true_false",
+      "prompt": "TCP flow control and congestion control solve exactly the same problem.",
+      "answer": false,
+      "explanation": "Flow control protects the receiver; congestion control responds to network path capacity."
+    },
+    {
+      "id": "computer-networks-acknowledgment",
+      "type": "single_choice",
+      "prompt": "In TCP, what does an acknowledgment generally indicate?",
+      "options": [
+        "Bytes received up to a sequence position",
+        "That an application processed the message semantically",
+        "That every router stored the packet permanently",
+        "That the DNS cache was cleared"
+      ],
+      "answerIndex": 0,
+      "explanation": "TCP ACKs communicate receipt of bytes in the stream, not necessarily application-level processing."
+    },
+    {
+      "id": "computer-networks-retransmission-timeout",
+      "type": "single_choice",
+      "prompt": "When may TCP retransmit data?",
+      "options": [
+        "When acknowledgment does not arrive within its retransmission logic",
+        "Whenever DNS returns an alias",
+        "After every successful packet",
+        "Only after a router restarts"
+      ],
+      "answerIndex": 0,
+      "explanation": "TCP uses retransmission timers and other loss signals to resend unacknowledged data."
+    },
+    {
+      "id": "computer-networks-reliability-techniques",
+      "type": "multiple_choice",
+      "prompt": "Which mechanisms can an application protocol use to improve reliability over an unreliable transport?",
+      "options": [
+        "Sequence numbers",
+        "Acknowledgments",
+        "Retransmissions",
+        "Assuming delivery is guaranteed"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sequence numbers, acknowledgments, and retransmission can implement reliability, with ordering and duplicate handling as needed."
+    },
+    {
+      "id": "computer-networks-checksum",
+      "type": "single_choice",
+      "prompt": "What is a checksum commonly used for in networking?",
+      "options": [
+        "Detect accidental corruption of data",
+        "Encrypt a packet against eavesdropping",
+        "Authenticate the sender’s identity",
+        "Choose a route"
+      ],
+      "answerIndex": 0,
+      "explanation": "Checksums detect many transmission errors but are not cryptographic authentication."
+    },
+    {
+      "id": "computer-networks-checksum-security",
+      "type": "true_false",
+      "prompt": "A basic packet checksum provides strong protection against malicious tampering.",
+      "answer": false,
+      "explanation": "An attacker can recompute a non-cryptographic checksum; integrity against tampering needs cryptographic mechanisms."
+    },
+    {
+      "id": "computer-networks-tls-confidentiality",
+      "type": "single_choice",
+      "prompt": "Which TLS property protects application data from passive network observation?",
+      "options": [
+        "Confidentiality through encryption",
+        "Routing convergence",
+        "DNS availability",
+        "IP address allocation"
+      ],
+      "answerIndex": 0,
+      "explanation": "TLS encryption protects traffic contents from passive observers when correctly negotiated and implemented."
+    },
+    {
+      "id": "computer-networks-tls-properties",
+      "type": "multiple_choice",
+      "prompt": "Which protections can TLS provide when configured securely?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Peer authentication",
+        "Protection from a compromised endpoint"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "TLS can provide confidentiality, integrity, and authenticated endpoints; it cannot protect a compromised endpoint."
+    },
+    {
+      "id": "computer-networks-certificate-hostname",
+      "type": "single_choice",
+      "prompt": "Why is hostname verification important in TLS?",
+      "options": [
+        "It checks that the authenticated certificate identifies the intended server",
+        "It measures network speed",
+        "It validates the page’s factual claims",
+        "It proves the server is malware-free"
+      ],
+      "answerIndex": 0,
+      "explanation": "Without hostname verification, a valid certificate for another name could be accepted for the connection."
+    },
+    {
+      "id": "computer-networks-vpn",
+      "type": "single_choice",
+      "prompt": "What does a VPN commonly create?",
+      "options": [
+        "An encrypted tunnel between endpoints or networks",
+        "A public DNS root zone",
+        "A new transport protocol for every website",
+        "A guarantee that users are anonymous"
+      ],
+      "answerIndex": 0,
+      "explanation": "A VPN tunnels traffic through an encrypted connection, but does not by itself guarantee anonymity or endpoint security."
+    },
+    {
+      "id": "computer-networks-firewall-stateful",
+      "type": "true_false",
+      "prompt": "A stateful firewall can make decisions based on the state of network connections.",
+      "answer": true,
+      "explanation": "Stateful filtering tracks connection information, unlike simple independent packet rules."
+    },
+    {
+      "id": "computer-networks-least-privilege-network",
+      "type": "single_choice",
+      "prompt": "What does network least privilege recommend?",
+      "options": [
+        "Allow only the communications needed for a service",
+        "Expose every service to every subnet",
+        "Use one shared credential for all hosts",
+        "Disable traffic logs"
+      ],
+      "answerIndex": 0,
+      "explanation": "Restricting network access to required flows limits reachable attack surface."
+    },
+    {
+      "id": "computer-networks-network-diagnostics",
+      "type": "multiple_choice",
+      "prompt": "Which tools or signals can help diagnose network reachability?",
+      "options": [
+        "Traceroute-style hop probes",
+        "DNS lookup results",
+        "Connection and packet-capture logs",
+        "Changing application source randomly"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Route probes, name resolution checks, and logs provide evidence about different layers."
+    },
+    {
+      "id": "computer-networks-latency-vs-bandwidth",
+      "type": "single_choice",
+      "prompt": "What is network latency?",
+      "options": [
+        "Time taken for data to travel or a request to complete",
+        "Amount of data a link can carry per unit time",
+        "The number of open ports",
+        "A server’s storage capacity"
+      ],
+      "answerIndex": 0,
+      "explanation": "Latency measures delay; bandwidth measures potential data rate."
+    },
+    {
+      "id": "computer-networks-bandwidth-latency",
+      "type": "true_false",
+      "prompt": "Increasing bandwidth necessarily reduces the round-trip latency of every request.",
+      "answer": false,
+      "explanation": "More capacity can improve throughput under load, but propagation and processing delays remain."
+    },
+    {
+      "id": "computer-networks-packet-loss",
+      "type": "single_choice",
+      "prompt": "What can packet loss cause for a TCP application?",
+      "options": [
+        "Retransmissions and reduced throughput",
+        "Automatic DNS alias creation",
+        "Guaranteed lower latency",
+        "A larger IP address"
+      ],
+      "answerIndex": 0,
+      "explanation": "Loss triggers recovery and congestion responses, which can reduce effective throughput."
+    },
+    {
+      "id": "computer-networks-zero-trust-networking",
+      "type": "single_choice",
+      "prompt": "What is a core idea of zero-trust network design?",
+      "options": [
+        "Continuously verify access based on identity and context rather than trusting network location alone",
+        "Trust all traffic inside one subnet",
+        "Disable all encryption",
+        "Allow unrestricted east-west access"
+      ],
+      "answerIndex": 0,
+      "explanation": "Zero trust treats network location as insufficient proof and applies explicit access decisions."
+    },
+    {
+      "id": "computer-networks-secure-protocol-practices",
+      "type": "multiple_choice",
+      "prompt": "Which practices support secure network protocol use?",
+      "options": [
+        "Prefer current protocol versions",
+        "Validate certificates and hostnames",
+        "Disable obsolete cipher suites",
+        "Ignore authentication errors for convenience"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Current protocols and validation reduce risk; ignoring authentication errors undermines security."
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "id": "large-language-models-prompting-and-inference",
+  "title": "LLM Prompting and Inference",
+  "description": "Design reliable prompts and manage generation at inference time.",
+  "tags": [
+    "prompting",
+    "inference",
+    "llm-applications"
+  ],
+  "questions": [
+    {
+      "id": "large-language-models-system-message",
+      "type": "single_choice",
+      "prompt": "In a chat interface, what is a system message commonly used for?",
+      "options": [
+        "Set high-level behavior or constraints for the assistant",
+        "Store the user’s password",
+        "Define every future answer’s factual truth",
+        "Train model weights during inference"
+      ],
+      "answerIndex": 0,
+      "explanation": "System messages provide high-priority behavioral context, though they cannot guarantee the model will follow it."
+    },
+    {
+      "id": "large-language-models-prompt-clarity",
+      "type": "multiple_choice",
+      "prompt": "Which prompt practices often improve task reliability?",
+      "options": [
+        "State the task and audience clearly",
+        "Specify output structure when needed",
+        "Provide relevant constraints and context",
+        "Add unrelated instructions to make the prompt longer"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Clear context and output requirements reduce ambiguity; irrelevant material can distract or consume context."
+    },
+    {
+      "id": "large-language-models-structured-output",
+      "type": "single_choice",
+      "prompt": "Why request a structured output schema from an LLM?",
+      "options": [
+        "Make outputs easier to parse and validate",
+        "Guarantee the values are true",
+        "Prevent all prompt injection",
+        "Increase the model context window"
+      ],
+      "answerIndex": 0,
+      "explanation": "Schemas improve consistency and downstream parsing, but the result still needs validation."
+    },
+    {
+      "id": "large-language-models-json-guarantee",
+      "type": "true_false",
+      "prompt": "Asking a model for JSON guarantees syntactically valid and semantically correct JSON.",
+      "answer": false,
+      "explanation": "A request alone does not ensure valid output; use constrained decoding or parsing and validate values."
+    },
+    {
+      "id": "large-language-models-tool-calling",
+      "type": "single_choice",
+      "prompt": "What is tool calling in an LLM application?",
+      "options": [
+        "The model emits a structured request for an external function",
+        "The model directly executes arbitrary code by definition",
+        "A method for changing model weights",
+        "A type of tokenization"
+      ],
+      "answerIndex": 0,
+      "explanation": "A host application interprets a tool request, applies authorization, runs the function, and may return its result."
+    },
+    {
+      "id": "large-language-models-tool-safety",
+      "type": "multiple_choice",
+      "prompt": "Which controls are appropriate when an LLM can invoke tools?",
+      "options": [
+        "Allowlist available tools",
+        "Validate arguments against a schema",
+        "Check authorization in the host",
+        "Trust model-generated arguments without review"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Tools should be constrained and authorized by application code; model output is untrusted input."
+    },
+    {
+      "id": "large-language-models-prompt-injection-boundary",
+      "type": "single_choice",
+      "prompt": "Why should retrieved text be treated as untrusted when included in a prompt?",
+      "options": [
+        "It may contain instructions that try to manipulate model behavior",
+        "It always contains malware",
+        "It cannot be summarized",
+        "It has more authority than system policy"
+      ],
+      "answerIndex": 0,
+      "explanation": "Retrieved passages can contain adversarial instructions; robust systems separate content from control and limit actions."
+    },
+    {
+      "id": "large-language-models-prompt-secrets",
+      "type": "true_false",
+      "prompt": "Placing an API secret in a prompt is safe if the model is instructed not to reveal it.",
+      "answer": false,
+      "explanation": "Prompts can be logged, exposed, or manipulated; secrets should stay in secure application-side storage."
+    },
+    {
+      "id": "large-language-models-retrieval-chunking",
+      "type": "single_choice",
+      "prompt": "Why split long documents into retrieval chunks?",
+      "options": [
+        "Retrieve focused passages that fit the context budget",
+        "Guarantee every chunk is relevant",
+        "Avoid indexing document metadata",
+        "Make the language model deterministic"
+      ],
+      "answerIndex": 0,
+      "explanation": "Chunking can improve retrieval granularity and fit context limits, though chunk size and overlap need evaluation."
+    },
+    {
+      "id": "large-language-models-retrieval-quality",
+      "type": "multiple_choice",
+      "prompt": "Which factors can affect retrieval-augmented answer quality?",
+      "options": [
+        "Coverage and freshness of indexed sources",
+        "Relevance of retrieved passages",
+        "Query formulation and ranking",
+        "Model response length alone"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Poor coverage, irrelevant passages, or weak query/ranking can undermine grounded generation."
+    },
+    {
+      "id": "large-language-models-citation-verification",
+      "type": "single_choice",
+      "prompt": "What is a reliable way to handle generated citations?",
+      "options": [
+        "Check that each cited source exists and supports the associated claim",
+        "Assume citation formatting proves evidence",
+        "Require a citation on every sentence regardless of support",
+        "Delete source metadata after generation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Generated citations can be fabricated or misattributed and should be checked against the actual source."
+    },
+    {
+      "id": "large-language-models-rag-guarantee",
+      "type": "true_false",
+      "prompt": "Retrieval-augmented generation guarantees that an answer is grounded and correct.",
+      "answer": false,
+      "explanation": "Retrieval can supply evidence, but the model may misread, ignore, or misattribute it."
+    },
+    {
+      "id": "large-language-models-cache-key",
+      "type": "single_choice",
+      "prompt": "What should an LLM response cache key usually account for?",
+      "options": [
+        "Relevant prompt, model, and generation configuration",
+        "Only the user’s display name",
+        "The current wall-clock second always",
+        "An unrelated database table"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cache identity should distinguish inputs and settings that can change the response, while respecting privacy and access boundaries."
+    },
+    {
+      "id": "large-language-models-latency-cost",
+      "type": "multiple_choice",
+      "prompt": "Which factors commonly affect hosted LLM request cost or latency?",
+      "options": [
+        "Input and output token counts",
+        "Model selection",
+        "Number of sequential model calls",
+        "The color of the interface"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Token volume, model choice, and call count typically affect usage; user-interface color does not."
+    },
+    {
+      "id": "large-language-models-streaming",
+      "type": "single_choice",
+      "prompt": "What does streaming an LLM response usually change for a user?",
+      "options": [
+        "It displays partial output as tokens arrive",
+        "It guarantees lower total computation",
+        "It enables model retraining in real time",
+        "It removes moderation needs"
+      ],
+      "answerIndex": 0,
+      "explanation": "Streaming can reduce perceived wait time, while total generation cost and safety requirements remain."
+    },
+    {
+      "id": "large-language-models-stop-sequence",
+      "type": "true_false",
+      "prompt": "A stop sequence can end generation when a specified token sequence is produced.",
+      "answer": true,
+      "explanation": "Decoding can stop after a configured sequence, which is useful for constrained formats or turn boundaries."
+    },
+    {
+      "id": "large-language-models-max-output-tokens",
+      "type": "single_choice",
+      "prompt": "What is the effect of setting a maximum output-token limit?",
+      "options": [
+        "It caps generation length and may truncate an answer",
+        "It increases model factuality",
+        "It changes training data",
+        "It guarantees a complete response"
+      ],
+      "answerIndex": 0,
+      "explanation": "The cap bounds output size; too small a limit can cut off otherwise useful answers."
+    },
+    {
+      "id": "large-language-models-conversation-summarization",
+      "type": "single_choice",
+      "prompt": "Why summarize older turns in a long conversation?",
+      "options": [
+        "Preserve relevant context within a limited token window",
+        "Expand the model’s learned parameters",
+        "Make all details perfectly recoverable",
+        "Replace authorization checks"
+      ],
+      "answerIndex": 0,
+      "explanation": "A summary can reduce context use, but it may omit details and should preserve important constraints."
+    },
+    {
+      "id": "large-language-models-fallback-design",
+      "type": "multiple_choice",
+      "prompt": "Which are useful LLM application fallback behaviors?",
+      "options": [
+        "Return a clear error when the service is unavailable",
+        "Use a validated alternative for suitable tasks",
+        "Offer escalation to a human when needed",
+        "Silently invent a result after a timeout"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Explicit failure handling and safe alternatives are preferable to fabricating a response."
+    },
+    {
+      "id": "large-language-models-output-validation",
+      "type": "single_choice",
+      "prompt": "Why validate LLM-produced values before using them in a transaction?",
+      "options": [
+        "Generation is probabilistic and may be malformed or unauthorized",
+        "Validation makes the model larger",
+        "The output is always encrypted",
+        "The prompt cannot contain mistakes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Treat generated content as untrusted; enforce types, business rules, and authorization before acting."
+    }
+  ]
+}

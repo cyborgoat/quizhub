@@ -10,6 +10,7 @@ Content lives under `content/<locale>/<domain>/<category>/`. The current locales
 
 - `id` equals the filename and starts with the category (`ai-ml-basics`).
 - Question types: `single_choice` (`answerIndex`), `multiple_choice` (`answerIndices`, exact set), `true_false` (`answer`, a boolean).
+- Aim for 20–30 questions per quiz, with a mix of question types and a clear explanation for every answer.
 - Write an `explanation` for every question (missing ones produce a warning).
 - Prompts, options and explanations accept Markdown, fenced code and KaTeX. In JSON, escape backslashes: `"$\\theta$"`.
 - Tags are lowercase-kebab.
@@ -43,4 +44,4 @@ Facts in quizzes and notes must be checked by a human, including anything drafte
 
 ## New domains and categories
 
-Add new domain IDs and localized titles to `DOMAINS`. Add each category to `CATEGORIES` with a globally unique ID, a primary domain, and a title for each locale. Create `content/en/<domain>/<category>/` and add the matching directory for each translation you publish. Use tags for topics that span categories.
+Add new domain IDs and localized titles to `DOMAINS`. Add each category to `CATEGORIES` with a globally unique ID, a primary domain, and a title for each locale. Create `content/en/<domain>/<category>/` and add the matching directory for each translation you publish. Use tags for topics that span categories. Prefer a distinct category when a topic merits its own feed; use quizzes and tags for narrower subtopics.

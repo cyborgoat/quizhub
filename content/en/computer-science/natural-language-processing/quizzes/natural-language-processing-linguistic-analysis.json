@@ -1,0 +1,263 @@
+{
+  "id": "natural-language-processing-linguistic-analysis",
+  "title": "Syntax and Meaning in NLP",
+  "description": "Explore tagging, parsing, semantics, and information extraction.",
+  "tags": [
+    "syntax",
+    "semantics",
+    "information-extraction"
+  ],
+  "questions": [
+    {
+      "id": "natural-language-processing-pos-tagging",
+      "type": "single_choice",
+      "prompt": "What does part-of-speech tagging assign to tokens?",
+      "options": [
+        "Grammatical categories such as noun or verb",
+        "A sentiment score for the document",
+        "A translation in another language",
+        "A document identifier"
+      ],
+      "answerIndex": 0,
+      "explanation": "POS tagging labels tokens with grammatical categories based on form and context."
+    },
+    {
+      "id": "natural-language-processing-named-entity",
+      "type": "single_choice",
+      "prompt": "Which is a named-entity recognition task?",
+      "options": [
+        "Identify a person, organization, or location mention",
+        "Count the number of paragraphs",
+        "Translate a sentence",
+        "Predict a continuous temperature"
+      ],
+      "answerIndex": 0,
+      "explanation": "NER locates and classifies spans such as people, organizations, and places."
+    },
+    {
+      "id": "natural-language-processing-ner-boundaries",
+      "type": "true_false",
+      "prompt": "Named-entity recognition includes identifying entity boundaries as well as entity types.",
+      "answer": true,
+      "explanation": "A system must determine which tokens form each mention and assign an appropriate label."
+    },
+    {
+      "id": "natural-language-processing-dependency-parse",
+      "type": "multiple_choice",
+      "prompt": "What does a dependency parse represent?",
+      "options": [
+        "Grammatical head-dependent relations",
+        "Directed arcs linking dependents to heads",
+        "The set of possible translations",
+        "A character-level checksum"
+      ],
+      "answerIndices": [
+        0,
+        1
+      ],
+      "explanation": "Dependency structure links words through directed syntactic relations, commonly organizing dependents under heads in a tree."
+    },
+    {
+      "id": "natural-language-processing-constituency-parse",
+      "type": "single_choice",
+      "prompt": "What does a constituency parse organize?",
+      "options": [
+        "Tokens into nested syntactic phrases",
+        "Documents into a file system",
+        "Words into frequency bins only",
+        "Sentences into translation pairs"
+      ],
+      "answerIndex": 0,
+      "explanation": "Constituency parsing builds a hierarchical phrase structure such as noun and verb phrases."
+    },
+    {
+      "id": "natural-language-processing-word-sense-disambiguation",
+      "type": "single_choice",
+      "prompt": "What is word-sense disambiguation?",
+      "options": [
+        "Choosing the intended meaning of an ambiguous word in context",
+        "Finding spelling errors only",
+        "Splitting text into paragraphs",
+        "Removing inflectional endings"
+      ],
+      "answerIndex": 0,
+      "explanation": "Context helps distinguish senses of a form such as “bank” in financial and river contexts."
+    },
+    {
+      "id": "natural-language-processing-polysemy",
+      "type": "true_false",
+      "prompt": "A word can have multiple related senses depending on context.",
+      "answer": true,
+      "explanation": "Polysemous words share related meanings, and context helps determine which sense is used."
+    },
+    {
+      "id": "natural-language-processing-coreference",
+      "type": "single_choice",
+      "prompt": "What is coreference resolution?",
+      "options": [
+        "Determine which mentions refer to the same entity",
+        "Find the most frequent word",
+        "Assign a language code to a document",
+        "Detect sentence punctuation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Coreference links mentions such as a name and a later pronoun that refer to the same entity."
+    },
+    {
+      "id": "natural-language-processing-semantic-role-labeling",
+      "type": "single_choice",
+      "prompt": "What does semantic role labeling identify?",
+      "options": [
+        "Who did what to whom, when, or where in a predicate frame",
+        "The document’s character encoding",
+        "A sentence’s word count",
+        "A set of spelling alternatives"
+      ],
+      "answerIndex": 0,
+      "explanation": "Semantic roles label participants and circumstances associated with a predicate or event."
+    },
+    {
+      "id": "natural-language-processing-relation-extraction",
+      "type": "multiple_choice",
+      "prompt": "Which outputs may a relation-extraction system produce?",
+      "options": [
+        "Entity pairs",
+        "A typed relation between entities",
+        "Evidence spans supporting the relation",
+        "A guarantee that the relation is causally true"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Systems can extract relation labels and evidence, but text extraction alone does not establish causal truth."
+    },
+    {
+      "id": "natural-language-processing-sentiment-polarity",
+      "type": "single_choice",
+      "prompt": "What is document-level sentiment classification intended to predict?",
+      "options": [
+        "An overall polarity or opinion category",
+        "The author’s verified identity",
+        "The exact number of entities",
+        "A syntactic parse tree"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sentiment classification estimates opinion polarity, often positive, negative, or neutral."
+    },
+    {
+      "id": "natural-language-processing-sentiment-sarcasm",
+      "type": "true_false",
+      "prompt": "A sentiment classifier can always infer sarcasm accurately from polarity words alone.",
+      "answer": false,
+      "explanation": "Sarcasm depends on context and pragmatic cues that a simple word-polarity method may miss."
+    },
+    {
+      "id": "natural-language-processing-topic-modeling",
+      "type": "single_choice",
+      "prompt": "What is a topic model commonly used to infer?",
+      "options": [
+        "Latent themes reflected by word co-occurrence",
+        "The exact author of every document",
+        "A sentence’s dependency root only",
+        "The next byte in a file"
+      ],
+      "answerIndex": 0,
+      "explanation": "Topic models represent documents as mixtures of latent themes under assumptions about word distributions."
+    },
+    {
+      "id": "natural-language-processing-word-embedding",
+      "type": "single_choice",
+      "prompt": "What does a distributional word embedding encode?",
+      "options": [
+        "A dense vector learned from patterns of word context",
+        "A full dictionary definition by guarantee",
+        "A unique vector independent of training",
+        "The word’s grammatical role in every sentence"
+      ],
+      "answerIndex": 0,
+      "explanation": "Embeddings capture statistical patterns from contexts and may encode semantic or syntactic similarities."
+    },
+    {
+      "id": "natural-language-processing-embedding-limitations",
+      "type": "multiple_choice",
+      "prompt": "Which cautions apply to word embeddings?",
+      "options": [
+        "They can reflect societal biases in data",
+        "A single static vector may miss context-dependent meaning",
+        "Similarity does not prove synonymy",
+        "They automatically explain causal relations"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Embeddings inherit data patterns; vector similarity is not a complete semantic or causal explanation."
+    },
+    {
+      "id": "natural-language-processing-semantic-similarity",
+      "type": "single_choice",
+      "prompt": "What does a sentence-embedding cosine similarity score usually indicate?",
+      "options": [
+        "Angular similarity between two vector representations",
+        "The probability the sentences are both true",
+        "Their exact edit distance",
+        "The count of shared words only"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cosine similarity compares vector directions; its semantic usefulness depends on the embedding model and task."
+    },
+    {
+      "id": "natural-language-processing-entailment",
+      "type": "single_choice",
+      "prompt": "In natural-language inference, what does entailment mean?",
+      "options": [
+        "The hypothesis follows from the premise under the task interpretation",
+        "The premise and hypothesis share a word",
+        "The hypothesis is longer",
+        "The premise was written later"
+      ],
+      "answerIndex": 0,
+      "explanation": "Entailment means the premise supports the hypothesis as true within the annotation framework."
+    },
+    {
+      "id": "natural-language-processing-negation-scope",
+      "type": "true_false",
+      "prompt": "Negation scope can change the interpretation of a sentence.",
+      "answer": true,
+      "explanation": "Which words fall under negation can determine whether a claim is asserted or denied."
+    },
+    {
+      "id": "natural-language-processing-frame-semantics",
+      "type": "single_choice",
+      "prompt": "What does a semantic frame describe?",
+      "options": [
+        "A situation type and its associated participant roles",
+        "A document’s font and margins",
+        "A tokenizer’s merge table",
+        "A sentence boundary marker"
+      ],
+      "answerIndex": 0,
+      "explanation": "Frames capture structured situations and roles, such as a buyer, seller, goods, and money in a transaction."
+    },
+    {
+      "id": "natural-language-processing-annotation-guidelines",
+      "type": "multiple_choice",
+      "prompt": "Why use annotation guidelines in a language dataset?",
+      "options": [
+        "Promote consistent label interpretation",
+        "Specify how ambiguous cases are handled",
+        "Support inter-annotator agreement analysis",
+        "Guarantee labels are objective facts"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Guidelines improve consistency and make disagreements measurable, though annotation still involves judgment."
+    }
+  ]
+}

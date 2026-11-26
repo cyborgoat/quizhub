@@ -1,0 +1,231 @@
+{
+  "id": "research-methods-measurement-design",
+  "title": "Measurement and Study Design",
+  "description": "Choose measures and designs that answer research questions.",
+  "tags": [
+    "measurement",
+    "study-design"
+  ],
+  "questions": [
+    {
+      "id": "design-01",
+      "type": "single_choice",
+      "prompt": "Construct validity asks whether a measure:",
+      "options": [
+        "Captures the intended concept",
+        "Produces the same score every time only",
+        "Uses a large sample",
+        "Has a low p-value"
+      ],
+      "answerIndex": 0,
+      "explanation": "Construct validity concerns evidence that scores represent the intended construct for the proposed use."
+    },
+    {
+      "id": "design-02",
+      "type": "true_false",
+      "prompt": "A measure can be reliable without being valid for the intended purpose.",
+      "answer": true,
+      "explanation": "Consistency alone does not ensure the measure captures the target concept."
+    },
+    {
+      "id": "design-03",
+      "type": "multiple_choice",
+      "prompt": "Which may threaten measurement quality?",
+      "options": [
+        "Ambiguous item wording",
+        "Social desirability in responses",
+        "A poorly calibrated instrument",
+        "A preregistered protocol"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Unclear items, response pressures, and faulty instruments can distort observations; preregistration improves transparency."
+    },
+    {
+      "id": "design-04",
+      "type": "true_false",
+      "prompt": "Operationalizing a construct requires making the chosen measurement procedure explicit.",
+      "answer": true,
+      "explanation": "Operational definitions clarify how an abstract concept is represented in a study."
+    },
+    {
+      "id": "design-05",
+      "type": "single_choice",
+      "prompt": "A sampling frame is:",
+      "options": [
+        "The list or mechanism from which a sample is drawn",
+        "The study’s analysis plan",
+        "A survey response scale",
+        "A causal diagram"
+      ],
+      "answerIndex": 0,
+      "explanation": "The frame determines which units can be selected and may omit parts of the target population."
+    },
+    {
+      "id": "design-06",
+      "type": "true_false",
+      "prompt": "A large sample automatically eliminates selection bias.",
+      "answer": false,
+      "explanation": "Size can reduce random error but does not correct systematic selection or nonresponse."
+    },
+    {
+      "id": "design-07",
+      "type": "multiple_choice",
+      "prompt": "Which improve a survey item?",
+      "options": [
+        "Ask one clear question at a time",
+        "Use balanced response options",
+        "Define the recall period",
+        "Combine two topics in one item"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Single, balanced items with clear timeframes reduce ambiguity and response burden."
+    },
+    {
+      "id": "design-08",
+      "type": "true_false",
+      "prompt": "Random sampling and random assignment serve different purposes.",
+      "answer": true,
+      "explanation": "Sampling supports population representation; assignment supports group comparability in experiments."
+    },
+    {
+      "id": "design-09",
+      "type": "single_choice",
+      "prompt": "A longitudinal study is designed to:",
+      "options": [
+        "Observe units repeatedly over time",
+        "Manipulate every variable",
+        "Guarantee causal identification",
+        "Sample only one person"
+      ],
+      "answerIndex": 0,
+      "explanation": "Repeated observations track change, though time trends and confounding complicate inference."
+    },
+    {
+      "id": "design-10",
+      "type": "true_false",
+      "prompt": "A cross-sectional association alone establishes how an individual changes over time.",
+      "answer": false,
+      "explanation": "Cross-sectional data capture a snapshot and cannot directly show within-person change."
+    },
+    {
+      "id": "design-11",
+      "type": "multiple_choice",
+      "prompt": "Which are useful design choices for a qualitative interview study?",
+      "options": [
+        "Use open-ended prompts",
+        "Document sampling rationale",
+        "Keep reflexive notes",
+        "Treat every quote as representative"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Open prompts, transparent sampling, and reflexivity support rigor; quotes are not population estimates."
+    },
+    {
+      "id": "design-12",
+      "type": "true_false",
+      "prompt": "A pilot study can reveal confusing procedures before a larger study begins.",
+      "answer": true,
+      "explanation": "Piloting assesses feasibility and comprehension but is not definitive evidence of effectiveness."
+    },
+    {
+      "id": "design-13",
+      "type": "single_choice",
+      "prompt": "A manipulation check assesses:",
+      "options": [
+        "Whether the intended manipulation changed its target",
+        "Whether participants guessed the hypothesis",
+        "Whether results are significant",
+        "Whether sampling was random"
+      ],
+      "answerIndex": 0,
+      "explanation": "It tests whether the intervention altered the intended construct or condition."
+    },
+    {
+      "id": "design-14",
+      "type": "true_false",
+      "prompt": "A failed manipulation check always means the theory is false.",
+      "answer": false,
+      "explanation": "Failure may reflect implementation, measurement, or theoretical issues and needs diagnosis."
+    },
+    {
+      "id": "design-15",
+      "type": "multiple_choice",
+      "prompt": "Which belong in a clear methods description?",
+      "options": [
+        "Recruitment and eligibility",
+        "Procedure and measures",
+        "Exclusions and missing-data handling",
+        "Only preferred findings"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Transparent methods let readers assess bias and understand how results were produced."
+    },
+    {
+      "id": "design-16",
+      "type": "true_false",
+      "prompt": "Blinding can reduce some expectancy effects in research.",
+      "answer": true,
+      "explanation": "Masking condition knowledge can limit bias in participants, assessors, or analysts when feasible."
+    },
+    {
+      "id": "design-17",
+      "type": "single_choice",
+      "prompt": "A ceiling effect limits a measure because:",
+      "options": [
+        "Many scores cluster near its maximum",
+        "Most scores are missing",
+        "The sample is too diverse",
+        "The study has many variables"
+      ],
+      "answerIndex": 0,
+      "explanation": "A task that is too easy cannot distinguish higher levels of the construct."
+    },
+    {
+      "id": "design-18",
+      "type": "true_false",
+      "prompt": "Measurement invariance matters when comparing scores across groups.",
+      "answer": true,
+      "explanation": "Researchers should examine whether a measure functions comparably before interpreting group differences."
+    },
+    {
+      "id": "design-19",
+      "type": "multiple_choice",
+      "prompt": "Which can improve response rates without compromising ethics?",
+      "options": [
+        "Keep a survey concise",
+        "Explain the study purpose",
+        "Offer accessible completion modes",
+        "Pressure people who declined"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Low-burden, clear, accessible invitations support participation without coercion."
+    },
+    {
+      "id": "design-20",
+      "type": "true_false",
+      "prompt": "Self-report is always inferior to behavioral measurement.",
+      "answer": false,
+      "explanation": "Each approach has strengths and limitations; the best measure depends on the construct and question."
+    }
+  ]
+}

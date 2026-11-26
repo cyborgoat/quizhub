@@ -2,7 +2,11 @@
   "id": "ai-transformers",
   "title": "Transformers and Attention",
   "description": "How self-attention works and why transformers power modern language models.",
-  "tags": ["deep-learning", "transformers", "llm"],
+  "tags": [
+    "deep-learning",
+    "transformers",
+    "llm"
+  ],
   "questions": [
     {
       "id": "scaling-factor",
@@ -28,7 +32,12 @@
       "id": "causal-mask",
       "type": "single_choice",
       "prompt": "A decoder builds its attention mask like this:\n\n```python\nmask = torch.triu(torch.ones(n, n), diagonal=1).bool()\nscores = scores.masked_fill(mask, float(\"-inf\"))\n```\n\nWhich positions can token $i$ attend to?",
-      "options": ["Only positions $j \\le i$", "Only positions $j > i$", "All positions", "Only position $i$"],
+      "options": [
+        "Only positions $j \\le i$",
+        "Only positions $j > i$",
+        "All positions",
+        "Only position $i$"
+      ],
       "answerIndex": 0,
       "explanation": "`triu(..., diagonal=1)` marks everything strictly above the diagonal (future positions). Those get $-\\infty$, so softmax gives them zero weight, leaving the current and earlier tokens."
     },
@@ -36,9 +45,215 @@
       "id": "transformer-parts",
       "type": "multiple_choice",
       "prompt": "Which components appear in a standard transformer block?",
-      "options": ["Multi-head attention", "Position-wise feed-forward network", "Residual connections with layer normalization", "Recurrent hidden state passed between tokens"],
-      "answerIndices": [0, 1, 2],
+      "options": [
+        "Multi-head attention",
+        "Position-wise feed-forward network",
+        "Residual connections with layer normalization",
+        "Recurrent hidden state passed between tokens"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
       "explanation": "A block combines attention, a feed-forward network, and residual connections with normalization. Transformers process tokens in parallel and do not carry an RNN-style hidden state between positions."
+    },
+    {
+      "type": "single_choice",
+      "prompt": "In self-attention, what role does a query vector play?",
+      "options": [
+        "It selects which keys are relevant to the current position",
+        "It stores the final vocabulary logits",
+        "It encodes only the output token",
+        "It replaces positional information"
+      ],
+      "answerIndex": 0,
+      "explanation": "Queries are compared with keys to produce attention weights, which then mix the corresponding values.",
+      "id": "ai-transformers-self-attention-query"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "Why use multiple attention heads?",
+      "options": [
+        "They can learn different representation subspaces or relationships",
+        "They guarantee linear-time attention",
+        "They eliminate the need for embeddings",
+        "They ensure every token has equal weight"
+      ],
+      "answerIndex": 0,
+      "explanation": "Separate heads apply distinct projections, allowing a layer to represent different interactions in parallel.",
+      "id": "ai-transformers-multi-head-purpose"
+    },
+    {
+      "type": "true_false",
+      "prompt": "A standard transformer encoder can use information from tokens on both sides of a position.",
+      "answer": true,
+      "explanation": "Encoder self-attention is typically unmasked, so each token can attend across the full input sequence.",
+      "id": "ai-transformers-encoder-bidirectional"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "In an encoder-decoder transformer, what does decoder cross-attention typically read?",
+      "options": [
+        "Encoder output representations",
+        "Only the decoder position embeddings",
+        "The optimizer state",
+        "The training labels at inference time"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cross-attention uses decoder states as queries and encoder outputs as keys and values.",
+      "id": "ai-transformers-decoder-cross-attention"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "For sequence length n, what is the usual time and memory scaling of dense self-attention scores?",
+      "options": [
+        "Quadratic in n",
+        "Constant in n",
+        "Logarithmic in n",
+        "Linear in model vocabulary only"
+      ],
+      "answerIndex": 0,
+      "explanation": "Dense attention forms interactions for pairs of positions, yielding O(n²) score and storage costs.",
+      "id": "ai-transformers-attention-complexity"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "Which mechanisms can prevent a decoder-only language model from using future tokens during training?",
+      "options": [
+        "A causal attention mask",
+        "A shifted next-token target",
+        "Removing all positional information",
+        "Masking future-position scores before softmax"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "The causal mask blocks future context, and shifted targets train prediction of the next token. Position information is still useful.",
+      "id": "ai-transformers-causal-generation"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is a key benefit of a residual connection in a deep transformer?",
+      "options": [
+        "It provides a direct path for information and gradients",
+        "It sorts tokens by position",
+        "It forces attention weights to be uniform",
+        "It removes the need for nonlinear layers"
+      ],
+      "answerIndex": 0,
+      "explanation": "Adding a block input to its output supports signal and gradient flow through deep stacks.",
+      "id": "ai-transformers-residual-connection"
+    },
+    {
+      "type": "true_false",
+      "prompt": "Layer normalization computes normalization statistics across the batch dimension by default.",
+      "answer": false,
+      "explanation": "Layer normalization normally computes statistics over specified feature dimensions for each example, unlike batch normalization.",
+      "id": "ai-transformers-layernorm-token"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What does a token embedding map represent?",
+      "options": [
+        "A learned vector associated with a token ID",
+        "A guaranteed human-readable definition",
+        "A probability distribution over documents",
+        "A fixed positional index only"
+      ],
+      "answerIndex": 0,
+      "explanation": "The embedding table maps discrete vocabulary IDs to dense vectors learned during training.",
+      "id": "ai-transformers-token-embedding"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is a common purpose of rotary positional embeddings?",
+      "options": [
+        "Inject position-dependent rotations into query and key representations",
+        "Replace softmax with a convolution",
+        "Store the full training corpus",
+        "Make tokenization unnecessary"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rotary embeddings encode relative positional relationships through position-dependent rotations of attention vectors.",
+      "id": "ai-transformers-rotary-position"
+    },
+    {
+      "type": "multiple_choice",
+      "prompt": "During autoregressive inference, what is typically stored in a key-value cache?",
+      "options": [
+        "Past attention keys",
+        "Past attention values",
+        "Future target tokens",
+        "Optimizer gradients"
+      ],
+      "answerIndices": [
+        0,
+        1
+      ],
+      "explanation": "Caching prior keys and values avoids recomputing them at each generation step; gradients are not needed for inference.",
+      "id": "ai-transformers-kv-cache"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "Which training objective is associated with a BERT-style masked language model?",
+      "options": [
+        "Predict selected masked input tokens using surrounding context",
+        "Predict only the next token from left context",
+        "Classify images into pixels",
+        "Reconstruct attention weights from labels"
+      ],
+      "answerIndex": 0,
+      "explanation": "Masked language modeling predicts hidden tokens using bidirectional context, unlike a strictly causal next-token objective.",
+      "id": "ai-transformers-masked-language-model"
+    },
+    {
+      "type": "true_false",
+      "prompt": "For finite attention scores, softmax attention weights are nonnegative and sum to one across the normalized axis.",
+      "answer": true,
+      "explanation": "Softmax converts a score vector into a probability-like distribution over attended positions.",
+      "id": "ai-transformers-softmax-weights"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is the usual role of the position-wise feed-forward sublayer?",
+      "options": [
+        "Apply nonlinear transformations independently at each token position",
+        "Mix information across positions using recurrence",
+        "Choose the next training batch",
+        "Compress the vocabulary into one token"
+      ],
+      "answerIndex": 0,
+      "explanation": "The feed-forward network transforms each position separately; attention handles communication between positions.",
+      "id": "ai-transformers-feedforward-block"
+    },
+    {
+      "type": "single_choice",
+      "prompt": "What is the typical purpose of fine-tuning a pretrained transformer?",
+      "options": [
+        "Adapt its learned parameters to a target task or data distribution",
+        "Rebuild its tokenizer for every prediction",
+        "Remove all pretrained representations",
+        "Guarantee correct outputs for unseen domains"
+      ],
+      "answerIndex": 0,
+      "explanation": "Fine-tuning continues training on task-relevant data, adapting a pretrained model but not guaranteeing generalization.",
+      "id": "ai-transformers-pretraining-finetuning"
+    },
+    {
+      "id": "ai-transformers-head-concatenation",
+      "type": "single_choice",
+      "prompt": "What commonly happens to the outputs of multiple attention heads?",
+      "options": [
+        "They are concatenated and linearly projected",
+        "They are averaged with the input token IDs",
+        "They replace the feed-forward layer",
+        "They are converted directly into labels"
+      ],
+      "answerIndex": 0,
+      "explanation": "A standard multi-head attention layer concatenates head outputs and applies an output projection to combine them."
     }
   ]
 }

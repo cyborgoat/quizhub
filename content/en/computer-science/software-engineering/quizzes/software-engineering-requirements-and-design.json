@@ -1,0 +1,259 @@
+{
+  "id": "software-engineering-requirements-and-design",
+  "title": "Requirements and Software Design",
+  "description": "Translate user needs into maintainable software structures.",
+  "tags": [
+    "requirements",
+    "software-design",
+    "architecture"
+  ],
+  "questions": [
+    {
+      "id": "software-engineering-functional-requirement",
+      "type": "single_choice",
+      "prompt": "Which is a functional requirement?",
+      "options": [
+        "The service lets a user reset a forgotten password",
+        "The service responds within 200 ms at p95",
+        "The system is available 99.9% of each month",
+        "The application uses a specified cloud region"
+      ],
+      "answerIndex": 0,
+      "explanation": "Functional requirements describe system behavior or capabilities; latency and availability are quality attributes."
+    },
+    {
+      "id": "software-engineering-nonfunctional-requirement",
+      "type": "single_choice",
+      "prompt": "Which is a nonfunctional requirement?",
+      "options": [
+        "The search endpoint returns results within a stated latency target",
+        "A user can create a project",
+        "An administrator can disable an account",
+        "A report can be exported"
+      ],
+      "answerIndex": 0,
+      "explanation": "Latency is a quality attribute that constrains how the system performs a function."
+    },
+    {
+      "id": "software-engineering-acceptance-criteria",
+      "type": "true_false",
+      "prompt": "Acceptance criteria make conditions for considering a requirement satisfied more explicit.",
+      "answer": true,
+      "explanation": "Specific, testable criteria help stakeholders and developers agree on expected behavior."
+    },
+    {
+      "id": "software-engineering-requirements-qualities",
+      "type": "multiple_choice",
+      "prompt": "Which qualities make a requirement more useful?",
+      "options": [
+        "Clear and unambiguous wording",
+        "A way to verify it",
+        "Traceability to a stakeholder need",
+        "Several unrelated behaviors in one sentence"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Clear, verifiable, traceable requirements reduce interpretation differences; unrelated needs should be separated."
+    },
+    {
+      "id": "software-engineering-use-case",
+      "type": "single_choice",
+      "prompt": "What does a use case describe?",
+      "options": [
+        "An actor’s interaction with a system to achieve a goal",
+        "Every class field in implementation order",
+        "A build server’s CPU utilization",
+        "A database backup schedule"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use cases capture interactions and goal-oriented behavior from an actor’s perspective."
+    },
+    {
+      "id": "software-engineering-domain-model",
+      "type": "single_choice",
+      "prompt": "What is the purpose of a domain model?",
+      "options": [
+        "Represent important concepts and relationships in the problem area",
+        "Specify the exact server rack layout",
+        "Replace all requirements",
+        "Measure code coverage"
+      ],
+      "answerIndex": 0,
+      "explanation": "A domain model names key concepts and relationships to align software design with the problem domain."
+    },
+    {
+      "id": "software-engineering-separation-concerns",
+      "type": "true_false",
+      "prompt": "Separating concerns can make components easier to understand and change independently.",
+      "answer": true,
+      "explanation": "Modular boundaries reduce the number of unrelated responsibilities a developer must reason about at once."
+    },
+    {
+      "id": "software-engineering-coupling",
+      "type": "single_choice",
+      "prompt": "What does tight coupling between modules imply?",
+      "options": [
+        "Changes in one module are more likely to require changes in another",
+        "Modules have no dependencies",
+        "The system has no tests",
+        "Every function is pure"
+      ],
+      "answerIndex": 0,
+      "explanation": "Tightly coupled components depend on one another’s details, increasing the impact of change."
+    },
+    {
+      "id": "software-engineering-cohesion",
+      "type": "single_choice",
+      "prompt": "What does high cohesion within a module generally indicate?",
+      "options": [
+        "Its responsibilities are closely related",
+        "It imports every package available",
+        "It cannot be tested",
+        "It has the largest possible API"
+      ],
+      "answerIndex": 0,
+      "explanation": "A cohesive module groups behavior that serves a focused purpose."
+    },
+    {
+      "id": "software-engineering-interface-contract",
+      "type": "single_choice",
+      "prompt": "Why define an interface contract between components?",
+      "options": [
+        "Specify expected operations, inputs, outputs, and behavior",
+        "Guarantee every implementation has no bugs",
+        "Eliminate runtime failures",
+        "Choose a programming language for all teams"
+      ],
+      "answerIndex": 0,
+      "explanation": "Contracts clarify how components interact and support independent implementation and testing."
+    },
+    {
+      "id": "software-engineering-api-versioning",
+      "type": "multiple_choice",
+      "prompt": "Which changes are usually backward-compatible for an API consumer?",
+      "options": [
+        "Adding an optional response field",
+        "Adding a new endpoint",
+        "Changing an existing field’s meaning",
+        "Making an optional request field required"
+      ],
+      "answerIndices": [
+        0,
+        1
+      ],
+      "explanation": "Adding optional capabilities often preserves existing clients; semantic changes or stricter required inputs can break them."
+    },
+    {
+      "id": "software-engineering-solid-single-responsibility",
+      "type": "single_choice",
+      "prompt": "What is the intent of the single-responsibility principle?",
+      "options": [
+        "Give a module one coherent reason to change",
+        "Make every class contain one method exactly",
+        "Avoid all dependencies",
+        "Require one developer per module"
+      ],
+      "answerIndex": 0,
+      "explanation": "The principle encourages cohesive responsibilities, not an arbitrary limit of one method."
+    },
+    {
+      "id": "software-engineering-design-pattern",
+      "type": "true_false",
+      "prompt": "Applying more design patterns always improves software design.",
+      "answer": false,
+      "explanation": "Patterns are useful when they address a real problem; unnecessary abstraction increases complexity."
+    },
+    {
+      "id": "software-engineering-dependency-injection",
+      "type": "single_choice",
+      "prompt": "What does dependency injection do?",
+      "options": [
+        "Provide a component’s dependencies from outside its implementation",
+        "Copy a database into every function",
+        "Remove all interfaces",
+        "Install packages at runtime by default"
+      ],
+      "answerIndex": 0,
+      "explanation": "Injecting dependencies separates construction from use and can make behavior easier to test or configure."
+    },
+    {
+      "id": "software-engineering-technical-debt",
+      "type": "single_choice",
+      "prompt": "What is technical debt?",
+      "options": [
+        "A future maintenance cost incurred by expedient design or implementation choices",
+        "Any old source file",
+        "An unpaid software invoice only",
+        "A type of runtime exception"
+      ],
+      "answerIndex": 0,
+      "explanation": "Debt describes trade-offs that may speed delivery now but create future costs if not managed."
+    },
+    {
+      "id": "software-engineering-architecture-tradeoffs",
+      "type": "multiple_choice",
+      "prompt": "Which concerns should inform an architectural decision?",
+      "options": [
+        "Quality attributes and constraints",
+        "Operational complexity",
+        "Team capabilities and context",
+        "Popularity of a pattern alone"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Architecture balances requirements, operational consequences, and context; popularity alone is not sufficient."
+    },
+    {
+      "id": "software-engineering-event-driven",
+      "type": "single_choice",
+      "prompt": "In event-driven architecture, what commonly triggers a handler?",
+      "options": [
+        "An event describing something that occurred",
+        "A compiler warning only",
+        "A fixed sequence of all services",
+        "A database schema name"
+      ],
+      "answerIndex": 0,
+      "explanation": "An event announces a fact, and interested components can react without direct sequential invocation."
+    },
+    {
+      "id": "software-engineering-eventual-consistency-ui",
+      "type": "true_false",
+      "prompt": "An asynchronous event-driven workflow may expose temporary inconsistency between components.",
+      "answer": true,
+      "explanation": "Events propagate over time, so consumers may not reflect a change immediately."
+    },
+    {
+      "id": "software-engineering-design-review",
+      "type": "single_choice",
+      "prompt": "What is a useful outcome of a design review?",
+      "options": [
+        "Surface assumptions, risks, and alternatives before implementation",
+        "Guarantee that no production defect will occur",
+        "Replace user research",
+        "Approve code without context"
+      ],
+      "answerIndex": 0,
+      "explanation": "Reviews help expose risks and trade-offs early, but cannot eliminate every defect."
+    },
+    {
+      "id": "software-engineering-architecture-documentation",
+      "type": "single_choice",
+      "prompt": "What should concise architecture documentation emphasize?",
+      "options": [
+        "Important decisions, boundaries, and rationale",
+        "Every line of implementation code",
+        "Only a list of developer names",
+        "A claim that design never changes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Documenting decisions and rationale helps future contributors understand constraints and revisit choices."
+    }
+  ]
+}

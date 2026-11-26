@@ -1,0 +1,256 @@
+{
+  "id": "deep-learning-vision-and-sequences",
+  "title": "Deep Learning for Vision and Sequences",
+  "description": "Explore convolution, sequence models, and generative neural architectures.",
+  "tags": [
+    "convolutional-networks",
+    "sequence-models",
+    "generative-models"
+  ],
+  "questions": [
+    {
+      "id": "deep-learning-convolution-filter",
+      "type": "single_choice",
+      "prompt": "What is a convolutional filter designed to detect?",
+      "options": [
+        "Local patterns across an input region",
+        "Only the final class label",
+        "The training-set filename",
+        "A gradient-free update"
+      ],
+      "answerIndex": 0,
+      "explanation": "A learned kernel responds to local patterns such as edges or textures and is applied at many locations."
+    },
+    {
+      "id": "deep-learning-stride",
+      "type": "single_choice",
+      "prompt": "What does stride control in a convolution?",
+      "options": [
+        "How far the filter moves between applications",
+        "The number of target classes",
+        "The activation derivative",
+        "The optimizer momentum"
+      ],
+      "answerIndex": 0,
+      "explanation": "Larger stride skips positions and typically reduces the output’s spatial dimensions."
+    },
+    {
+      "id": "deep-learning-padding",
+      "type": "single_choice",
+      "prompt": "Why add padding before a convolution?",
+      "options": [
+        "Control output dimensions and retain border information",
+        "Guarantee translation invariance",
+        "Add new training labels",
+        "Remove all nonlinearities"
+      ],
+      "answerIndex": 0,
+      "explanation": "Padding supplies values around boundaries so filters can cover edge locations and output size can be controlled."
+    },
+    {
+      "id": "deep-learning-pooling-parameters",
+      "type": "true_false",
+      "prompt": "A max-pooling layer usually learns a separate weight for every input location.",
+      "answer": false,
+      "explanation": "Standard max pooling selects the maximum in each window and has no learned kernel weights."
+    },
+    {
+      "id": "deep-learning-cnn-inductive-bias",
+      "type": "multiple_choice",
+      "prompt": "Which inductive biases are associated with convolutional networks?",
+      "options": [
+        "Local connectivity",
+        "Shared filters across spatial positions",
+        "Sensitivity to absolute position removed in every architecture",
+        "Useful processing of grid-like data"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Local filters and weight sharing suit spatial data; pooling or other mechanisms may add some position tolerance, not universal invariance."
+    },
+    {
+      "id": "deep-learning-channel-dimension",
+      "type": "single_choice",
+      "prompt": "In an image tensor, what does a channel dimension commonly represent?",
+      "options": [
+        "Color components or learned feature maps",
+        "The number of epochs",
+        "A list of model licenses",
+        "The image file’s checksum"
+      ],
+      "answerIndex": 0,
+      "explanation": "Input channels may encode RGB components; later channels usually represent learned features."
+    },
+    {
+      "id": "deep-learning-augmentation-flip",
+      "type": "single_choice",
+      "prompt": "When is horizontal flipping a valid image augmentation?",
+      "options": [
+        "When left-right orientation does not change the label or task meaning",
+        "For every medical image without review",
+        "When labels are text strings",
+        "Only after testing"
+      ],
+      "answerIndex": 0,
+      "explanation": "Augmentations must preserve task semantics; flipping can invalidate labels in orientation-sensitive applications."
+    },
+    {
+      "id": "deep-learning-transfer-learning",
+      "type": "true_false",
+      "prompt": "Transfer learning can reuse representations learned from a related source task.",
+      "answer": true,
+      "explanation": "A pretrained network can provide useful features or initialization for a target task, subject to domain fit."
+    },
+    {
+      "id": "deep-learning-fine-tune-backbone",
+      "type": "single_choice",
+      "prompt": "When fine-tuning a pretrained vision backbone, why might early layers be frozen initially?",
+      "options": [
+        "To preserve general features while adapting later layers",
+        "To remove the classifier labels",
+        "To increase image resolution automatically",
+        "To prevent evaluation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Freezing reduces trainable parameters and can stabilize adaptation when target data is limited."
+    },
+    {
+      "id": "deep-learning-receptive-field",
+      "type": "single_choice",
+      "prompt": "What is a receptive field in a convolutional network?",
+      "options": [
+        "The input region that can influence a particular activation",
+        "The number of output classes",
+        "The optimizer’s memory",
+        "A dataset split ratio"
+      ],
+      "answerIndex": 0,
+      "explanation": "As layers compose, an activation can depend on a larger region of the original input."
+    },
+    {
+      "id": "deep-learning-rnn-state",
+      "type": "single_choice",
+      "prompt": "What does a recurrent neural network hidden state provide?",
+      "options": [
+        "A representation carrying information from earlier sequence steps",
+        "A list of all possible future labels",
+        "A fixed convolution kernel",
+        "The validation metric"
+      ],
+      "answerIndex": 0,
+      "explanation": "The hidden state is updated over time and can summarize preceding sequence context."
+    },
+    {
+      "id": "deep-learning-lstm-gates",
+      "type": "single_choice",
+      "prompt": "What is a role of gates in an LSTM?",
+      "options": [
+        "Control information retained, forgotten, or exposed",
+        "Compute convolution padding",
+        "Sort sequence tokens",
+        "Select the learning-rate schedule"
+      ],
+      "answerIndex": 0,
+      "explanation": "LSTM gates regulate updates to the cell state and hidden output, helping preserve long-range information."
+    },
+    {
+      "id": "deep-learning-teacher-forcing",
+      "type": "true_false",
+      "prompt": "Teacher forcing trains a sequence decoder by feeding it the true previous token during training.",
+      "answer": true,
+      "explanation": "Teacher forcing uses ground-truth prior tokens as decoder input, though inference uses generated tokens."
+    },
+    {
+      "id": "deep-learning-autoregressive-error",
+      "type": "single_choice",
+      "prompt": "Why can errors compound in autoregressive generation?",
+      "options": [
+        "Each generated token conditions later predictions",
+        "All tokens are generated independently",
+        "The model ignores previous outputs",
+        "The vocabulary shrinks after each step"
+      ],
+      "answerIndex": 0,
+      "explanation": "A mistaken output can enter subsequent context and influence later steps."
+    },
+    {
+      "id": "deep-learning-vae-latent",
+      "type": "single_choice",
+      "prompt": "In a variational autoencoder, what is the latent variable intended to represent?",
+      "options": [
+        "A compact stochastic representation of the input",
+        "The optimizer’s learning rate",
+        "A list of class names only",
+        "The output image dimensions"
+      ],
+      "answerIndex": 0,
+      "explanation": "The encoder represents inputs with a latent distribution from which the decoder reconstructs samples."
+    },
+    {
+      "id": "deep-learning-gan-components",
+      "type": "multiple_choice",
+      "prompt": "Which components define a standard generative adversarial network?",
+      "options": [
+        "A generator",
+        "A discriminator",
+        "An adversarial training objective",
+        "A nearest-neighbor index as a required component"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The generator creates samples and the discriminator distinguishes generated from real examples in adversarial training."
+    },
+    {
+      "id": "deep-learning-gan-mode-collapse",
+      "type": "single_choice",
+      "prompt": "What does mode collapse in a GAN refer to?",
+      "options": [
+        "The generator produces limited varieties of samples",
+        "The discriminator has no output",
+        "The training data contains no images",
+        "The latent vector becomes a class label"
+      ],
+      "answerIndex": 0,
+      "explanation": "A collapsed generator maps many latent inputs to a narrow set of outputs, reducing diversity."
+    },
+    {
+      "id": "deep-learning-diffusion-noising",
+      "type": "single_choice",
+      "prompt": "What is the forward process in a basic diffusion model?",
+      "options": [
+        "Gradually add noise to data according to a schedule",
+        "Sort images by brightness",
+        "Train a classifier on labels only",
+        "Remove tokens from a prompt"
+      ],
+      "answerIndex": 0,
+      "explanation": "The forward process defines progressive corruption; the learned reverse process generates by denoising."
+    },
+    {
+      "id": "deep-learning-diffusion-sampling",
+      "type": "true_false",
+      "prompt": "A diffusion model typically generates a sample by iteratively denoising from a noisy starting point.",
+      "answer": true,
+      "explanation": "Sampling follows a learned reverse trajectory from noise toward a structured output."
+    },
+    {
+      "id": "deep-learning-sequence-padding",
+      "type": "single_choice",
+      "prompt": "Why pad variable-length sequences in a batch?",
+      "options": [
+        "Make tensor dimensions compatible for batched computation",
+        "Increase the number of real tokens",
+        "Guarantee correct predictions",
+        "Replace the attention mask"
+      ],
+      "answerIndex": 0,
+      "explanation": "Padding creates uniform tensor shapes; masks ensure padded positions are not treated as meaningful content."
+    }
+  ]
+}

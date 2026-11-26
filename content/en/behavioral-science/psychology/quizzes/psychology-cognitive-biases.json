@@ -2,7 +2,10 @@
   "id": "psychology-cognitive-biases",
   "title": "Cognitive Biases",
   "description": "Systematic patterns in how people judge and decide.",
-  "tags": ["cognition", "decision-making"],
+  "tags": [
+    "cognition",
+    "decision-making"
+  ],
   "questions": [
     {
       "id": "confirmation-bias",
@@ -21,15 +24,29 @@
       "id": "bias-examples",
       "type": "multiple_choice",
       "prompt": "Which of these are cognitive biases or heuristics?",
-      "options": ["Anchoring", "Availability heuristic", "Sunk cost fallacy", "Classical conditioning"],
-      "answerIndices": [0, 1, 2],
+      "options": [
+        "Anchoring",
+        "Availability heuristic",
+        "Sunk cost fallacy",
+        "Classical conditioning"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
       "explanation": "Anchoring, the availability heuristic and the sunk cost fallacy all describe distortions in judgment. Classical conditioning is a learning process, not a judgment bias."
     },
     {
       "id": "availability-example",
       "type": "single_choice",
       "prompt": "After seeing several news reports about plane crashes, a person rates flying as more dangerous than driving. Which mechanism is most likely at work?",
-      "options": ["Availability heuristic", "Halo effect", "Gambler's fallacy", "Self-serving bias"],
+      "options": [
+        "Availability heuristic",
+        "Halo effect",
+        "Gambler's fallacy",
+        "Self-serving bias"
+      ],
       "answerIndex": 0,
       "explanation": "Vivid, easily recalled examples make an event feel more frequent than it is, even though driving is statistically far riskier per mile."
     },
@@ -39,6 +56,187 @@
       "prompt": "Under the sunk cost fallacy, people keep investing in something because of what they have already spent, even when future costs outweigh future benefits.",
       "answer": true,
       "explanation": "Past, unrecoverable costs should not affect a forward-looking decision, but they often do."
+    },
+    {
+      "id": "bias-practice-01",
+      "type": "single_choice",
+      "prompt": "What does the **anchoring effect** describe?",
+      "options": [
+        "Judgments pulled toward an initial value",
+        "Confidence after success",
+        "Memory for the last item",
+        "Avoiding uncertain choices"
+      ],
+      "answerIndex": 0,
+      "explanation": "An initial number or reference point can influence later estimates, even when arbitrary."
+    },
+    {
+      "id": "bias-practice-02",
+      "type": "multiple_choice",
+      "prompt": "Which are examples of framing effects?",
+      "options": [
+        "A survival rate versus equivalent mortality rate",
+        "A discount described as savings versus a cost of waiting",
+        "Changing the actual outcomes while holding wording fixed",
+        "A gamble described by gains rather than equivalent losses"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Framing changes presentation of equivalent information and can shift preference without changing outcomes."
+    },
+    {
+      "id": "bias-practice-03",
+      "type": "true_false",
+      "prompt": "The representativeness heuristic can lead people to neglect how common a category is.",
+      "answer": true,
+      "explanation": "Resemblance to a stereotype may dominate base-rate information."
+    },
+    {
+      "id": "bias-practice-04",
+      "type": "single_choice",
+      "prompt": "Calling heads \"due\" after a run of tails illustrates:",
+      "options": [
+        "Gambler’s fallacy",
+        "Hindsight bias",
+        "Halo effect",
+        "Planning fallacy"
+      ],
+      "answerIndex": 0,
+      "explanation": "For independent tosses, prior results do not make heads more likely on the next toss."
+    },
+    {
+      "id": "bias-practice-05",
+      "type": "true_false",
+      "prompt": "Hindsight bias can make an outcome seem more predictable after it is known.",
+      "answer": true,
+      "explanation": "Knowledge of the outcome changes people’s recollection of what they expected beforehand."
+    },
+    {
+      "id": "bias-practice-06",
+      "type": "multiple_choice",
+      "prompt": "Which can reduce anchoring in forecasts?",
+      "options": [
+        "Estimate independently before seeing others’ estimates",
+        "Compare with a relevant base rate",
+        "Ask what evidence would change the estimate",
+        "Treat the first number as neutral"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Independent estimates, outside-view data, and explicit alternatives can reveal the pull of an initial value."
+    },
+    {
+      "id": "bias-practice-07",
+      "type": "true_false",
+      "prompt": "A vivid anecdote is always more informative about risk than representative data.",
+      "answer": false,
+      "explanation": "Anecdotes can generate hypotheses, but frequency estimates require systematic evidence."
+    },
+    {
+      "id": "bias-practice-08",
+      "type": "single_choice",
+      "prompt": "The **halo effect** is when:",
+      "options": [
+        "One salient trait colors judgments of other traits",
+        "Success is attributed to luck",
+        "Familiar options are always preferred",
+        "A group suppresses disagreement"
+      ],
+      "answerIndex": 0,
+      "explanation": "A general positive or negative impression spills into evaluations of specific qualities."
+    },
+    {
+      "id": "bias-practice-09",
+      "type": "true_false",
+      "prompt": "Searching only for evidence that supports a favored proposal risks confirmation bias.",
+      "answer": true,
+      "explanation": "Confirmation bias favors belief-consistent evidence; actively seeking disconfirmation can help."
+    },
+    {
+      "id": "bias-practice-10",
+      "type": "multiple_choice",
+      "prompt": "Which claims about sunk costs are sound?",
+      "options": [
+        "Past unrecoverable costs are not a benefit of continuing",
+        "Future costs and benefits should guide the choice",
+        "Prior investment can make stopping feel wasteful",
+        "Any project with past spending should be cancelled"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The bias is undue influence of irrecoverable investment, not a rule to cancel every project."
+    },
+    {
+      "id": "bias-practice-11",
+      "type": "true_false",
+      "prompt": "Repeated exposure can increase liking without adding evidence of quality.",
+      "answer": true,
+      "explanation": "Mere exposure can increase familiarity and preference, but liking does not establish value."
+    },
+    {
+      "id": "bias-practice-12",
+      "type": "single_choice",
+      "prompt": "Status quo bias is a tendency to:",
+      "options": [
+        "Prefer keeping the current arrangement",
+        "Prefer only recent information",
+        "Copy a confident speaker",
+        "Reject every default"
+      ],
+      "answerIndex": 0,
+      "explanation": "The current state can feel safer or less effortful than change."
+    },
+    {
+      "id": "bias-practice-13",
+      "type": "true_false",
+      "prompt": "Loss aversion means losses relative to a reference point can loom larger than comparable gains.",
+      "answer": true,
+      "explanation": "It is a documented tendency, not a fixed universal ratio for every person or choice."
+    },
+    {
+      "id": "bias-practice-14",
+      "type": "single_choice",
+      "prompt": "Why can availability distort estimates of rare events?",
+      "options": [
+        "Memorable cases are easier to recall than ordinary cases",
+        "Rare events always have more data",
+        "Recent information is ignored",
+        "Memory cannot affect probability"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ease of recall can be mistaken for frequency; news and vividness affect what comes to mind."
+    },
+    {
+      "id": "bias-practice-15",
+      "type": "true_false",
+      "prompt": "People can show the planning fallacy even after completing similar projects.",
+      "answer": true,
+      "explanation": "Plans often focus on the current case; comparison with actual past outcomes can help."
+    },
+    {
+      "id": "bias-practice-16",
+      "type": "multiple_choice",
+      "prompt": "Which improve an estimate of event frequency?",
+      "options": [
+        "Define a time period and count comparable cases",
+        "Recall only the most striking example",
+        "Use an explicit denominator",
+        "Count only cases supporting your guess"
+      ],
+      "answerIndices": [
+        0,
+        2
+      ],
+      "explanation": "A clear definition and denominator reduce selective recall and ambiguous comparisons."
     }
   ]
 }

@@ -1,0 +1,268 @@
+{
+  "id": "large-language-models-safety-and-applications",
+  "title": "LLM Safety and Application Design",
+  "description": "Assess risks and build human-centered language-model applications.",
+  "tags": [
+    "llm-safety",
+    "responsible-ai",
+    "application-design"
+  ],
+  "questions": [
+    {
+      "id": "large-language-models-refusal-behavior",
+      "type": "single_choice",
+      "prompt": "What should a safe refusal do when a request falls outside permitted use?",
+      "options": [
+        "Briefly explain the boundary and, when possible, offer a safe alternative",
+        "Provide the disallowed instructions indirectly",
+        "Claim the system has no limitations",
+        "Reveal hidden policy text"
+      ],
+      "answerIndex": 0,
+      "explanation": "A useful refusal communicates the limit without enabling the harmful request and can redirect to benign help."
+    },
+    {
+      "id": "large-language-models-safety-filter",
+      "type": "true_false",
+      "prompt": "A content filter alone can guarantee that an LLM application will never produce harmful output.",
+      "answer": false,
+      "explanation": "Filters can miss context or be bypassed; safety needs layered prevention, testing, monitoring, and response."
+    },
+    {
+      "id": "large-language-models-red-team-testing",
+      "type": "multiple_choice",
+      "prompt": "Which are useful elements of LLM red-team testing?",
+      "options": [
+        "Probe adversarial prompts",
+        "Test tool-use boundaries",
+        "Include multiple languages and user contexts",
+        "Test only the default happy path"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Adversarial and context-diverse testing can uncover risks missed by ordinary expected-use tests."
+    },
+    {
+      "id": "large-language-models-human-escalation",
+      "type": "single_choice",
+      "prompt": "When should an LLM workflow offer human escalation?",
+      "options": [
+        "When uncertainty or impact exceeds its validated scope",
+        "Only when the user asks for a longer answer",
+        "Whenever the model uses punctuation",
+        "Never if responses are streamed"
+      ],
+      "answerIndex": 0,
+      "explanation": "Escalation is important when consequences or uncertainty exceed what the system is validated to handle."
+    },
+    {
+      "id": "large-language-models-high-impact-use",
+      "type": "single_choice",
+      "prompt": "What is a prudent principle for LLMs in high-impact decisions?",
+      "options": [
+        "Keep qualified human accountability and meaningful review",
+        "Let the model decide solely from a confidence score",
+        "Avoid documenting limitations",
+        "Use an untested prompt for speed"
+      ],
+      "answerIndex": 0,
+      "explanation": "High-impact settings need accountable human processes, appeal mechanisms, and validated evidence."
+    },
+    {
+      "id": "large-language-models-privacy-controls",
+      "type": "multiple_choice",
+      "prompt": "Which controls can reduce privacy risk in an LLM application?",
+      "options": [
+        "Minimize personal data sent to the model",
+        "Redact sensitive fields when feasible",
+        "Define retention and access controls",
+        "Log every raw prompt forever"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Minimization, redaction, and retention controls limit exposure; indefinite raw logging is risky."
+    },
+    {
+      "id": "large-language-models-training-data-recall",
+      "type": "true_false",
+      "prompt": "An LLM can be assumed never to reproduce personal information from its training data.",
+      "answer": false,
+      "explanation": "Models can memorize or reproduce data in some conditions, so privacy risk and output handling require assessment."
+    },
+    {
+      "id": "large-language-models-copyright-provenance",
+      "type": "single_choice",
+      "prompt": "Why track provenance for documents used in an LLM knowledge base?",
+      "options": [
+        "Understand rights, source quality, and update history",
+        "Guarantee generated text has no overlap",
+        "Remove the need for review",
+        "Increase the model context limit"
+      ],
+      "answerIndex": 0,
+      "explanation": "Provenance supports rights management, source auditing, and freshness checks."
+    },
+    {
+      "id": "large-language-models-access-control-rag",
+      "type": "single_choice",
+      "prompt": "What is a critical access-control concern in multi-user retrieval systems?",
+      "options": [
+        "A query must retrieve only documents the caller is allowed to see",
+        "All indexed documents should be public",
+        "The model’s answer is an authorization token",
+        "Filtering after generation is always sufficient"
+      ],
+      "answerIndex": 0,
+      "explanation": "Authorization should constrain retrieval itself; revealing restricted context before filtering can leak information."
+    },
+    {
+      "id": "large-language-models-fairness-testing",
+      "type": "multiple_choice",
+      "prompt": "Which steps can help examine demographic performance disparities?",
+      "options": [
+        "Use appropriate and lawfully handled subgroup data",
+        "Compare error patterns across affected groups",
+        "Engage domain experts and affected stakeholders",
+        "Assume one overall average is enough"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Subgroup evaluation and stakeholder input can expose differences hidden by aggregate metrics."
+    },
+    {
+      "id": "large-language-models-overreliance-ui",
+      "type": "single_choice",
+      "prompt": "Which interface choice can reduce overreliance on model output?",
+      "options": [
+        "Show uncertainty and source limitations clearly",
+        "Present every answer as authoritative",
+        "Hide provenance and alternatives",
+        "Remove user correction mechanisms"
+      ],
+      "answerIndex": 0,
+      "explanation": "Clear limits, evidence, and correction paths help users judge outputs rather than defer blindly."
+    },
+    {
+      "id": "large-language-models-model-disclosure",
+      "type": "true_false",
+      "prompt": "Users may benefit from knowing when content or decisions are generated with AI.",
+      "answer": true,
+      "explanation": "Disclosure supports informed use, especially where synthetic content or automated assistance could be consequential."
+    },
+    {
+      "id": "large-language-models-accessibility",
+      "type": "single_choice",
+      "prompt": "How should an LLM feature be evaluated for accessibility?",
+      "options": [
+        "Test with assistive technologies and users with diverse needs",
+        "Assume language generation is inherently accessible",
+        "Use only the development team’s devices",
+        "Remove alternative interaction paths"
+      ],
+      "answerIndex": 0,
+      "explanation": "Accessibility requires testing real interactions and ensuring alternatives for diverse users."
+    },
+    {
+      "id": "large-language-models-incident-logging",
+      "type": "multiple_choice",
+      "prompt": "What should an LLM incident log aim to capture while respecting privacy?",
+      "options": [
+        "Relevant model and prompt-template versions",
+        "Tool actions and outcomes",
+        "A minimal, access-controlled record for investigation",
+        "Every secret and raw personal field indefinitely"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Useful, minimized, protected records support response without unnecessary sensitive-data retention."
+    },
+    {
+      "id": "large-language-models-supply-chain",
+      "type": "single_choice",
+      "prompt": "Why assess third-party model and component supply chains?",
+      "options": [
+        "Updates or dependencies can change security, behavior, and licensing",
+        "Third-party models cannot have vulnerabilities",
+        "It guarantees model accuracy",
+        "It replaces access controls"
+      ],
+      "answerIndex": 0,
+      "explanation": "Model providers, packages, and updates bring operational, security, and legal dependencies to manage."
+    },
+    {
+      "id": "large-language-models-jailbreak-evaluation",
+      "type": "true_false",
+      "prompt": "Passing a small set of jailbreak tests proves that a model is resistant to all prompt attacks.",
+      "answer": false,
+      "explanation": "Attack strategies evolve, so no finite test set proves universal resistance."
+    },
+    {
+      "id": "large-language-models-uncertainty-communication",
+      "type": "single_choice",
+      "prompt": "What is a responsible way to communicate model uncertainty?",
+      "options": [
+        "Describe what is unknown and suggest verification for consequential claims",
+        "Use a precise percentage without calibration evidence",
+        "Remove caveats to sound confident",
+        "Claim uncertainty means the answer is false"
+      ],
+      "answerIndex": 0,
+      "explanation": "Useful uncertainty language is calibrated to evidence and helps users verify important claims."
+    },
+    {
+      "id": "large-language-models-change-management",
+      "type": "multiple_choice",
+      "prompt": "When updating an LLM-powered product, which changes merit reevaluation?",
+      "options": [
+        "Switching model versions",
+        "Changing system prompts or tools",
+        "Changing retrieval sources",
+        "Changing a button’s border color only"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Model, prompt, tool, and corpus changes can alter behavior and should trigger relevant regression checks."
+    },
+    {
+      "id": "large-language-models-user-feedback",
+      "type": "single_choice",
+      "prompt": "How should user feedback about LLM errors be used?",
+      "options": [
+        "Review and categorize it to improve safeguards and product quality",
+        "Automatically treat each report as verified ground truth",
+        "Publish identifying details by default",
+        "Ignore reports that disagree with benchmarks"
+      ],
+      "answerIndex": 0,
+      "explanation": "Feedback can reveal real-world failures but needs triage, privacy protection, and verification."
+    },
+    {
+      "id": "large-language-models-deployment-boundary",
+      "type": "single_choice",
+      "prompt": "What is the best approach when a model output is outside the product’s validated scope?",
+      "options": [
+        "Decline or route to a suitable process rather than imply reliability",
+        "Present it as guaranteed because the model responded",
+        "Hide the scope statement",
+        "Increase output length"
+      ],
+      "answerIndex": 0,
+      "explanation": "Applications should enforce intended-use boundaries and avoid presenting unsupported outputs as reliable."
+    }
+  ]
+}

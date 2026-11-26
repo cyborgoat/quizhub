@@ -1,0 +1,266 @@
+{
+  "id": "computer-systems-storage-and-distribution",
+  "title": "Storage and Distributed Systems",
+  "description": "Persistence, consistency, fault tolerance, and distributed-system trade-offs.",
+  "tags": [
+    "storage",
+    "distributed-systems",
+    "reliability"
+  ],
+  "questions": [
+    {
+      "id": "computer-systems-durability",
+      "type": "single_choice",
+      "prompt": "In ACID transactions, what does durability promise?",
+      "options": [
+        "Committed changes survive failures according to the system’s guarantees",
+        "Transactions never run concurrently",
+        "Every query returns in constant time",
+        "Data is always encrypted"
+      ],
+      "answerIndex": 0,
+      "explanation": "Durability means committed effects persist across specified failures, often using logs or replicated storage."
+    },
+    {
+      "id": "computer-systems-atomicity",
+      "type": "single_choice",
+      "prompt": "What does transaction atomicity mean?",
+      "options": [
+        "A transaction’s operations all take effect or none do",
+        "Transactions always run in parallel",
+        "Every read returns the newest global value",
+        "The database uses no indexes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Atomicity prevents partial transaction effects from being exposed as committed state."
+    },
+    {
+      "id": "computer-systems-isolation-serializable",
+      "type": "true_false",
+      "prompt": "Serializable isolation aims for results equivalent to some serial transaction order.",
+      "answer": true,
+      "explanation": "A serializable execution preserves the effect of running transactions one at a time in some order."
+    },
+    {
+      "id": "computer-systems-write-ahead-log",
+      "type": "single_choice",
+      "prompt": "Why use a write-ahead log?",
+      "options": [
+        "Record changes before applying them so recovery can restore consistency",
+        "Compress every query result",
+        "Replace database indexes",
+        "Prevent all hardware failures"
+      ],
+      "answerIndex": 0,
+      "explanation": "The log provides a recovery record that can be replayed or used to undo incomplete updates."
+    },
+    {
+      "id": "computer-systems-replication",
+      "type": "single_choice",
+      "prompt": "What is data replication?",
+      "options": [
+        "Maintaining copies of data on multiple nodes",
+        "Splitting one file into source-code functions",
+        "Sorting database rows",
+        "Converting text to binary"
+      ],
+      "answerIndex": 0,
+      "explanation": "Replicas can improve availability or read performance, while introducing coordination and consistency concerns."
+    },
+    {
+      "id": "computer-systems-replica-consistency",
+      "type": "true_false",
+      "prompt": "Replicated copies are always immediately identical after every write.",
+      "answer": false,
+      "explanation": "Replication may be asynchronous, so replicas can temporarily lag or diverge during failures."
+    },
+    {
+      "id": "computer-systems-quorum",
+      "type": "single_choice",
+      "prompt": "In a replicated system, what does a quorum generally mean?",
+      "options": [
+        "A required number of nodes must participate in an operation",
+        "Every node must always be online",
+        "The database stores only one copy",
+        "A client has administrative privileges"
+      ],
+      "answerIndex": 0,
+      "explanation": "Quorum rules require enough replicas for reads or writes to meet a chosen consistency and availability design."
+    },
+    {
+      "id": "computer-systems-eventual-consistency",
+      "type": "single_choice",
+      "prompt": "What does eventual consistency promise, assuming updates stop and communication recovers?",
+      "options": [
+        "Replicas will converge to a consistent value eventually",
+        "Every read immediately returns the latest write",
+        "Transactions are globally serializable",
+        "No conflicting writes can occur"
+      ],
+      "answerIndex": 0,
+      "explanation": "Eventual consistency allows temporary divergence but expects replicas to converge when updates cease and messages are delivered."
+    },
+    {
+      "id": "computer-systems-distributed-failures",
+      "type": "multiple_choice",
+      "prompt": "Which are common failure modes in distributed systems?",
+      "options": [
+        "Network partition",
+        "Slow or unavailable node",
+        "Message duplication",
+        "A global clock with perfect synchronization"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Partitions, node failures, and duplicate delivery are common; perfect global clocks are not a safe assumption."
+    },
+    {
+      "id": "computer-systems-idempotency",
+      "type": "single_choice",
+      "prompt": "What property makes a retry safe for an operation?",
+      "options": [
+        "Repeating it has the same effect as performing it once",
+        "It always runs faster",
+        "It never returns an error",
+        "It avoids writing any data"
+      ],
+      "answerIndex": 0,
+      "explanation": "Idempotent operations can be retried without duplicating their intended effect."
+    },
+    {
+      "id": "computer-systems-exactly-once",
+      "type": "single_choice",
+      "prompt": "Why is “exactly once” processing difficult in distributed systems?",
+      "options": [
+        "Failures can leave uncertainty about whether an operation already took effect",
+        "Messages are always delivered in order",
+        "Networks never duplicate data",
+        "Storage cannot persist state"
+      ],
+      "answerIndex": 0,
+      "explanation": "A sender may not know whether a timed-out request committed; deduplication and idempotent design help manage this uncertainty."
+    },
+    {
+      "id": "computer-systems-fault-tolerance",
+      "type": "multiple_choice",
+      "prompt": "Which techniques can improve fault tolerance?",
+      "options": [
+        "Replication",
+        "Checksums or error detection",
+        "Retries with bounded backoff",
+        "Assuming failures never occur"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Replication and error detection address some failures; retries should be bounded and designed to avoid overload."
+    },
+    {
+      "id": "computer-systems-backoff",
+      "type": "single_choice",
+      "prompt": "Why use exponential backoff with jitter for retries?",
+      "options": [
+        "Reduce synchronized retry spikes and spread load",
+        "Guarantee the server never fails",
+        "Make requests execute in order",
+        "Remove latency variation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Backoff slows repeated attempts, while jitter avoids many clients retrying in lockstep."
+    },
+    {
+      "id": "computer-systems-cache-invalidation",
+      "type": "single_choice",
+      "prompt": "Why is cache invalidation challenging?",
+      "options": [
+        "Keeping cached data consistent with changing source data is difficult",
+        "Caches cannot store values",
+        "Every cache is always authoritative",
+        "Invalidation changes the network protocol"
+      ],
+      "answerIndex": 0,
+      "explanation": "Stale entries are hard to manage because updates and cached copies can race across components."
+    },
+    {
+      "id": "computer-systems-cache-durability",
+      "type": "true_false",
+      "prompt": "A cache is generally a substitute for durable primary storage.",
+      "answer": false,
+      "explanation": "Caches optimize access and may be evicted; durable storage is responsible for preserving authoritative data."
+    },
+    {
+      "id": "computer-systems-object-storage",
+      "type": "single_choice",
+      "prompt": "Which workload is a natural fit for object storage?",
+      "options": [
+        "Large unstructured objects addressed by keys",
+        "Low-latency CPU registers",
+        "Process scheduling state",
+        "A shared-memory mutex"
+      ],
+      "answerIndex": 0,
+      "explanation": "Object stores handle durable blobs such as media and backups, typically via object identifiers and metadata."
+    },
+    {
+      "id": "computer-systems-block-storage",
+      "type": "single_choice",
+      "prompt": "What does block storage expose to a host?",
+      "options": [
+        "A volume of fixed-size addressable blocks",
+        "Only a document search API",
+        "A list of DNS names",
+        "An in-memory process thread"
+      ],
+      "answerIndex": 0,
+      "explanation": "Block storage presents raw blocks that a host can format with a filesystem or use directly."
+    },
+    {
+      "id": "computer-systems-backup-practices",
+      "type": "multiple_choice",
+      "prompt": "Which are sound backup practices?",
+      "options": [
+        "Keep backups isolated from routine credentials",
+        "Test restoration procedures",
+        "Retain versions according to recovery needs",
+        "Assume successful backup logs prove restore works"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Isolation, retention, and restore tests improve recovery; a backup is useful only if it can be restored."
+    },
+    {
+      "id": "computer-systems-rpo-rto",
+      "type": "single_choice",
+      "prompt": "What does recovery point objective (RPO) describe?",
+      "options": [
+        "The maximum acceptable data loss measured in time",
+        "The maximum time to restore service",
+        "The number of replica nodes",
+        "The average database query time"
+      ],
+      "answerIndex": 0,
+      "explanation": "RPO defines how far back recovery may need to go, expressing tolerance for lost recent data."
+    },
+    {
+      "id": "computer-systems-rto",
+      "type": "single_choice",
+      "prompt": "What does recovery time objective (RTO) describe?",
+      "options": [
+        "The target time to restore a service after disruption",
+        "The tolerated data loss window",
+        "The database transaction size",
+        "The number of backups retained"
+      ],
+      "answerIndex": 0,
+      "explanation": "RTO specifies the target duration for restoring service after an outage."
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "id": "natural-language-processing-text-foundations",
+  "title": "Text Processing Foundations",
+  "description": "Represent and normalize language data for NLP tasks.",
+  "tags": [
+    "tokenization",
+    "text-processing",
+    "linguistics"
+  ],
+  "questions": [
+    {
+      "id": "natural-language-processing-sentence-tokenization",
+      "type": "single_choice",
+      "prompt": "What is sentence segmentation?",
+      "options": [
+        "Dividing text into sentence units",
+        "Mapping each word to a vector",
+        "Removing every punctuation mark",
+        "Predicting a document topic"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sentence segmentation identifies sentence boundaries, which can be ambiguous around abbreviations and punctuation."
+    },
+    {
+      "id": "natural-language-processing-unicode-normalization",
+      "type": "single_choice",
+      "prompt": "Why may Unicode normalization be useful before text comparison?",
+      "options": [
+        "Visually similar characters can have different code-point sequences",
+        "It translates every word to English",
+        "It guarantees correct spelling",
+        "It removes all whitespace"
+      ],
+      "answerIndex": 0,
+      "explanation": "Unicode normalization standardizes equivalent representations, improving matching across text sources."
+    },
+    {
+      "id": "natural-language-processing-casefolding",
+      "type": "true_false",
+      "prompt": "Lowercasing text is always safe for every NLP task.",
+      "answer": false,
+      "explanation": "Case can carry meaning, such as proper names or acronyms, so normalization should fit the task."
+    },
+    {
+      "id": "natural-language-processing-stemming",
+      "type": "single_choice",
+      "prompt": "What does stemming generally do?",
+      "options": [
+        "Reduce a word to a crude stem using heuristic rules",
+        "Find a full dictionary definition",
+        "Translate a sentence",
+        "Assign dependency relations"
+      ],
+      "answerIndex": 0,
+      "explanation": "Stemmers strip or alter endings with rules and may produce forms that are not dictionary words."
+    },
+    {
+      "id": "natural-language-processing-lemmatization",
+      "type": "single_choice",
+      "prompt": "How does lemmatization differ from stemming?",
+      "options": [
+        "It aims to map an inflected form to a dictionary lemma",
+        "It always removes more characters",
+        "It ignores word context in every system",
+        "It identifies document topics"
+      ],
+      "answerIndex": 0,
+      "explanation": "Lemmatization uses lexical or morphological knowledge to produce a base form, often considering part of speech."
+    },
+    {
+      "id": "natural-language-processing-stopword-tradeoff",
+      "type": "multiple_choice",
+      "prompt": "Which statements about stopword removal are reasonable?",
+      "options": [
+        "It can reduce feature sparsity for some tasks",
+        "It can remove meaningful negation or task-relevant terms",
+        "Its usefulness depends on the application",
+        "It is required for every language model"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Stopword removal can help certain representations but may erase meaning; modern methods do not universally require it."
+    },
+    {
+      "id": "natural-language-processing-subword-tokenization",
+      "type": "single_choice",
+      "prompt": "Why use subword tokenization in NLP?",
+      "options": [
+        "Represent rare words as combinations of common units",
+        "Guarantee that every token is a complete morpheme",
+        "Eliminate all out-of-vocabulary behavior",
+        "Preserve sentence meaning without a model"
+      ],
+      "answerIndex": 0,
+      "explanation": "Subword vocabularies handle rare and unseen word forms by composing familiar units."
+    },
+    {
+      "id": "natural-language-processing-byte-pair-encoding",
+      "type": "single_choice",
+      "prompt": "What does byte-pair encoding commonly do when building a subword vocabulary?",
+      "options": [
+        "Iteratively merge frequent adjacent symbol pairs",
+        "Remove all frequent words",
+        "Parse grammatical dependencies",
+        "Assign part-of-speech tags"
+      ],
+      "answerIndex": 0,
+      "explanation": "BPE learns merge operations from frequent neighboring symbols to form subword units."
+    },
+    {
+      "id": "natural-language-processing-tokenization-language",
+      "type": "true_false",
+      "prompt": "A tokenizer designed for one language will necessarily tokenize every other language equally well.",
+      "answer": false,
+      "explanation": "Vocabulary and segmentation choices can favor some languages and scripts over others."
+    },
+    {
+      "id": "natural-language-processing-n-gram",
+      "type": "single_choice",
+      "prompt": "In a word bigram model, what does each bigram represent?",
+      "options": [
+        "Two consecutive tokens",
+        "Two documents with similar topics",
+        "A pair of class labels",
+        "A word and its dictionary entry"
+      ],
+      "answerIndex": 0,
+      "explanation": "A bigram is a contiguous sequence of two tokens and can model local co-occurrence."
+    },
+    {
+      "id": "natural-language-processing-tf-idf",
+      "type": "single_choice",
+      "prompt": "What does inverse document frequency downweight?",
+      "options": [
+        "Terms appearing in many documents",
+        "Terms appearing in only one document",
+        "Document boundaries",
+        "Rare punctuation only"
+      ],
+      "answerIndex": 0,
+      "explanation": "IDF reduces the weight of broadly common terms because they are less discriminative across a corpus."
+    },
+    {
+      "id": "natural-language-processing-tfidf-properties",
+      "type": "multiple_choice",
+      "prompt": "Which are typical properties of TF-IDF representations?",
+      "options": [
+        "They weight terms by within-document frequency",
+        "They reduce weight for corpus-wide common terms",
+        "They can form sparse vectors",
+        "They encode word order fully"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "TF-IDF is usually sparse and order-insensitive; n-gram features can add limited local order."
+    },
+    {
+      "id": "natural-language-processing-sparse-vector",
+      "type": "single_choice",
+      "prompt": "Why are bag-of-words vectors often sparse?",
+      "options": [
+        "A document uses only a small fraction of the full vocabulary",
+        "Every word occupies every coordinate",
+        "The vocabulary contains no rare terms",
+        "All term frequencies equal zero"
+      ],
+      "answerIndex": 0,
+      "explanation": "Most documents contain few of the corpus vocabulary terms, leaving many vector coordinates at zero."
+    },
+    {
+      "id": "natural-language-processing-bag-order",
+      "type": "true_false",
+      "prompt": "A unigram bag-of-words representation preserves the original word order.",
+      "answer": false,
+      "explanation": "Unigram bag-of-words counts tokens without retaining their positions or sequence."
+    },
+    {
+      "id": "natural-language-processing-language-identification",
+      "type": "single_choice",
+      "prompt": "What evidence can a language-identification model use?",
+      "options": [
+        "Character and word patterns in the text",
+        "Only the file extension",
+        "A guaranteed author identity",
+        "The document’s font color"
+      ],
+      "answerIndex": 0,
+      "explanation": "Character sequences, vocabulary, and other textual cues can help estimate the language."
+    },
+    {
+      "id": "natural-language-processing-text-cleaning",
+      "type": "multiple_choice",
+      "prompt": "Which text-cleaning decisions should generally be documented?",
+      "options": [
+        "How markup is stripped",
+        "Whether case is normalized",
+        "How URLs and numbers are handled",
+        "The programmer’s favorite editor"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cleaning choices affect the model input and reproducibility, so task-relevant transformations should be explicit."
+    },
+    {
+      "id": "natural-language-processing-sentencepiece",
+      "type": "single_choice",
+      "prompt": "What is a useful property of SentencePiece-style tokenization?",
+      "options": [
+        "It can learn subword units directly from raw text without pre-tokenized words",
+        "It guarantees a single token per word",
+        "It performs semantic parsing",
+        "It removes the need for vocabulary management"
+      ],
+      "answerIndex": 0,
+      "explanation": "SentencePiece can train from raw text, using algorithms such as unigram or BPE tokenization."
+    },
+    {
+      "id": "natural-language-processing-stemming-output",
+      "type": "true_false",
+      "prompt": "A stemmer may output a string that is not a valid dictionary word.",
+      "answer": true,
+      "explanation": "Heuristic suffix removal can produce stems that are useful for matching but not linguistically valid lemmas."
+    },
+    {
+      "id": "natural-language-processing-morphology",
+      "type": "single_choice",
+      "prompt": "What does morphology study in language?",
+      "options": [
+        "How words are formed from morphemes and inflected",
+        "How network packets are routed",
+        "How documents are ranked by popularity",
+        "How pixels form images"
+      ],
+      "answerIndex": 0,
+      "explanation": "Morphology concerns word structure, including roots, affixes, and inflection."
+    },
+    {
+      "id": "natural-language-processing-oov-problem",
+      "type": "single_choice",
+      "prompt": "What is an out-of-vocabulary problem in a word-level NLP model?",
+      "options": [
+        "A word at inference is absent from the model vocabulary",
+        "The model has no output classes",
+        "The corpus contains punctuation",
+        "The training split is too large"
+      ],
+      "answerIndex": 0,
+      "explanation": "A fixed word vocabulary cannot directly represent unseen items unless it has an unknown-token or subword strategy."
+    }
+  ]
+}

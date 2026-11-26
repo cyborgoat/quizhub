@@ -1,0 +1,270 @@
+{
+  "id": "software-engineering-testing-and-quality",
+  "title": "Testing and Code Quality",
+  "description": "Choose test strategies and improve reliability through feedback.",
+  "tags": [
+    "testing",
+    "code-quality",
+    "quality-assurance"
+  ],
+  "questions": [
+    {
+      "id": "software-engineering-unit-test",
+      "type": "single_choice",
+      "prompt": "What is a unit test intended to verify?",
+      "options": [
+        "A small component in isolation or with controlled collaborators",
+        "The whole production environment only",
+        "A user’s network provider",
+        "A project’s business success"
+      ],
+      "answerIndex": 0,
+      "explanation": "Unit tests focus on small units with dependencies controlled to provide fast, localized feedback."
+    },
+    {
+      "id": "software-engineering-integration-test",
+      "type": "single_choice",
+      "prompt": "What does an integration test primarily check?",
+      "options": [
+        "Interactions between components or services",
+        "A single function with all dependencies mocked",
+        "The developer’s typing speed",
+        "The project license"
+      ],
+      "answerIndex": 0,
+      "explanation": "Integration tests exercise boundaries where components work together, such as a service and database."
+    },
+    {
+      "id": "software-engineering-end-to-end-test",
+      "type": "true_false",
+      "prompt": "End-to-end tests typically exercise a user-visible flow across multiple system layers.",
+      "answer": true,
+      "explanation": "They validate integrated behavior but are often slower and more environment-sensitive than unit tests."
+    },
+    {
+      "id": "software-engineering-test-pyramid",
+      "type": "single_choice",
+      "prompt": "Why favor many fast tests and fewer broad end-to-end tests?",
+      "options": [
+        "Fast focused tests provide quicker, more localized feedback",
+        "End-to-end tests cannot detect bugs",
+        "Unit tests prove the entire system correct",
+        "The pyramid is a required file structure"
+      ],
+      "answerIndex": 0,
+      "explanation": "A balanced suite uses inexpensive tests broadly and reserves slower integrated tests for critical flows."
+    },
+    {
+      "id": "software-engineering-test-double",
+      "type": "multiple_choice",
+      "prompt": "Which are common test doubles?",
+      "options": [
+        "Stub",
+        "Mock",
+        "Fake",
+        "Production database backup"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Stubs, mocks, and fakes replace collaborators in tests; backups are data artifacts, not test-double types."
+    },
+    {
+      "id": "software-engineering-mock-overuse",
+      "type": "single_choice",
+      "prompt": "What is a risk of overusing mocks?",
+      "options": [
+        "Tests can become coupled to implementation details",
+        "Tests become impossible to run locally",
+        "Mocks guarantee production fidelity",
+        "Assertions stop working"
+      ],
+      "answerIndex": 0,
+      "explanation": "Brittle interaction-heavy tests may fail after harmless refactoring without validating user-visible behavior."
+    },
+    {
+      "id": "software-engineering-boundary-value",
+      "type": "single_choice",
+      "prompt": "Why test boundary values?",
+      "options": [
+        "Defects often occur at limits and transitions between cases",
+        "Boundaries are always the most common inputs",
+        "It removes the need to test typical cases",
+        "It guarantees full correctness"
+      ],
+      "answerIndex": 0,
+      "explanation": "Off-by-one and range errors often occur at boundaries such as zero, maximum, or empty input."
+    },
+    {
+      "id": "software-engineering-property-based-testing",
+      "type": "multiple_choice",
+      "prompt": "What is characteristic of property-based testing?",
+      "options": [
+        "Generate many inputs from a defined space",
+        "Check general invariants or properties",
+        "Shrink failing cases in some frameworks",
+        "Require a handwritten expected output for every generated case"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Property-based tools generate cases, check invariants, and can minimize failures to simpler examples."
+    },
+    {
+      "id": "software-engineering-regression-test",
+      "type": "single_choice",
+      "prompt": "What is a regression test?",
+      "options": [
+        "A test that checks previously working behavior remains correct after changes",
+        "A test run only before the first release",
+        "A test that intentionally fails",
+        "A user survey"
+      ],
+      "answerIndex": 0,
+      "explanation": "Regression tests guard against reintroducing defects or breaking established behavior."
+    },
+    {
+      "id": "software-engineering-test-coverage",
+      "type": "true_false",
+      "prompt": "100% line coverage proves that a program is free of defects.",
+      "answer": false,
+      "explanation": "Coverage shows executed code, not whether assertions are adequate or all relevant behavior is correct."
+    },
+    {
+      "id": "software-engineering-mutation-testing",
+      "type": "single_choice",
+      "prompt": "What does mutation testing assess?",
+      "options": [
+        "Whether tests detect small intentional changes to the code",
+        "How fast the application starts",
+        "How many developers commit",
+        "Whether all requirements are complete"
+      ],
+      "answerIndex": 0,
+      "explanation": "Mutation testing introduces small code changes and checks whether tests fail, probing assertion effectiveness."
+    },
+    {
+      "id": "software-engineering-static-analysis",
+      "type": "single_choice",
+      "prompt": "What does static analysis examine?",
+      "options": [
+        "Source code without executing the program",
+        "Only live production network traffic",
+        "User satisfaction surveys",
+        "A binary after every possible input"
+      ],
+      "answerIndex": 0,
+      "explanation": "Static analyzers inspect code for patterns, defects, or policy violations without running it."
+    },
+    {
+      "id": "software-engineering-code-review",
+      "type": "multiple_choice",
+      "prompt": "Which practices improve code review effectiveness?",
+      "options": [
+        "Keep changes focused",
+        "Explain the intent and relevant context",
+        "Review correctness and maintainability",
+        "Require reviewers to approve without reading"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Focused changes and clear context enable meaningful review of behavior and maintainability."
+    },
+    {
+      "id": "software-engineering-continuous-integration",
+      "type": "single_choice",
+      "prompt": "What is the primary purpose of continuous integration?",
+      "options": [
+        "Frequently integrate changes and run automated checks",
+        "Deploy every commit to production without controls",
+        "Replace version control",
+        "Avoid testing locally or in CI"
+      ],
+      "answerIndex": 0,
+      "explanation": "CI provides rapid feedback by building and testing integrated changes regularly."
+    },
+    {
+      "id": "software-engineering-flaky-test",
+      "type": "true_false",
+      "prompt": "A flaky test has inconsistent results under apparently equivalent conditions.",
+      "answer": true,
+      "explanation": "Flakiness undermines trust in test signals and should be investigated rather than ignored."
+    },
+    {
+      "id": "software-engineering-test-isolation",
+      "type": "single_choice",
+      "prompt": "Why isolate tests from shared mutable state?",
+      "options": [
+        "Prevent order-dependent or concurrent interference",
+        "Increase the number of source files",
+        "Guarantee all tests pass",
+        "Avoid writing assertions"
+      ],
+      "answerIndex": 0,
+      "explanation": "Isolation makes outcomes more deterministic and prevents one test from affecting another."
+    },
+    {
+      "id": "software-engineering-contract-test",
+      "type": "single_choice",
+      "prompt": "What does a contract test verify?",
+      "options": [
+        "An agreed interaction between a provider and consumer",
+        "Every user interface pixel",
+        "All possible system behaviors",
+        "A developer’s work schedule"
+      ],
+      "answerIndex": 0,
+      "explanation": "Contract tests check that a service provider and its consumers agree on interface expectations."
+    },
+    {
+      "id": "software-engineering-defect-triage",
+      "type": "multiple_choice",
+      "prompt": "Which information helps triage a reported defect?",
+      "options": [
+        "Steps to reproduce",
+        "Expected and actual behavior",
+        "Environment and version",
+        "A guess presented as verified root cause"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Reproduction, observed behavior, and environment provide actionable evidence; hypotheses should be labeled as such."
+    },
+    {
+      "id": "software-engineering-code-smell",
+      "type": "single_choice",
+      "prompt": "What is a code smell?",
+      "options": [
+        "A sign that design may benefit from review or refactoring",
+        "A guaranteed runtime failure",
+        "A programming language feature",
+        "A test result file"
+      ],
+      "answerIndex": 0,
+      "explanation": "Smells suggest possible maintainability problems but do not by themselves prove incorrect behavior."
+    },
+    {
+      "id": "software-engineering-refactoring",
+      "type": "single_choice",
+      "prompt": "What is refactoring?",
+      "options": [
+        "Restructure code without changing its externally observable behavior",
+        "Add a new feature with no tests",
+        "Rewrite all source in another language",
+        "Delete all technical documentation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Refactoring improves internal structure while preserving behavior, ideally protected by tests."
+    }
+  ]
+}

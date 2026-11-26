@@ -1,0 +1,231 @@
+{
+  "id": "professional-practice-software-developers",
+  "title": "Behavioral Science for Software Developers",
+  "description": "Apply behavioral evidence to product decisions and engineering teams.",
+  "tags": [
+    "software-developers",
+    "product-design"
+  ],
+  "questions": [
+    {
+      "id": "developers-01",
+      "type": "single_choice",
+      "prompt": "A team wants to know whether a new onboarding flow improves activation. Which is the strongest first step?",
+      "options": [
+        "Define activation and a comparison before launch",
+        "Ask only the design team whether it feels clearer",
+        "Ship it and inspect favorable comments",
+        "Count page views as success"
+      ],
+      "answerIndex": 0,
+      "explanation": "A defined outcome and credible comparison make the product hypothesis testable."
+    },
+    {
+      "id": "developers-02",
+      "type": "true_false",
+      "prompt": "A/B tests should be stopped as soon as the preferred variant briefly leads.",
+      "answer": false,
+      "explanation": "Repeated peeking can inflate false positives; use a stopping plan or sequential method designed for monitoring."
+    },
+    {
+      "id": "developers-03",
+      "type": "multiple_choice",
+      "prompt": "Which improve an experiment’s interpretation?",
+      "options": [
+        "Choose a primary metric in advance",
+        "Check guardrail outcomes",
+        "Randomize eligible users when appropriate",
+        "Change the metric after seeing results"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Predefined outcomes and guardrails reduce selective interpretation and reveal unintended harm."
+    },
+    {
+      "id": "developers-04",
+      "type": "true_false",
+      "prompt": "A statistically significant product metric increase necessarily improves user welfare.",
+      "answer": false,
+      "explanation": "Metrics are proxies; inspect user impact, distributional effects, and unintended outcomes."
+    },
+    {
+      "id": "developers-05",
+      "type": "single_choice",
+      "prompt": "A dark pattern is a design that:",
+      "options": [
+        "Steers users through deceptive or obstructive choices",
+        "Improves accessibility",
+        "Makes consent understandable",
+        "Reduces irrelevant steps"
+      ],
+      "answerIndex": 0,
+      "explanation": "Manipulative patterns undermine informed choice, even if they raise a short-term conversion metric."
+    },
+    {
+      "id": "developers-06",
+      "type": "true_false",
+      "prompt": "Choice architecture in a user interface can influence behavior without removing options.",
+      "answer": true,
+      "explanation": "Defaults, ordering, and friction shape choices and should be designed transparently."
+    },
+    {
+      "id": "developers-07",
+      "type": "multiple_choice",
+      "prompt": "Which support accessible interface decisions?",
+      "options": [
+        "Test with assistive technology",
+        "Provide keyboard navigation",
+        "Use labels that do not rely on color alone",
+        "Treat automated checks as complete proof"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Accessibility requires multiple checks and real use; automated tools find some, not all, barriers."
+    },
+    {
+      "id": "developers-08",
+      "type": "true_false",
+      "prompt": "Usability-test participants should be told to hide confusion so the interface appears successful.",
+      "answer": false,
+      "explanation": "Researchers need honest reactions; blaming users masks design problems."
+    },
+    {
+      "id": "developers-09",
+      "type": "single_choice",
+      "prompt": "During usability testing, the facilitator should usually:",
+      "options": [
+        "Ask the participant to think aloud while avoiding leading",
+        "Explain every control before each task",
+        "Correct every mistake immediately",
+        "Praise only successful paths"
+      ],
+      "answerIndex": 0,
+      "explanation": "Neutral prompts reveal users’ mental models without steering their behavior."
+    },
+    {
+      "id": "developers-10",
+      "type": "true_false",
+      "prompt": "Code review is more effective when comments distinguish defects from preferences.",
+      "answer": true,
+      "explanation": "Clear, evidence-based feedback focuses discussion on correctness, maintainability, and agreed conventions."
+    },
+    {
+      "id": "developers-11",
+      "type": "multiple_choice",
+      "prompt": "Which help reduce review bias?",
+      "options": [
+        "Use a checklist for risk areas",
+        "Review changes in manageable chunks",
+        "Ask for evidence rather than infer intent",
+        "Assume unfamiliar style is incompetent"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Structured criteria and smaller reviews limit cognitive load and personal attribution."
+    },
+    {
+      "id": "developers-12",
+      "type": "true_false",
+      "prompt": "A blameless incident review means no one is accountable for follow-up actions.",
+      "answer": false,
+      "explanation": "Blamelessness examines system conditions without shame; owners and corrective actions still matter."
+    },
+    {
+      "id": "developers-13",
+      "type": "single_choice",
+      "prompt": "After a production incident, an effective first review asks:",
+      "options": [
+        "What conditions and safeguards shaped the event?",
+        "Who should be punished?",
+        "How can the timeline be shortened?",
+        "Which evidence can be omitted?"
+      ],
+      "answerIndex": 0,
+      "explanation": "System-focused analysis identifies contributing conditions and opportunities to improve defenses."
+    },
+    {
+      "id": "developers-14",
+      "type": "true_false",
+      "prompt": "Alert fatigue can make important alerts easier to miss.",
+      "answer": true,
+      "explanation": "Frequent low-value alarms desensitize responders; alerts should be actionable and appropriately prioritized."
+    },
+    {
+      "id": "developers-15",
+      "type": "multiple_choice",
+      "prompt": "Which reduce cognitive load in developer workflows?",
+      "options": [
+        "Automate routine checks",
+        "Make error messages actionable",
+        "Keep task context available",
+        "Increase interruptions to maintain urgency"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Automation, clear feedback, and context reduce avoidable working-memory demands."
+    },
+    {
+      "id": "developers-16",
+      "type": "true_false",
+      "prompt": "A team’s confident estimate is a substitute for checking historical delivery data.",
+      "answer": false,
+      "explanation": "Outside-view data can expose systematic planning errors and improve forecasts."
+    },
+    {
+      "id": "developers-17",
+      "type": "single_choice",
+      "prompt": "A useful software estimate should communicate:",
+      "options": [
+        "Range, assumptions, and key uncertainty",
+        "A precise date without caveats",
+        "Only the best-case duration",
+        "The developer’s confidence alone"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ranges and assumptions convey uncertainty and help stakeholders plan contingencies."
+    },
+    {
+      "id": "developers-18",
+      "type": "multiple_choice",
+      "prompt": "Which are responsible uses of user analytics?",
+      "options": [
+        "Collect only data needed for a clear purpose",
+        "Limit access and retention",
+        "Explain tracking where required",
+        "Store personal data indefinitely just in case"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Data minimization and safeguards reduce privacy risk; collection should be justified and transparent."
+    },
+    {
+      "id": "developers-19",
+      "type": "true_false",
+      "prompt": "A successful feature should be evaluated across user groups, not only in aggregate.",
+      "answer": true,
+      "explanation": "Aggregate gains can conceal harms or unequal effects for particular groups."
+    },
+    {
+      "id": "developers-20",
+      "type": "true_false",
+      "prompt": "A product metric is a complete measure of user experience.",
+      "answer": false,
+      "explanation": "Metrics capture selected behavior; qualitative evidence and other outcomes may reveal what the metric misses."
+    }
+  ]
+}

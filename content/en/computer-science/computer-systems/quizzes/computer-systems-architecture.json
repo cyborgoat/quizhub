@@ -1,0 +1,259 @@
+{
+  "id": "computer-systems-architecture",
+  "title": "Computer Architecture Essentials",
+  "description": "CPU execution, memory hierarchy, and hardware performance.",
+  "tags": [
+    "computer-architecture",
+    "cpu",
+    "memory"
+  ],
+  "questions": [
+    {
+      "id": "computer-systems-instruction-set",
+      "type": "single_choice",
+      "prompt": "What does an instruction-set architecture specify?",
+      "options": [
+        "The programmer-visible instructions and machine state of a processor",
+        "The exact layout of every chip transistor",
+        "The source language of an application",
+        "A network addressing scheme"
+      ],
+      "answerIndex": 0,
+      "explanation": "An ISA defines the interface between software and processor implementation, including instructions and registers."
+    },
+    {
+      "id": "computer-systems-register",
+      "type": "single_choice",
+      "prompt": "Why are CPU registers useful?",
+      "options": [
+        "They provide very fast storage for current operands and state",
+        "They store every file permanently",
+        "They replace all caches",
+        "They connect networks between hosts"
+      ],
+      "answerIndex": 0,
+      "explanation": "Registers are small, fast storage directly available to processor instructions."
+    },
+    {
+      "id": "computer-systems-cache-locality",
+      "type": "true_false",
+      "prompt": "Caches exploit temporal and spatial locality in typical workloads.",
+      "answer": true,
+      "explanation": "Recently used data may be reused, and nearby addresses are often accessed, making caching effective."
+    },
+    {
+      "id": "computer-systems-cache-hit",
+      "type": "single_choice",
+      "prompt": "What is a cache hit?",
+      "options": [
+        "The requested data is found in the cache",
+        "A cache line is removed from memory",
+        "A processor instruction fails",
+        "A disk request is queued"
+      ],
+      "answerIndex": 0,
+      "explanation": "A hit lets the processor obtain the requested cached data without fetching it from a lower level."
+    },
+    {
+      "id": "computer-systems-cache-miss",
+      "type": "single_choice",
+      "prompt": "What typically happens after a cache miss?",
+      "options": [
+        "The data is fetched from a lower memory level",
+        "The CPU permanently stops",
+        "The cache doubles in size",
+        "The instruction is deleted"
+      ],
+      "answerIndex": 0,
+      "explanation": "A miss triggers access to a lower cache or main memory, usually with higher latency."
+    },
+    {
+      "id": "computer-systems-memory-hierarchy",
+      "type": "multiple_choice",
+      "prompt": "Which are typically levels of a computer memory hierarchy?",
+      "options": [
+        "Registers",
+        "Caches",
+        "Main memory",
+        "CPU execution units as persistent storage"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Registers, caches, and RAM form storage levels with differing size, speed, and cost."
+    },
+    {
+      "id": "computer-systems-virtual-memory",
+      "type": "single_choice",
+      "prompt": "What abstraction does virtual memory provide to a process?",
+      "options": [
+        "A virtual address space mapped to physical memory and storage",
+        "A guarantee that RAM is unlimited",
+        "A second CPU core",
+        "A network-wide filesystem by default"
+      ],
+      "answerIndex": 0,
+      "explanation": "Virtual memory gives each process an address-space abstraction managed by the operating system and hardware."
+    },
+    {
+      "id": "computer-systems-page-fault",
+      "type": "true_false",
+      "prompt": "A page fault always indicates that a program has a bug.",
+      "answer": false,
+      "explanation": "A page fault may be a normal event when a valid page is not currently resident in physical memory."
+    },
+    {
+      "id": "computer-systems-tlb",
+      "type": "single_choice",
+      "prompt": "What does a translation lookaside buffer cache?",
+      "options": [
+        "Recent virtual-to-physical address translations",
+        "Recently executed source code text",
+        "Disk file contents only",
+        "Network route advertisements"
+      ],
+      "answerIndex": 0,
+      "explanation": "A TLB speeds address translation by caching page-table entries."
+    },
+    {
+      "id": "computer-systems-endianness",
+      "type": "single_choice",
+      "prompt": "What does endianness describe?",
+      "options": [
+        "Byte order used to represent multibyte values",
+        "The order in which processes receive CPU time",
+        "The direction of network cables",
+        "The alignment of source files"
+      ],
+      "answerIndex": 0,
+      "explanation": "Endianness specifies whether the most or least significant byte is stored at the lowest address."
+    },
+    {
+      "id": "computer-systems-interrupt",
+      "type": "single_choice",
+      "prompt": "What is the role of a hardware interrupt?",
+      "options": [
+        "Notify the processor of an event needing attention",
+        "Permanently disable all processes",
+        "Convert virtual addresses to URLs",
+        "Store code in cache"
+      ],
+      "answerIndex": 0,
+      "explanation": "Interrupts signal events such as device completion so the processor can run an appropriate handler."
+    },
+    {
+      "id": "computer-systems-dma",
+      "type": "multiple_choice",
+      "prompt": "What is a common benefit of direct memory access?",
+      "options": [
+        "Devices transfer data to or from memory with less CPU copying",
+        "The CPU can perform other work while a transfer proceeds",
+        "It removes the need for device drivers",
+        "It guarantees data durability"
+      ],
+      "answerIndices": [
+        0,
+        1
+      ],
+      "explanation": "DMA lets a device controller transfer blocks with less CPU copying, allowing the CPU to perform other work while the transfer proceeds."
+    },
+    {
+      "id": "computer-systems-pipeline-hazard",
+      "type": "single_choice",
+      "prompt": "What is a data hazard in a processor pipeline?",
+      "options": [
+        "An instruction depends on a result not yet available",
+        "The disk has too many files",
+        "The network packet has a checksum",
+        "A program has an invalid pointer"
+      ],
+      "answerIndex": 0,
+      "explanation": "A data dependency can prevent a later pipeline stage from proceeding until an earlier result is ready."
+    },
+    {
+      "id": "computer-systems-parallelism-types",
+      "type": "multiple_choice",
+      "prompt": "Which are forms of parallelism used in computer systems?",
+      "options": [
+        "Instruction-level parallelism",
+        "Data parallelism",
+        "Task or thread parallelism",
+        "Endianness"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Processors exploit independent instructions, data elements, or tasks; endianness is a representation property."
+    },
+    {
+      "id": "computer-systems-simd",
+      "type": "single_choice",
+      "prompt": "What does SIMD mean?",
+      "options": [
+        "Single instruction, multiple data",
+        "Single input, multiple disks",
+        "Shared interrupt, mapped device",
+        "Sequential instruction, managed data"
+      ],
+      "answerIndex": 0,
+      "explanation": "SIMD applies one instruction to multiple data elements, useful for vectorizable operations."
+    },
+    {
+      "id": "computer-systems-clock-rate",
+      "type": "true_false",
+      "prompt": "A higher CPU clock rate alone guarantees better application performance.",
+      "answer": false,
+      "explanation": "Performance also depends on architecture, memory, parallelism, workload, and other bottlenecks."
+    },
+    {
+      "id": "computer-systems-benchmarking",
+      "type": "single_choice",
+      "prompt": "Why should a performance benchmark use representative workloads?",
+      "options": [
+        "Different workloads stress different system components",
+        "A synthetic score always predicts every application",
+        "Representative inputs eliminate measurement noise",
+        "It removes the need to report hardware"
+      ],
+      "answerIndex": 0,
+      "explanation": "Benchmarks should reflect target usage because CPU, memory, I/O, and accelerator demands vary."
+    },
+    {
+      "id": "computer-systems-power-wall",
+      "type": "single_choice",
+      "prompt": "Why can increasing processor frequency become difficult?",
+      "options": [
+        "Power and heat rise significantly with voltage and frequency",
+        "Instructions stop having operands",
+        "RAM becomes nonvolatile",
+        "The ISA changes automatically"
+      ],
+      "answerIndex": 0,
+      "explanation": "Higher frequency and voltage increase power and thermal demands, constraining sustained performance."
+    },
+    {
+      "id": "computer-systems-ecc-memory",
+      "type": "single_choice",
+      "prompt": "What is the purpose of error-correcting memory?",
+      "options": [
+        "Detect and often correct certain memory bit errors",
+        "Encrypt all process data",
+        "Increase disk capacity",
+        "Prevent every software bug"
+      ],
+      "answerIndex": 0,
+      "explanation": "ECC memory can detect and correct some bit errors, improving reliability but not preventing all faults."
+    },
+    {
+      "id": "computer-systems-volatile-ram",
+      "type": "true_false",
+      "prompt": "Ordinary DRAM retains its contents without power indefinitely.",
+      "answer": false,
+      "explanation": "DRAM is volatile and requires power and refresh; its contents are lost when power is removed."
+    }
+  ]
+}

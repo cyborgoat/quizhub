@@ -1,0 +1,264 @@
+{
+  "id": "machine-learning-optimization",
+  "title": "Training and Model Optimization",
+  "description": "Understand loss functions, optimization, regularization, and training diagnostics.",
+  "tags": [
+    "optimization",
+    "training",
+    "regularization"
+  ],
+  "questions": [
+    {
+      "id": "machine-learning-objective-function",
+      "type": "single_choice",
+      "prompt": "In model training, what does an objective function usually quantify?",
+      "options": [
+        "A scalar criterion the optimizer seeks to minimize or maximize",
+        "The number of source files",
+        "A guaranteed test score",
+        "The model’s deployment region"
+      ],
+      "answerIndex": 0,
+      "explanation": "An objective combines a data-fit term and possibly regularization to define what training optimizes."
+    },
+    {
+      "id": "machine-learning-mini-batch-gradient",
+      "type": "single_choice",
+      "prompt": "What is a mini-batch gradient estimate computed from?",
+      "options": [
+        "A subset of training examples",
+        "The full test set",
+        "Only the model architecture",
+        "A random validation metric"
+      ],
+      "answerIndex": 0,
+      "explanation": "Mini-batch training estimates a gradient from a subset, reducing computation per update while introducing sampling noise."
+    },
+    {
+      "id": "machine-learning-learning-rate-too-large",
+      "type": "true_false",
+      "prompt": "A learning rate that is too large can make optimization unstable or divergent.",
+      "answer": true,
+      "explanation": "Oversized steps may overshoot low-loss regions and cause loss oscillation or growth."
+    },
+    {
+      "id": "machine-learning-momentum",
+      "type": "single_choice",
+      "prompt": "What is the common purpose of momentum in gradient optimization?",
+      "options": [
+        "Accumulate a smoothed direction from past gradients",
+        "Normalize input features to unit variance",
+        "Select the validation set",
+        "Change class labels"
+      ],
+      "answerIndex": 0,
+      "explanation": "Momentum smooths updates using a running velocity, often accelerating progress along consistent directions."
+    },
+    {
+      "id": "machine-learning-adam-adaptation",
+      "type": "single_choice",
+      "prompt": "What distinguishes Adam from plain stochastic gradient descent?",
+      "options": [
+        "It adapts per-parameter step sizes using moving gradient statistics",
+        "It does not use gradients",
+        "It guarantees a global optimum",
+        "It only trains decision trees"
+      ],
+      "answerIndex": 0,
+      "explanation": "Adam tracks moving averages of gradients and squared gradients to adapt updates by parameter."
+    },
+    {
+      "id": "machine-learning-weight-decay",
+      "type": "multiple_choice",
+      "prompt": "Which statements about weight decay are accurate?",
+      "options": [
+        "It penalizes large parameter values",
+        "It can discourage overly complex fits",
+        "It is often related to L2 regularization",
+        "It adds mislabeled examples"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Weight decay discourages large weights and can regularize a model; it does not alter labels."
+    },
+    {
+      "id": "machine-learning-early-stopping",
+      "type": "single_choice",
+      "prompt": "What is a typical early-stopping signal?",
+      "options": [
+        "Validation performance stops improving",
+        "Training accuracy first exceeds zero",
+        "The test set contains an even number of rows",
+        "The model has no parameters"
+      ],
+      "answerIndex": 0,
+      "explanation": "Early stopping halts when validation performance plateaus or worsens, limiting over-training."
+    },
+    {
+      "id": "machine-learning-dropout-inference",
+      "type": "true_false",
+      "prompt": "Standard dropout randomly disables units during ordinary inference.",
+      "answer": false,
+      "explanation": "Dropout is generally disabled at inference; implementations maintain expected activation magnitude."
+    },
+    {
+      "id": "machine-learning-batch-size-effect",
+      "type": "single_choice",
+      "prompt": "What is one common trade-off of using a larger training batch?",
+      "options": [
+        "More examples per gradient estimate but potentially more memory use",
+        "No need for data",
+        "Guaranteed better generalization",
+        "No optimizer updates"
+      ],
+      "answerIndex": 0,
+      "explanation": "Larger batches can produce smoother estimates while requiring more memory and potentially changing optimization behavior."
+    },
+    {
+      "id": "machine-learning-gradient-clipping",
+      "type": "single_choice",
+      "prompt": "Why might training use gradient clipping?",
+      "options": [
+        "Limit unusually large gradient updates",
+        "Set all targets to zero",
+        "Guarantee no overfitting",
+        "Increase the number of labels"
+      ],
+      "answerIndex": 0,
+      "explanation": "Clipping constrains gradient magnitude and can stabilize training when gradients become unusually large."
+    },
+    {
+      "id": "machine-learning-loss-choice",
+      "type": "multiple_choice",
+      "prompt": "Which pairings are commonly appropriate?",
+      "options": [
+        "Mean squared error for continuous regression",
+        "Cross-entropy for classification",
+        "Hinge loss for margin-based classification",
+        "Accuracy as a differentiable gradient objective by default"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "MSE, cross-entropy, and hinge loss are common objectives. Accuracy is usually nondifferentiable and not directly optimized."
+    },
+    {
+      "id": "machine-learning-loss-vs-metric",
+      "type": "true_false",
+      "prompt": "The metric used to select a deployed model must always be identical to its differentiable training loss.",
+      "answer": false,
+      "explanation": "Training loss enables optimization; model selection can instead use application-relevant metrics."
+    },
+    {
+      "id": "machine-learning-l1-sparsity",
+      "type": "single_choice",
+      "prompt": "What is a characteristic effect associated with L1 regularization?",
+      "options": [
+        "It can drive some coefficients exactly to zero",
+        "It always increases every coefficient",
+        "It makes the model nonlinear",
+        "It removes the intercept by definition"
+      ],
+      "answerIndex": 0,
+      "explanation": "The absolute-value penalty can yield sparse coefficient estimates, effectively selecting features in some settings."
+    },
+    {
+      "id": "machine-learning-learning-rate-schedule",
+      "type": "single_choice",
+      "prompt": "What is the purpose of a learning-rate schedule?",
+      "options": [
+        "Change the step size over the course of training",
+        "Change the target labels every epoch",
+        "Select a new test set",
+        "Convert a classifier into a regressor"
+      ],
+      "answerIndex": 0,
+      "explanation": "Schedules adjust optimization steps over time, often using smaller steps later in training."
+    },
+    {
+      "id": "machine-learning-optimization-diagnostics",
+      "type": "multiple_choice",
+      "prompt": "Which observations can indicate a training problem?",
+      "options": [
+        "Loss becomes NaN",
+        "Training loss oscillates without settling",
+        "Validation loss rises while training loss falls",
+        "A model file has a descriptive name"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "NaN loss and persistent oscillation may indicate unstable updates; diverging validation loss can signal overfitting."
+    },
+    {
+      "id": "machine-learning-initialization",
+      "type": "single_choice",
+      "prompt": "Why is careful parameter initialization useful in deep models?",
+      "options": [
+        "It can help keep activations and gradients in workable ranges",
+        "It selects the test metric automatically",
+        "It guarantees an optimal solution",
+        "It removes the need for data"
+      ],
+      "answerIndex": 0,
+      "explanation": "Initialization affects signal propagation and optimization; suitable schemes reduce vanishing or exploding activations."
+    },
+    {
+      "id": "machine-learning-frozen-parameters",
+      "type": "true_false",
+      "prompt": "Freezing a parameter means its value is not updated by the optimizer.",
+      "answer": true,
+      "explanation": "Frozen parameters are excluded from gradient-based updates, though they can still participate in forward computation."
+    },
+    {
+      "id": "machine-learning-hyperparameter",
+      "type": "single_choice",
+      "prompt": "Which is a hyperparameter rather than a parameter learned directly from training examples?",
+      "options": [
+        "Learning rate",
+        "Linear-model coefficient",
+        "Neural-network bias value",
+        "Embedding vector after training"
+      ],
+      "answerIndex": 0,
+      "explanation": "The learning rate is configured to control optimization; model parameters are adjusted from data."
+    },
+    {
+      "id": "machine-learning-gradient-zero",
+      "type": "single_choice",
+      "prompt": "What does a zero gradient at a point establish?",
+      "options": [
+        "The first-order local slope is zero there",
+        "The point is necessarily a global minimum",
+        "The model has no training data",
+        "The loss is necessarily positive"
+      ],
+      "answerIndex": 0,
+      "explanation": "A zero gradient identifies a stationary point, which may be a minimum, maximum, or saddle point."
+    },
+    {
+      "id": "machine-learning-reproducibility",
+      "type": "multiple_choice",
+      "prompt": "Which steps can improve reproducibility of model experiments?",
+      "options": [
+        "Record data and code versions",
+        "Set and record random seeds where applicable",
+        "Log hyperparameters and environment",
+        "Report only the best run without selection details"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Versioning, seeds, and logs aid repeatability; selective reporting hides variability and selection effects."
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "id": "deep-learning-neural-network-fundamentals",
+  "title": "Neural Network Fundamentals",
+  "description": "Layers, activations, gradients, and core deep-learning concepts.",
+  "tags": [
+    "neural-networks",
+    "backpropagation",
+    "fundamentals"
+  ],
+  "questions": [
+    {
+      "id": "deep-learning-neuron-output",
+      "type": "single_choice",
+      "prompt": "In a basic artificial neuron, what is typically applied to the weighted input sum?",
+      "options": [
+        "An activation function",
+        "A sorting algorithm",
+        "A network packet header",
+        "A database transaction"
+      ],
+      "answerIndex": 0,
+      "explanation": "The activation transforms the weighted sum and enables nonlinear functions when chosen nonlinearly."
+    },
+    {
+      "id": "deep-learning-relu",
+      "type": "single_choice",
+      "prompt": "For input x, what does the ReLU activation compute?",
+      "options": [
+        "max(0, x)",
+        "1/(1+exp(-x))",
+        "x squared for every x",
+        "The average of a batch"
+      ],
+      "answerIndex": 0,
+      "explanation": "ReLU returns zero for negative inputs and the input itself for positive values."
+    },
+    {
+      "id": "deep-learning-linear-stack",
+      "type": "true_false",
+      "prompt": "Stacking only linear layers without nonlinear activations is equivalent to one linear transformation.",
+      "answer": true,
+      "explanation": "Compositions of linear maps remain linear, so depth alone adds no nonlinear expressive power."
+    },
+    {
+      "id": "deep-learning-backpropagation",
+      "type": "single_choice",
+      "prompt": "What does backpropagation efficiently compute?",
+      "options": [
+        "Gradients of a loss with respect to model parameters",
+        "The best train-test split",
+        "A guaranteed global minimum",
+        "The number of dataset classes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Backpropagation applies the chain rule through a computation graph to obtain parameter gradients."
+    },
+    {
+      "id": "deep-learning-computation-graph",
+      "type": "multiple_choice",
+      "prompt": "Which are represented in a neural-network computation graph?",
+      "options": [
+        "Operations",
+        "Intermediate tensor values",
+        "Dependencies between computations",
+        "A proof that the model generalizes"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The graph captures operations and dependencies; generalization is an empirical property, not encoded as a proof."
+    },
+    {
+      "id": "deep-learning-chain-rule",
+      "type": "single_choice",
+      "prompt": "Why is the chain rule central to training multilayer networks?",
+      "options": [
+        "It combines local derivatives along composed operations",
+        "It converts labels into images",
+        "It replaces the loss function",
+        "It chooses hardware automatically"
+      ],
+      "answerIndex": 0,
+      "explanation": "Each layer contributes a local derivative, and chain-rule products propagate sensitivities through the network."
+    },
+    {
+      "id": "deep-learning-vanishing-gradient",
+      "type": "single_choice",
+      "prompt": "What is a common effect of vanishing gradients in very deep networks?",
+      "options": [
+        "Early layers receive tiny updates",
+        "All outputs become probabilities",
+        "The batch size increases",
+        "The labels are shuffled"
+      ],
+      "answerIndex": 0,
+      "explanation": "Gradients that shrink through many layers make it difficult to update parameters far from the output."
+    },
+    {
+      "id": "deep-learning-exploding-gradient",
+      "type": "single_choice",
+      "prompt": "Which symptom can indicate exploding gradients?",
+      "options": [
+        "Unstable, extremely large updates or loss values",
+        "A perfectly flat validation curve only",
+        "The model has too few layers",
+        "The input feature names change"
+      ],
+      "answerIndex": 0,
+      "explanation": "Large gradient magnitudes can create destabilizing parameter steps and numerical overflow."
+    },
+    {
+      "id": "deep-learning-activation-saturation",
+      "type": "single_choice",
+      "prompt": "Why can a saturated sigmoid activation impede learning?",
+      "options": [
+        "Its derivative becomes very small at extreme inputs",
+        "It has no output range",
+        "It is not differentiable anywhere",
+        "It requires integer input"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sigmoid derivatives approach zero at large positive or negative inputs, reducing gradient flow."
+    },
+    {
+      "id": "deep-learning-softmax-axis",
+      "type": "true_false",
+      "prompt": "Softmax is typically applied across a class dimension to turn logits into normalized class probabilities.",
+      "answer": true,
+      "explanation": "Softmax exponentiates scores and normalizes them along the selected axis."
+    },
+    {
+      "id": "deep-learning-logits",
+      "type": "single_choice",
+      "prompt": "What are logits in a classification network?",
+      "options": [
+        "Unnormalized class scores before probability conversion",
+        "The hidden training labels",
+        "The model checkpoint filename",
+        "A normalized input image"
+      ],
+      "answerIndex": 0,
+      "explanation": "Logits are raw output scores; softmax or another decision rule can transform them for prediction."
+    },
+    {
+      "id": "deep-learning-initialization-methods",
+      "type": "multiple_choice",
+      "prompt": "Which are established neural-network initialization approaches?",
+      "options": [
+        "Xavier/Glorot initialization",
+        "He/Kaiming initialization",
+        "All weights set to the same constant",
+        "Random initialization scaled for activation behavior"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Xavier and He methods scale random weights to support signal propagation; identical constants can break neuron symmetry."
+    },
+    {
+      "id": "deep-learning-batch-normalization",
+      "type": "single_choice",
+      "prompt": "What does batch normalization generally normalize during training?",
+      "options": [
+        "Intermediate activations using batch statistics",
+        "The number of hidden layers",
+        "Class names alphabetically",
+        "Model file size"
+      ],
+      "answerIndex": 0,
+      "explanation": "Batch normalization uses minibatch statistics during training and running statistics for inference."
+    },
+    {
+      "id": "deep-learning-layer-vs-batch-norm",
+      "type": "true_false",
+      "prompt": "Layer normalization typically normalizes features within each example rather than relying on other examples in a batch.",
+      "answer": true,
+      "explanation": "Layer normalization computes statistics over feature dimensions for each sample, making it useful for variable batch sizes."
+    },
+    {
+      "id": "deep-learning-residual-learning",
+      "type": "single_choice",
+      "prompt": "What does an identity skip connection add in a residual block?",
+      "options": [
+        "The block input to its transformed output",
+        "The labels to the input tensor",
+        "A new optimizer for every layer",
+        "The test examples to training"
+      ],
+      "answerIndex": 0,
+      "explanation": "Residual addition gives a direct signal path around a transformation and can ease optimization."
+    },
+    {
+      "id": "deep-learning-parameter-sharing",
+      "type": "single_choice",
+      "prompt": "What does parameter sharing mean in a convolutional layer?",
+      "options": [
+        "The same kernel weights are applied at many spatial positions",
+        "Every image uses a separate model",
+        "All parameters are frozen",
+        "Each pixel has a unique class label"
+      ],
+      "answerIndex": 0,
+      "explanation": "A convolution reuses each filter across locations, reducing parameters and expressing translation-equivariant patterns."
+    },
+    {
+      "id": "deep-learning-regularization-neural",
+      "type": "multiple_choice",
+      "prompt": "Which methods can regularize neural networks?",
+      "options": [
+        "Dropout",
+        "Weight decay",
+        "Data augmentation",
+        "Increasing training loss by corrupting labels"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Dropout, weight decay, and label-preserving augmentation can reduce overfitting; corrupt labels harm supervision."
+    },
+    {
+      "id": "deep-learning-epoch-definition",
+      "type": "single_choice",
+      "prompt": "What is one epoch in standard supervised training?",
+      "options": [
+        "One pass through the training dataset",
+        "One optimizer parameter",
+        "One validation example",
+        "A single network layer"
+      ],
+      "answerIndex": 0,
+      "explanation": "An epoch denotes processing the complete training set once, often in multiple minibatches."
+    },
+    {
+      "id": "deep-learning-inference-gradients",
+      "type": "true_false",
+      "prompt": "A model usually needs to compute parameter gradients during ordinary prediction.",
+      "answer": false,
+      "explanation": "Inference computes outputs; gradients are normally disabled to save memory and computation."
+    },
+    {
+      "id": "deep-learning-checkpoint",
+      "type": "single_choice",
+      "prompt": "Why save a training checkpoint?",
+      "options": [
+        "To resume or restore a particular model and optimizer state",
+        "To improve accuracy without computation",
+        "To store the dataset labels publicly",
+        "To replace evaluation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Checkpoints preserve a training state or selected model version for recovery and reproducibility."
+    }
+  ]
+}

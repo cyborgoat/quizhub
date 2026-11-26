@@ -1,0 +1,231 @@
+{
+  "id": "learning-science-assessment-feedback",
+  "title": "Assessment and Feedback",
+  "description": "Use assessment and feedback to support learning and valid decisions.",
+  "tags": [
+    "assessment",
+    "feedback"
+  ],
+  "questions": [
+    {
+      "id": "feedback-01",
+      "type": "single_choice",
+      "prompt": "What is formative assessment primarily for?",
+      "options": [
+        "Inform next steps in teaching and learning",
+        "Assign a final credential only",
+        "Rank learners publicly",
+        "Replace instruction"
+      ],
+      "answerIndex": 0,
+      "explanation": "Formative assessment provides evidence used to adjust learning while there is opportunity to improve."
+    },
+    {
+      "id": "feedback-02",
+      "type": "true_false",
+      "prompt": "A quiz can be both an assessment and a learning activity.",
+      "answer": true,
+      "explanation": "Retrieval attempts can strengthen learning while responses provide evidence of understanding."
+    },
+    {
+      "id": "feedback-03",
+      "type": "multiple_choice",
+      "prompt": "Which make feedback actionable?",
+      "options": [
+        "Refer to a specific task or strategy",
+        "Explain the gap from the goal",
+        "Offer a feasible next step",
+        "Label the learner’s personality"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Specific, goal-referenced guidance helps learners decide what to do next; trait labels do not."
+    },
+    {
+      "id": "feedback-04",
+      "type": "true_false",
+      "prompt": "Feedback is useful regardless of whether learners understand or act on it.",
+      "answer": false,
+      "explanation": "Feedback must be understandable, timely enough, and usable to influence learning."
+    },
+    {
+      "id": "feedback-05",
+      "type": "single_choice",
+      "prompt": "A rubric is most helpful when it:",
+      "options": [
+        "Describes performance criteria and levels",
+        "Hides standards until grading",
+        "Measures effort only",
+        "Uses vague labels without examples"
+      ],
+      "answerIndex": 0,
+      "explanation": "Explicit criteria clarify expectations and support consistent judgments."
+    },
+    {
+      "id": "feedback-06",
+      "type": "true_false",
+      "prompt": "Assessment validity concerns whether evidence supports the intended interpretation and use.",
+      "answer": true,
+      "explanation": "Validity is about the evidence and proposed use, not a permanent property of a test alone."
+    },
+    {
+      "id": "feedback-07",
+      "type": "true_false",
+      "prompt": "A reliable assessment is necessarily valid for every purpose.",
+      "answer": false,
+      "explanation": "Consistency is necessary but does not ensure the assessment measures the intended construct."
+    },
+    {
+      "id": "feedback-08",
+      "type": "multiple_choice",
+      "prompt": "Which can improve scoring consistency?",
+      "options": [
+        "Use clear criteria",
+        "Train raters with examples",
+        "Check agreement across raters",
+        "Change standards for each student"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Shared criteria, calibration, and monitoring reduce unintended variation in scoring."
+    },
+    {
+      "id": "feedback-09",
+      "type": "single_choice",
+      "prompt": "What is an assessment blueprint used for?",
+      "options": [
+        "Map items to outcomes and content coverage",
+        "Predict each learner’s future career",
+        "Replace scoring criteria",
+        "Guarantee a test has no bias"
+      ],
+      "answerIndex": 0,
+      "explanation": "A blueprint helps ensure assessment samples the intended learning goals and content."
+    },
+    {
+      "id": "feedback-10",
+      "type": "true_false",
+      "prompt": "High-stakes decisions should generally rely on more than one narrow measure when feasible.",
+      "answer": true,
+      "explanation": "Multiple relevant sources can reduce the consequences of measurement error or construct underrepresentation."
+    },
+    {
+      "id": "feedback-11",
+      "type": "true_false",
+      "prompt": "A test score is a complete description of a learner’s ability.",
+      "answer": false,
+      "explanation": "Scores are limited samples influenced by measurement error, context, and what the assessment covers."
+    },
+    {
+      "id": "feedback-12",
+      "type": "multiple_choice",
+      "prompt": "Which support fair assessment?",
+      "options": [
+        "Accessible directions",
+        "A chance to demonstrate the target skill",
+        "Consistent scoring rules",
+        "Unrelated barriers that vary by learner"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Fairness requires access and consistent evidence of the intended construct rather than irrelevant obstacles."
+    },
+    {
+      "id": "feedback-13",
+      "type": "true_false",
+      "prompt": "Specific comments are often more useful when learners have time to revise their work.",
+      "answer": true,
+      "explanation": "Feedback supports learning when learners can apply it in another attempt."
+    },
+    {
+      "id": "feedback-14",
+      "type": "single_choice",
+      "prompt": "A ceiling effect occurs when:",
+      "options": [
+        "A measure is too easy to distinguish high performers",
+        "A measure is too difficult for beginners",
+        "Scores cluster at the bottom",
+        "A rater gives no feedback"
+      ],
+      "answerIndex": 0,
+      "explanation": "A ceiling limits discrimination among people near the top because the task lacks sufficient challenge."
+    },
+    {
+      "id": "feedback-15",
+      "type": "true_false",
+      "prompt": "Assessment accommodations should preserve the construct being measured where possible.",
+      "answer": true,
+      "explanation": "Accommodations aim to remove irrelevant barriers without changing the target skill."
+    },
+    {
+      "id": "feedback-16",
+      "type": "multiple_choice",
+      "prompt": "Which are useful feedback questions for learners?",
+      "options": [
+        "What is the goal?",
+        "How is my current work progressing?",
+        "What is my next step?",
+        "Which classmate should I outperform?"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Goal, progress, and next-step questions focus feedback on learning rather than social comparison."
+    },
+    {
+      "id": "feedback-17",
+      "type": "true_false",
+      "prompt": "A grading curve guarantees that grades accurately represent mastery.",
+      "answer": false,
+      "explanation": "Curving sets relative ranks and does not by itself establish alignment with learning standards."
+    },
+    {
+      "id": "feedback-18",
+      "type": "single_choice",
+      "prompt": "Why use exemplars?",
+      "options": [
+        "They make quality criteria concrete",
+        "They eliminate the need for judgment",
+        "They guarantee identical work",
+        "They replace learner practice"
+      ],
+      "answerIndex": 0,
+      "explanation": "Exemplars illustrate criteria and can support self-assessment, while requiring care to avoid imitation alone."
+    },
+    {
+      "id": "feedback-19",
+      "type": "multiple_choice",
+      "prompt": "Which help interpret score changes over time?",
+      "options": [
+        "Use comparable measures",
+        "Consider measurement error",
+        "Review changes in testing conditions",
+        "Assume every point change is real"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Comparability, reliability, and context matter before treating a score difference as meaningful."
+    },
+    {
+      "id": "feedback-20",
+      "type": "true_false",
+      "prompt": "Learners can use self-assessment to monitor progress when criteria are clear.",
+      "answer": true,
+      "explanation": "Self-assessment is more informative when learners know the goal and have evidence to compare with it."
+    }
+  ]
+}

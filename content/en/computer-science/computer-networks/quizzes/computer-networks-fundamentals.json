@@ -1,0 +1,256 @@
+{
+  "id": "computer-networks-fundamentals",
+  "title": "Networking Fundamentals",
+  "description": "Addresses, packet delivery, transport, and core Internet protocols.",
+  "tags": [
+    "network-fundamentals",
+    "tcp-ip",
+    "protocols"
+  ],
+  "questions": [
+    {
+      "id": "computer-networks-packet-switching",
+      "type": "single_choice",
+      "prompt": "In packet switching, how is a message typically transmitted?",
+      "options": [
+        "Divided into packets that share network links",
+        "Reserved as one dedicated physical circuit for the full session",
+        "Stored only in the destination CPU",
+        "Converted into a single radio frequency"
+      ],
+      "answerIndex": 0,
+      "explanation": "Packet switching divides data into packets that can be forwarded independently over shared links."
+    },
+    {
+      "id": "computer-networks-ip-address",
+      "type": "single_choice",
+      "prompt": "What does an IP address identify at the network layer?",
+      "options": [
+        "A network interface’s logical location for packet delivery",
+        "A web page’s file name",
+        "A CPU instruction",
+        "A user’s password"
+      ],
+      "answerIndex": 0,
+      "explanation": "IP addresses support routing packets to interfaces; they are not user identities or application resource names."
+    },
+    {
+      "id": "computer-networks-mac-routing",
+      "type": "true_false",
+      "prompt": "Routers normally forward packets between networks using destination MAC addresses from the original end-to-end frame.",
+      "answer": false,
+      "explanation": "Each link has its own layer-2 framing; routers remove and replace link-layer headers as packets cross links."
+    },
+    {
+      "id": "computer-networks-subnet-mask",
+      "type": "single_choice",
+      "prompt": "What does a subnet mask or prefix length indicate?",
+      "options": [
+        "Which IP address bits identify the network prefix",
+        "The encryption algorithm",
+        "The transport port number",
+        "The packet’s time to live"
+      ],
+      "answerIndex": 0,
+      "explanation": "The prefix length separates network and host portions for address assignment and routing."
+    },
+    {
+      "id": "computer-networks-default-gateway",
+      "type": "single_choice",
+      "prompt": "What is a host’s default gateway used for?",
+      "options": [
+        "Forward traffic destined outside its local subnet",
+        "Resolve every hostname directly",
+        "Assign application port numbers",
+        "Encrypt local files"
+      ],
+      "answerIndex": 0,
+      "explanation": "A host sends off-subnet traffic to a router configured as its default gateway."
+    },
+    {
+      "id": "computer-networks-arp-purpose",
+      "type": "single_choice",
+      "prompt": "On a local IPv4 Ethernet network, what does ARP help discover?",
+      "options": [
+        "The link-layer address associated with a local IPv4 address",
+        "The public DNS name of a server",
+        "The route between continents",
+        "A TCP sequence number"
+      ],
+      "answerIndex": 0,
+      "explanation": "ARP resolves an IPv4 neighbor address to its link-layer address on the local network."
+    },
+    {
+      "id": "computer-networks-icmp",
+      "type": "true_false",
+      "prompt": "ICMP is used for network control and diagnostic messages, not as a reliable application transport.",
+      "answer": true,
+      "explanation": "ICMP carries messages such as errors and echo requests, rather than providing TCP-like application delivery."
+    },
+    {
+      "id": "computer-networks-dns-purpose",
+      "type": "single_choice",
+      "prompt": "What is the primary purpose of DNS?",
+      "options": [
+        "Translate names into records such as IP addresses",
+        "Encrypt all network traffic",
+        "Assign CPU time slices",
+        "Transfer files with guaranteed ordering"
+      ],
+      "answerIndex": 0,
+      "explanation": "DNS is a distributed naming system that resolves names to resource records, commonly IP addresses."
+    },
+    {
+      "id": "computer-networks-dhcp",
+      "type": "single_choice",
+      "prompt": "What does DHCP commonly provide to a host joining a network?",
+      "options": [
+        "An IP configuration such as address, gateway, and DNS server",
+        "A TLS certificate for every website",
+        "A permanent MAC address",
+        "An application’s source code"
+      ],
+      "answerIndex": 0,
+      "explanation": "DHCP can lease address configuration and related network parameters to clients."
+    },
+    {
+      "id": "computer-networks-tcp-properties",
+      "type": "multiple_choice",
+      "prompt": "Which are characteristics of TCP?",
+      "options": [
+        "Reliable ordered byte-stream delivery",
+        "Connection-oriented communication",
+        "Congestion control",
+        "Preservation of application message boundaries"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "TCP provides a reliable ordered byte stream with congestion control, but does not preserve write or message boundaries."
+    },
+    {
+      "id": "computer-networks-udp",
+      "type": "single_choice",
+      "prompt": "Which statement best describes UDP?",
+      "options": [
+        "A connectionless datagram transport without built-in reliable delivery",
+        "A reliable byte stream",
+        "A routing protocol",
+        "A DNS record type"
+      ],
+      "answerIndex": 0,
+      "explanation": "UDP provides datagrams with minimal transport services; applications can implement reliability if needed."
+    },
+    {
+      "id": "computer-networks-tcp-message-boundaries",
+      "type": "true_false",
+      "prompt": "TCP delivers each application write as a separate message to the receiver.",
+      "answer": false,
+      "explanation": "TCP is a byte stream; the application protocol must frame its own messages."
+    },
+    {
+      "id": "computer-networks-port-number",
+      "type": "single_choice",
+      "prompt": "What does a transport-layer port number help identify?",
+      "options": [
+        "An application endpoint on a host",
+        "A router’s physical location",
+        "An IP network prefix",
+        "A packet checksum algorithm"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ports allow a host to multiplex transport traffic among application processes or services."
+    },
+    {
+      "id": "computer-networks-three-way-handshake",
+      "type": "single_choice",
+      "prompt": "What is the purpose of TCP’s three-way handshake?",
+      "options": [
+        "Establish connection state and synchronize initial sequence numbers",
+        "Encrypt every packet with a shared key",
+        "Resolve a domain name",
+        "Choose a network route globally"
+      ],
+      "answerIndex": 0,
+      "explanation": "The handshake establishes both sides’ sequence-number state and confirms connectivity."
+    },
+    {
+      "id": "computer-networks-mtu",
+      "type": "single_choice",
+      "prompt": "What does a link MTU limit?",
+      "options": [
+        "The maximum size of a packet or frame payload carried on that link",
+        "The number of user accounts",
+        "The route’s distance in kilometers",
+        "The TCP port range"
+      ],
+      "answerIndex": 0,
+      "explanation": "MTU constrains packet size on a link; oversized IP packets may need fragmentation or path-MTU handling."
+    },
+    {
+      "id": "computer-networks-packet-fields",
+      "type": "multiple_choice",
+      "prompt": "Which fields are commonly found in an IP header?",
+      "options": [
+        "Source address",
+        "Destination address",
+        "Hop limit or time-to-live",
+        "Application password"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "IP headers include source and destination addresses and a hop limit; passwords belong at higher layers and should not be exposed in headers."
+    },
+    {
+      "id": "computer-networks-ttl-hop-limit",
+      "type": "single_choice",
+      "prompt": "Why does an IP packet carry a TTL or hop limit?",
+      "options": [
+        "Prevent packets from circulating indefinitely",
+        "Guarantee delivery within a fixed time",
+        "Encrypt the payload",
+        "Select the destination port"
+      ],
+      "answerIndex": 0,
+      "explanation": "Routers decrement the hop limit and discard packets when it reaches zero, preventing routing loops from persisting."
+    },
+    {
+      "id": "computer-networks-nat",
+      "type": "single_choice",
+      "prompt": "What does network address translation commonly do?",
+      "options": [
+        "Rewrite address or port information between network address spaces",
+        "Resolve a name to a certificate",
+        "Compress application text",
+        "Guarantee end-to-end encryption"
+      ],
+      "answerIndex": 0,
+      "explanation": "NAT maps address or port tuples, often allowing private hosts to share a public address."
+    },
+    {
+      "id": "computer-networks-ipv6-address",
+      "type": "true_false",
+      "prompt": "An IPv6 address is 128 bits long.",
+      "answer": true,
+      "explanation": "IPv6 uses 128-bit addresses, providing a vastly larger address space than IPv4."
+    },
+    {
+      "id": "computer-networks-loopback",
+      "type": "single_choice",
+      "prompt": "What is a loopback address used for?",
+      "options": [
+        "Refer to the local host itself",
+        "Identify the default gateway only",
+        "Broadcast to every Internet host",
+        "Represent a DNS root server"
+      ],
+      "answerIndex": 0,
+      "explanation": "Loopback traffic returns to the local networking stack without reaching an external interface."
+    }
+  ]
+}
