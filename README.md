@@ -67,11 +67,7 @@ npm run typecheck
 npm run build      # write the feed and content to dist/
 ```
 
-`npm run validate` ends with a summary like this:
-
-```text
-50 quizzes, 18 notes, 0 errors, 0 warnings
-```
+`npm run validate` reports the number of quizzes and notes, along with any validation errors or warnings.
 
 ## Repository layout
 

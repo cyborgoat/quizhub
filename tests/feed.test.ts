@@ -82,7 +82,8 @@ describe("build-feed", () => {
       })));
       expect(manifest.items.filter((item: { kind: string }) => item.kind === "quiz"))
         .toHaveLength(locale.id === "en" ? 42 : 4);
-      expect(manifest.items.filter((item: { kind: string }) => item.kind === "note")).toHaveLength(6);
+      expect(manifest.items.filter((item: { kind: string }) => item.kind === "note"))
+        .toHaveLength(locale.id === "en" ? 44 : 6);
       for (const category of manifest.categories) {
         const categoryAtom = read(join(dirname(locale.manifest), category.feed));
         expect(categoryAtom).toContain(`href="${baseUrl}${prefix}${category.id}/atom.xml"`);
