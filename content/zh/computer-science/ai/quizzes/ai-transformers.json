@@ -1,0 +1,62 @@
+{
+  "id": "ai-transformers",
+  "title": "Transformer 与注意力机制",
+  "description": "了解自注意力的原理，以及 Transformer 为何成为现代语言模型的基础。",
+  "tags": [
+    "deep-learning",
+    "transformers",
+    "llm"
+  ],
+  "questions": [
+    {
+      "id": "scaling-factor",
+      "type": "single_choice",
+      "prompt": "在缩放点积注意力 $$\\text{Attention}(Q,K,V)=\\text{softmax}\\!\\left(\\frac{QK^\\top}{\\sqrt{d_k}}\\right)V$$ 中，为什么要将分数除以 $\\sqrt{d_k}$？",
+      "options": [
+        "防止点积随 $d_k$ 增大并使 softmax 饱和",
+        "让输出和输入的长度相同",
+        "省去值矩阵 $V$",
+        "让注意力满足因果性"
+      ],
+      "answerIndex": 0,
+      "explanation": "在查询向量和键向量的各分量独立、均值为零且方差为 1 的假设下，它们的点积方差为 $d_k$。若省去缩放，较大的分数会使 softmax 进入梯度很小的区域。"
+    },
+    {
+      "id": "positional-encoding",
+      "type": "true_false",
+      "prompt": "自注意力本身不包含词元的顺序信息，因此 Transformer 会加入位置信息。",
+      "answer": true,
+      "explanation": "如果没有位置信息，打乱输入词元的顺序只会以同样的方式打乱输出。正弦位置编码、可学习位置编码、旋转位置编码等方法可以引入顺序信息。"
+    },
+    {
+      "id": "causal-mask",
+      "type": "single_choice",
+      "prompt": "某解码器用以下代码构造注意力掩码。\n\n```python\nmask = torch.triu(torch.ones(n, n), diagonal=1).bool()\nscores = scores.masked_fill(mask, float(\"-inf\"))\n```\n\n词元 $i$ 可以关注哪些位置？",
+      "options": [
+        "仅位置 $j \\le i$",
+        "仅位置 $j > i$",
+        "所有位置",
+        "仅位置 $i$"
+      ],
+      "answerIndex": 0,
+      "explanation": "`triu(..., diagonal=1)` 标记主对角线上方的位置，也就是未来的位置。这些位置的分数被设为 $-\\infty$，经过 softmax 后权重为零，因此只能关注当前位置和更早的位置。"
+    },
+    {
+      "id": "transformer-parts",
+      "type": "multiple_choice",
+      "prompt": "标准的 Transformer 模块包含哪些组件？",
+      "options": [
+        "多头注意力",
+        "逐位置前馈网络",
+        "带层归一化的残差连接",
+        "在词元间传递的循环隐藏状态"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Transformer 模块结合了注意力、前馈网络、残差连接和归一化。Transformer 并行处理词元，无需像循环神经网络那样在位置之间传递隐藏状态。"
+    }
+  ]
+}

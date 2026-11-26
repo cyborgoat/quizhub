@@ -1,19 +1,29 @@
 # quizhub
 
+[简体中文](README.zh.md)
+
 [![Validate](https://github.com/cyborgoat/quizhub/actions/workflows/validate.yml/badge.svg)](https://github.com/cyborgoat/quizhub/actions/workflows/validate.yml)
 [![Deploy feed](https://github.com/cyborgoat/quizhub/actions/workflows/deploy.yml/badge.svg)](https://github.com/cyborgoat/quizhub/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/github/license/cyborgoat/quizhub)](LICENSE)
 
-Curated quizzes and knowledge notes for [Quizzy](https://github.com/cyborgoat/quizzy), grouped by category and published as an Atom feed. It is for Quizzy users who want ready-made study material, and for contributors who want to add some.
+Curated quizzes and knowledge notes for [Quizzy](https://github.com/cyborgoat/quizzy), organized by language, domain, and category. QuizHub includes English and Simplified Chinese editions.
 
 Quizzy will connect to the feed URLs below and sync quizzes and notes automatically. Status: early. The content and feed format are in place and tested; the sync feature in Quizzy is planned.
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Development](#development)
+- [Repository layout](#repository-layout)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
 
 ## Features
 
 - Quizzes in the [Quizzy quiz format](https://github.com/cyborgoat/quizzy/blob/main/docs/quiz-format.md): single choice, multiple choice and true/false, with Markdown, code and KaTeX.
 - Knowledge notes in the [Quizzy knowledge format](https://github.com/cyborgoat/quizzy/blob/main/docs/knowledge-format.md), each linked to the quiz questions it explains.
-- Two categories so far: **AI** and **Psychology**, with 2 quizzes and 3 notes each.
-- An Atom feed per category plus a JSON manifest with SHA-256 hashes, so a client can download only what changed. See [docs/feed-spec.md](docs/feed-spec.md).
+- **Artificial Intelligence** in Computer Science and **Psychology** in Behavioral Science, with four quizzes and six notes per language.
+- An Atom feed for each language and category, with a JSON manifest per language so a client can download only what changed. See [the feed specification](docs/feed-spec.md).
 - A validator that applies Quizzy's rules, checks KaTeX, and checks that note links resolve.
 
 ## Installation
@@ -28,16 +38,16 @@ npm ci
 
 ## Usage
 
-Add a feed URL in Quizzy to sync that category. Once deployed to GitHub Pages, the feeds are at:
+Choose one language per Quizzy working directory. To study in both languages, use two working directories. Translations share quiz, question, and note IDs.
 
-| URL | Content |
-|---|---|
-| `https://cyborgoat.github.io/quizhub/atom.xml` | All categories |
-| `https://cyborgoat.github.io/quizhub/ai/atom.xml` | AI only |
-| `https://cyborgoat.github.io/quizhub/psychology/atom.xml` | Psychology only |
-| `https://cyborgoat.github.io/quizhub/manifest.json` | Index with hashes, for clients |
+| Content | English | 简体中文 |
+|---|---|---|
+| All categories | [Atom](https://cyborgoat.github.io/quizhub/en/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/atom.xml) |
+| AI | [Atom](https://cyborgoat.github.io/quizhub/en/ai/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/ai/atom.xml) |
+| Psychology | [Atom](https://cyborgoat.github.io/quizhub/en/psychology/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/psychology/atom.xml) |
+| Manifest | [JSON](https://cyborgoat.github.io/quizhub/en/manifest.json) | [JSON](https://cyborgoat.github.io/quizhub/zh/manifest.json) |
 
-Each Atom entry links to the quiz or note file and carries its SHA-256 as `quizhub:sha256`.
+While automatic sync is in development, download the linked quiz JSON files to your working directory and place the note Markdown files in its `knowledge-base/` folder. Clients can discover both editions through the [language catalog](https://cyborgoat.github.io/quizhub/locales.json).
 
 ## Requirements
 
@@ -59,14 +69,14 @@ npm run build      # write the feed and content to dist/
 `npm run validate` ends with a summary like this:
 
 ```text
-4 quizzes, 6 notes, 0 errors, 0 warnings
+8 quizzes, 12 notes, 0 errors, 0 warnings
 ```
 
 ## Repository layout
 
 ```text
-content/<category>/quizzes/<quiz-id>.json
-content/<category>/knowledge-base/<note-id>.md
+content/<locale>/<domain>/<category>/quizzes/<quiz-id>.json
+content/<locale>/<domain>/<category>/knowledge-base/<note-id>.md
 scripts/      validator and feed generator (TypeScript)
 schemas/      JSON Schema for quiz files (editor aid)
 docs/         contributing guide and feed specification

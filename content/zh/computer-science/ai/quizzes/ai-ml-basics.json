@@ -1,0 +1,74 @@
+{
+  "id": "ai-ml-basics",
+  "title": "机器学习基础",
+  "description": "训练和评估机器学习模型的核心概念。",
+  "tags": [
+    "machine-learning",
+    "fundamentals"
+  ],
+  "questions": [
+    {
+      "id": "supervised-data",
+      "type": "single_choice",
+      "prompt": "与无监督学习相比，**监督学习**需要什么？",
+      "options": [
+        "带标签的样本",
+        "GPU",
+        "神经网络",
+        "至少两个特征"
+      ],
+      "answerIndex": 0,
+      "explanation": "监督学习要学习从输入到已知目标的映射，因此训练样本需要有标签。聚类等无监督方法可以在没有标签时发现数据中的结构。"
+    },
+    {
+      "id": "gradient-descent-step",
+      "type": "single_choice",
+      "prompt": "使用学习率 $\\eta$ 做梯度下降时，哪种更新会使参数 $\\theta$ 朝损失 $L$ 减小的方向移动？",
+      "options": [
+        "$\\theta \\leftarrow \\theta + \\eta \\nabla_\\theta L$",
+        "$\\theta \\leftarrow \\theta - \\eta \\nabla_\\theta L$",
+        "$\\theta \\leftarrow \\theta - \\eta L$",
+        "$\\theta \\leftarrow \\eta \\nabla_\\theta L$"
+      ],
+      "answerIndex": 1,
+      "explanation": "梯度指向损失增长最快的方向，因此要沿相反方向更新。$$\\theta \\leftarrow \\theta - \\eta \\nabla_\\theta L(\\theta)$$"
+    },
+    {
+      "id": "regularization-techniques",
+      "type": "multiple_choice",
+      "prompt": "下列哪些是减少过拟合的常用方法？",
+      "options": [
+        "L2 权重衰减",
+        "Dropout（随机失活）",
+        "提前停止",
+        "用同一批训练数据多训练几轮"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "权重衰减、Dropout 和提前停止都能限制模型对噪声的拟合程度。延长训练通常会让过拟合更严重。"
+    },
+    {
+      "id": "test-set-tuning",
+      "type": "true_false",
+      "prompt": "在测试集上反复检查表现来调整超参数，是一种好的做法。",
+      "answer": false,
+      "explanation": "用测试集调参会把测试集的信息泄露到调参过程中，使最终评分偏高。可以改用验证集或交叉验证，并把测试集留到最后一次评估时使用。"
+    },
+    {
+      "id": "bias-variance",
+      "type": "single_choice",
+      "prompt": "某模型的训练误差很低，但验证误差高得多。最可能是什么问题？",
+      "options": [
+        "高方差（过拟合）",
+        "高偏差（欠拟合）",
+        "正则化不可能太弱",
+        "各类别的标签数量均衡"
+      ],
+      "answerIndex": 0,
+      "explanation": "训练误差和验证误差相差很大，是高方差的典型迹象。模型记住了训练数据的细节，但这些细节无法推广到新数据。"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "psychology-learning-memory",
+  "title": "学习与记忆",
+  "description": "记忆如何形成、消退和巩固。",
+  "tags": [
+    "memory",
+    "learning"
+  ],
+  "questions": [
+    {
+      "id": "spacing-effect",
+      "type": "single_choice",
+      "prompt": "什么是**间隔效应**？",
+      "options": [
+        "与集中学习相比，分多次间隔学习更有利于长期记忆",
+        "在安静的房间里学习更有利于回忆",
+        "人们更容易记住列表开头的项目",
+        "睡眠可以减少遗忘"
+      ],
+      "answerIndex": 0,
+      "explanation": "就长期记忆而言，分散练习比集中突击更有效。这是学习研究中最稳定的发现之一。"
+    },
+    {
+      "id": "long-term-memory-types",
+      "type": "multiple_choice",
+      "prompt": "下列哪些属于长时记忆？",
+      "options": [
+        "情景记忆",
+        "语义记忆",
+        "程序性记忆",
+        "图像记忆"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "情景记忆（事件）、语义记忆（事实）和程序性记忆（技能）都是长时记忆。图像记忆是一种极为短暂的视觉感觉记忆。"
+    },
+    {
+      "id": "testing-effect",
+      "type": "true_false",
+      "prompt": "与单纯重读材料相比，提取练习（自我测验）通常更有利于长期记忆。",
+      "answer": true,
+      "explanation": "这种现象称为测试效应或提取练习效应。主动从记忆中提取信息，比被动重读更能巩固记忆。"
+    },
+    {
+      "id": "forgetting-curve",
+      "type": "single_choice",
+      "prompt": "艾宾浩斯遗忘曲线通常是什么形状？",
+      "options": [
+        "起初下降很快，随后逐渐趋缓",
+        "沿直线下降",
+        "起初平稳，随后骤降",
+        "随时间上升"
+      ],
+      "answerIndex": 0,
+      "explanation": "遗忘大多发生在学习后的初期，随后速度减慢。间隔复习可以让曲线更平缓。"
+    }
+  ]
+}

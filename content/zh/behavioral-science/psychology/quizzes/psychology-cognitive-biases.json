@@ -1,0 +1,61 @@
+{
+  "id": "psychology-cognitive-biases",
+  "title": "认知偏差",
+  "description": "人们在判断与决策中表现出的系统性倾向。",
+  "tags": [
+    "cognition",
+    "decision-making"
+  ],
+  "questions": [
+    {
+      "id": "confirmation-bias",
+      "type": "single_choice",
+      "prompt": "以下哪一项最符合**确认偏差**的含义？",
+      "options": [
+        "偏好支持既有观点的信息",
+        "高估他人对自己的关注程度",
+        "仅凭结果评价一项决策",
+        "依赖最先听到的数字"
+      ],
+      "answerIndex": 0,
+      "explanation": "确认偏差是指人们倾向于以支持自己既有观点的方式搜寻、解读和记忆证据。"
+    },
+    {
+      "id": "bias-examples",
+      "type": "multiple_choice",
+      "prompt": "下列哪些属于认知偏差或启发式？",
+      "options": [
+        "锚定效应",
+        "可得性启发式",
+        "沉没成本谬误",
+        "经典条件作用"
+      ],
+      "answerIndices": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "锚定效应、可得性启发式和沉没成本谬误都可能使判断产生偏差。经典条件作用属于学习过程。"
+    },
+    {
+      "id": "availability-example",
+      "type": "single_choice",
+      "prompt": "看过几则飞机失事的新闻后，有人认为坐飞机比开车更危险。最可能是哪种机制在起作用？",
+      "options": [
+        "可得性启发式",
+        "晕轮效应",
+        "赌徒谬误",
+        "自利偏差"
+      ],
+      "answerIndex": 0,
+      "explanation": "生动、容易回想起来的例子会让事件显得比实际更常见，尽管按出行里程计算，开车的风险高得多。"
+    },
+    {
+      "id": "sunk-cost",
+      "type": "true_false",
+      "prompt": "在沉没成本谬误的影响下，即使未来的成本大于收益，人们仍会因为已经付出的成本而继续投入。",
+      "answer": true,
+      "explanation": "过去无法收回的成本本来不该影响面向未来的决策，但人们往往还是会受它影响。"
+    }
+  ]
+}

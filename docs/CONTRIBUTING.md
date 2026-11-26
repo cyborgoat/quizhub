@@ -1,10 +1,12 @@
 # Contributing content
 
-Content lives under `content/<category>/`. Allowed categories are listed in [`scripts/lib/categories.ts`](../scripts/lib/categories.ts).
+[简体中文](zh/CONTRIBUTING.md)
+
+Content lives under `content/<locale>/<domain>/<category>/`. The current locales are `en` (English) and `zh` (Simplified Chinese). See the [taxonomy registry](../scripts/lib/categories.ts).
 
 ## Quizzes
 
-`content/<category>/quizzes/<quiz-id>.json`, following the [Quizzy quiz format](https://github.com/cyborgoat/quizzy/blob/main/docs/quiz-format.md).
+`content/<locale>/<domain>/<category>/quizzes/<quiz-id>.json`, following the [Quizzy quiz format](https://github.com/cyborgoat/quizzy/blob/main/docs/quiz-format.md).
 
 - `id` equals the filename and starts with the category (`ai-ml-basics`).
 - Question types: `single_choice` (`answerIndex`), `multiple_choice` (`answerIndices`, exact set), `true_false` (`answer`, a boolean).
@@ -14,11 +16,17 @@ Content lives under `content/<category>/`. Allowed categories are listed in [`sc
 
 ## Knowledge notes
 
-`content/<category>/knowledge-base/<note-id>.md`, following the [Quizzy knowledge format](https://github.com/cyborgoat/quizzy/blob/main/docs/knowledge-format.md).
+`content/<locale>/<domain>/<category>/knowledge-base/<note-id>.md`, following the [Quizzy knowledge format](https://github.com/cyborgoat/quizzy/blob/main/docs/knowledge-format.md).
 
 - Front matter `id` equals the filename stem and starts with the category.
 - `createdAt` and `updatedAt` are ISO 8601 with a timezone. Bump `updatedAt` when you edit.
-- Link a note to the questions it explains with `linkedQuizQuestions`. Links must resolve.
+- Link a note to the questions it explains with `linkedQuizQuestions`. Links can cross domains within the same locale.
+
+## Translations
+
+Add new material to `content/en/` first. Translations can follow in later pull requests. Copy the English file into the matching category in the target locale, then translate the title, description, prompts, options, explanations, and note prose as applicable.
+
+Keep filenames, IDs, category, tags, question types, option order, answer keys, and note links aligned with the English source. When translating a note, make sure the quizzes it links to are available in the same locale.
 
 ## Check your work
 
@@ -31,8 +39,8 @@ npm run build      # writes dist/
 
 ## Review
 
-Facts in quizzes and notes must be checked by a human, including anything drafted with an LLM. Cite sources in the pull request when a claim is not common knowledge.
+Facts in quizzes and notes must be checked by a human, including anything drafted with an LLM. For translations, also check the wording, correct answers, and explanations against the English source. Cite sources in the pull request when a claim is not common knowledge.
 
-## New categories
+## New domains and categories
 
-Add an entry to `CATEGORIES` and create `content/<id>/`.
+Add new domain IDs and localized titles to `DOMAINS`. Add each category to `CATEGORIES` with a globally unique ID, a primary domain, and a title for each locale. Create `content/en/<domain>/<category>/` and add the matching directory for each translation you publish. Use tags for topics that span categories.

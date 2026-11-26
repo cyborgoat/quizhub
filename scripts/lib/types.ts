@@ -1,3 +1,5 @@
+import type { Locale } from "./locales.js";
+
 export interface Issue {
   file: string;
   message: string;
@@ -29,6 +31,7 @@ export interface NoteMeta {
 
 export interface QuizItem {
   kind: "quiz";
+  locale: Locale;
   category: string;
   /** path relative to repo root */
   file: string;
@@ -38,6 +41,7 @@ export interface QuizItem {
 
 export interface NoteItem {
   kind: "note";
+  locale: Locale;
   category: string;
   file: string;
   meta: NoteMeta;

@@ -1,8 +1,9 @@
-import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
+import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, basename, extname, relative } from "node:path";
 import matter from "gray-matter";
 import katex from "katex";
-import { CATEGORIES } from "./categories.js";
+import { CATEGORIES, DOMAINS } from "./categories.js";
+import { DEFAULT_LOCALE, isLocale, LOCALES, type Locale } from "./locales.js";
 import type { Issue, Item, NoteItem, QuizItem } from "./types.js";
 
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
@@ -121,20 +122,36 @@ export function validateNote(meta: Record<string, any>, stem: string, file: stri
   return !issues.slice(before).some((i) => i.level === "error");
 }
 
-/** Load and validate everything under <root>/content. */
-export function loadContent(root: string): LoadResult {
-  const issues: Issue[] = [];
-  const items: Item[] = [];
-  const contentDir = join(root, "content");
-  const rel = (p: string) => relative(root, p).split("\\").join("/");
-
-  for (const entry of readdirSync(contentDir)) {
-    const dir = join(contentDir, entry);
-    if (!statSync(dir).isDirectory()) continue;
-    if (!(entry in CATEGORIES)) {
-      issues.push({ file: rel(dir), level: "error", message: `unknown category "${entry}" (allowed: ${Object.keys(CATEGORIES).join(", ")})` });
+function* categoryDirectories(localeDir: string, rel: (path: string) => string, issues: Issue[]) {
+  for (const domain of readdirSync(localeDir, { withFileTypes: true })) {
+    if (!domain.isDirectory()) continue;
+    const domainDir = join(localeDir, domain.name);
+    if (!Object.hasOwn(DOMAINS, domain.name)) {
+      issues.push({ file: rel(domainDir), level: "error", message: `unknown domain "${domain.name}" (allowed: ${Object.keys(DOMAINS).join(", ")})` });
       continue;
     }
+    for (const category of readdirSync(domainDir, { withFileTypes: true })) {
+      if (!category.isDirectory()) continue;
+      const dir = join(domainDir, category.name);
+      if (!Object.hasOwn(CATEGORIES, category.name)) {
+        issues.push({ file: rel(dir), level: "error", message: `unknown category "${category.name}"` });
+        continue;
+      }
+      const { domain: expectedDomain } = CATEGORIES[category.name];
+      if (expectedDomain !== domain.name) {
+        issues.push({ file: rel(dir), level: "error", message: `category "${category.name}" belongs under "${expectedDomain}"` });
+        continue;
+      }
+      yield { dir, category: category.name };
+    }
+  }
+}
+
+function loadLocale(localeDir: string, locale: Locale, root: string, issues: Issue[]): Item[] {
+  const items: Item[] = [];
+  const rel = (p: string) => relative(root, p).split("\\").join("/");
+
+  for (const { dir, category } of categoryDirectories(localeDir, rel, issues)) {
     const quizDir = join(dir, "quizzes");
     if (existsSync(quizDir)) {
       for (const f of readdirSync(quizDir).sort()) {
@@ -154,8 +171,8 @@ export function loadContent(root: string): LoadResult {
         const quiz = validateQuiz(data, rel(path), issues);
         if (!quiz) continue;
         if (quiz.id !== basename(f, ".json")) issues.push({ file: rel(path), level: "error", message: `quiz id "${quiz.id}" must equal filename stem` });
-        if (!quiz.id.startsWith(`${entry}-`)) issues.push({ file: rel(path), level: "error", message: `quiz id must start with "${entry}-"` });
-        items.push({ kind: "quiz", category: entry, file: rel(path), quiz, raw });
+        if (!quiz.id.startsWith(`${category}-`)) issues.push({ file: rel(path), level: "error", message: `quiz id must start with "${category}-"` });
+        items.push({ kind: "quiz", locale, category, file: rel(path), quiz, raw });
       }
     }
     const kbDir = join(dir, "knowledge-base");
@@ -177,14 +194,18 @@ export function loadContent(root: string): LoadResult {
         const meta = parsed.data as Record<string, any>;
         for (const k of ["createdAt", "updatedAt"]) if (meta[k] instanceof Date) meta[k] = (meta[k] as Date).toISOString();
         if (!validateNote(meta, basename(f, ".md"), rel(path), issues)) continue;
-        if (!meta.id.startsWith(`${entry}-`)) issues.push({ file: rel(path), level: "error", message: `note id must start with "${entry}-"` });
+        if (!meta.id.startsWith(`${category}-`)) issues.push({ file: rel(path), level: "error", message: `note id must start with "${category}-"` });
         checkMath(parsed.content, rel(path), "body", issues);
-        items.push({ kind: "note", category: entry, file: rel(path), meta: meta as NoteItem["meta"], body: parsed.content, raw });
+        items.push({ kind: "note", locale, category, file: rel(path), meta: meta as NoteItem["meta"], body: parsed.content, raw });
       }
     }
   }
 
-  // cross-file rules
+  validateLocaleLinks(items, issues);
+  return items;
+}
+
+function validateLocaleLinks(items: Item[], issues: Issue[]): void {
   const quizzes = new Map<string, QuizItem>();
   for (const it of items) {
     if (it.kind !== "quiz") continue;
@@ -202,6 +223,34 @@ export function loadContent(root: string): LoadResult {
       if (!target) issues.push({ file: it.file, level: "error", message: `linked quiz "${l.quizId}" does not exist` });
       else if (!target.quiz.questions.some((q) => q.id === l.questionId))
         issues.push({ file: it.file, level: "error", message: `linked question "${l.questionId}" not found in quiz "${l.quizId}"` });
+    }
+  }
+}
+
+/** Load and validate every locale under <root>/content. */
+export function loadContent(root: string): LoadResult {
+  const issues: Issue[] = [];
+  const items: Item[] = [];
+  const contentDir = join(root, "content");
+  for (const entry of readdirSync(contentDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    if (!isLocale(entry.name)) {
+      issues.push({
+        file: `content/${entry.name}`,
+        level: "error",
+        message: `unknown locale "${entry.name}" (allowed: ${Object.keys(LOCALES).join(", ")})`,
+      });
+      continue;
+    }
+    items.push(...loadLocale(join(contentDir, entry.name), entry.name, root, issues));
+  }
+
+  const sourceKey = (item: Item) =>
+    `${item.kind}/${item.category}/${item.kind === "quiz" ? item.quiz.id : item.meta.id}`;
+  const sources = new Set(items.filter((item) => item.locale === DEFAULT_LOCALE).map(sourceKey));
+  for (const item of items) {
+    if (item.locale !== DEFAULT_LOCALE && !sources.has(sourceKey(item))) {
+      issues.push({ file: item.file, level: "error", message: `missing ${DEFAULT_LOCALE} source for ${sourceKey(item)}` });
     }
   }
   return { items, issues };
