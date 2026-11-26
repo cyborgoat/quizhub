@@ -1,0 +1,44 @@
+{
+  "id": "psychology-cognitive-biases",
+  "title": "Sesgos cognitivos",
+  "description": "Patrones sistemáticos en la forma en que las personas juzgan y toman decisiones.",
+  "tags": ["cognition", "decision-making"],
+  "questions": [
+    {
+      "id": "confirmation-bias",
+      "type": "single_choice",
+      "prompt": "¿Qué descripción corresponde mejor al **sesgo de confirmación**?",
+      "options": [
+        "Dar preferencia a la información que respalda las creencias previas",
+        "Sobreestimar cuánto se fijan los demás en ti",
+        "Juzgar una decisión únicamente por su resultado",
+        "Basarse en el primer número que se oye"
+      ],
+      "answerIndex": 0,
+      "explanation": "El sesgo de confirmación es la tendencia a buscar, interpretar y recordar información de modo que confirme lo que ya creemos."
+    },
+    {
+      "id": "bias-examples",
+      "type": "multiple_choice",
+      "prompt": "¿Cuáles de los siguientes son sesgos cognitivos o heurísticos?",
+      "options": ["Anclaje", "Heurístico de disponibilidad", "Falacia del costo hundido", "Condicionamiento clásico"],
+      "answerIndices": [0, 1, 2],
+      "explanation": "El anclaje, el heurístico de disponibilidad y la falacia del costo hundido describen distorsiones del juicio. El condicionamiento clásico describe un proceso de aprendizaje."
+    },
+    {
+      "id": "availability-example",
+      "type": "single_choice",
+      "prompt": "Tras ver varias noticias sobre accidentes aéreos, una persona considera que volar es más peligroso que conducir. ¿Qué mecanismo explica mejor este juicio?",
+      "options": ["Heurístico de disponibilidad", "Efecto halo", "Falacia del jugador", "Sesgo de autoservicio"],
+      "answerIndex": 0,
+      "explanation": "Los ejemplos impactantes y fáciles de recordar hacen que un suceso parezca más frecuente de lo que es. Por kilómetro recorrido, conducir entraña mucho más riesgo que volar."
+    },
+    {
+      "id": "sunk-cost",
+      "type": "true_false",
+      "prompt": "Debido a la falacia del costo hundido, las personas siguen invirtiendo en algo por lo que ya han gastado, incluso cuando los costos futuros superan los beneficios futuros.",
+      "answer": true,
+      "explanation": "Los costos pasados e irrecuperables a menudo influyen en las decisiones, aunque lo relevante al decidir son los costos y beneficios futuros."
+    }
+  ]
+}

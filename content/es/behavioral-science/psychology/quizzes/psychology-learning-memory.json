@@ -1,0 +1,49 @@
+{
+  "id": "psychology-learning-memory",
+  "title": "Aprendizaje y memoria",
+  "description": "Cómo se forman, se debilitan y se refuerzan los recuerdos.",
+  "tags": ["memory", "learning"],
+  "questions": [
+    {
+      "id": "spacing-effect",
+      "type": "single_choice",
+      "prompt": "¿En qué consiste el **efecto de espaciamiento**?",
+      "options": [
+        "Distribuir el estudio en el tiempo mejora la retención a largo plazo frente a concentrarlo en una sola sesión",
+        "Estudiar en un lugar tranquilo facilita recordar lo aprendido",
+        "Se recuerdan mejor los elementos del principio de una lista",
+        "Dormir reduce el olvido"
+      ],
+      "answerIndex": 0,
+      "explanation": "La práctica distribuida mejora la retención a largo plazo frente al estudio intensivo en una sola sesión. Es uno de los hallazgos más sólidos de la investigación sobre el aprendizaje."
+    },
+    {
+      "id": "long-term-memory-types",
+      "type": "multiple_choice",
+      "prompt": "¿Cuáles son tipos de memoria a largo plazo?",
+      "options": ["Episódica", "Semántica", "Procedimental", "Icónica"],
+      "answerIndices": [0, 1, 2],
+      "explanation": "La memoria episódica (sucesos), la semántica (hechos) y la procedimental (habilidades) son tipos de memoria a largo plazo. La memoria icónica retiene información visual durante un instante."
+    },
+    {
+      "id": "testing-effect",
+      "type": "true_false",
+      "prompt": "Practicar la recuperación, por ejemplo poniéndote a prueba, suele mejorar más la retención a largo plazo que limitarte a releer el material.",
+      "answer": true,
+      "explanation": "Recuperar información de la memoria la consolida más que repasarla de forma pasiva. Esto se conoce como efecto de las pruebas o efecto de la práctica de recuperación."
+    },
+    {
+      "id": "forgetting-curve",
+      "type": "single_choice",
+      "prompt": "¿Qué forma suele tener la curva del olvido de Ebbinghaus?",
+      "options": [
+        "Una caída inicial pronunciada que se va suavizando",
+        "Una línea recta descendente",
+        "Un tramo plano seguido de una caída repentina",
+        "Un aumento con el tiempo"
+      ],
+      "answerIndex": 0,
+      "explanation": "La mayor parte del olvido ocurre poco después de aprender y luego se ralentiza. Repasar a intervalos espaciados suaviza la curva."
+    }
+  ]
+}

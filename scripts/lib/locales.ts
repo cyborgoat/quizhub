@@ -1,6 +1,7 @@
 export const LOCALES = {
   en: { name: "English", quizSummary: (count: number) => `${count} questions` },
   zh: { name: "简体中文", quizSummary: (count: number) => `${count} 道题` },
+  es: { name: "Español", quizSummary: (count: number) => `${count} ${count === 1 ? "pregunta" : "preguntas"}` },
 };
 
 export type Locale = keyof typeof LOCALES;

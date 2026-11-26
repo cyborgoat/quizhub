@@ -1,12 +1,12 @@
 # quizhub
 
-[简体中文](README.zh.md)
+[简体中文](README.zh.md) · [Español](README.es.md)
 
 [![Validate](https://github.com/cyborgoat/quizhub/actions/workflows/validate.yml/badge.svg)](https://github.com/cyborgoat/quizhub/actions/workflows/validate.yml)
 [![Deploy feed](https://github.com/cyborgoat/quizhub/actions/workflows/deploy.yml/badge.svg)](https://github.com/cyborgoat/quizhub/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/github/license/cyborgoat/quizhub)](LICENSE)
 
-Curated quizzes and knowledge notes for [Quizzy](https://github.com/cyborgoat/quizzy), organized by language, domain, and category. QuizHub includes English and Simplified Chinese editions.
+Curated quizzes and knowledge notes for [Quizzy](https://github.com/cyborgoat/quizzy), organized by language, domain, and category. QuizHub includes English, Simplified Chinese, and Spanish editions.
 
 Quizzy will connect to the feed URLs below and sync quizzes and notes automatically. Status: early. The content and feed format are in place and tested; the sync feature in Quizzy is planned.
 
@@ -38,16 +38,16 @@ npm ci
 
 ## Usage
 
-Choose one language per Quizzy working directory. To study in both languages, use two working directories. Translations share quiz, question, and note IDs.
+Choose one language per Quizzy working directory. To study in multiple languages, use a working directory for each language. Translations share quiz, question, and note IDs.
 
-| Content | English | 简体中文 |
-|---|---|---|
-| All categories | [Atom](https://cyborgoat.github.io/quizhub/en/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/atom.xml) |
-| AI | [Atom](https://cyborgoat.github.io/quizhub/en/ai/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/ai/atom.xml) |
-| Psychology | [Atom](https://cyborgoat.github.io/quizhub/en/psychology/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/psychology/atom.xml) |
-| Manifest | [JSON](https://cyborgoat.github.io/quizhub/en/manifest.json) | [JSON](https://cyborgoat.github.io/quizhub/zh/manifest.json) |
+| Content | English | 简体中文 | Español |
+|---|---|---|---|
+| All categories | [Atom](https://cyborgoat.github.io/quizhub/en/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/es/atom.xml) |
+| AI | [Atom](https://cyborgoat.github.io/quizhub/en/ai/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/ai/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/es/ai/atom.xml) |
+| Psychology | [Atom](https://cyborgoat.github.io/quizhub/en/psychology/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/zh/psychology/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/es/psychology/atom.xml) |
+| Manifest | [JSON](https://cyborgoat.github.io/quizhub/en/manifest.json) | [JSON](https://cyborgoat.github.io/quizhub/zh/manifest.json) | [JSON](https://cyborgoat.github.io/quizhub/es/manifest.json) |
 
-While automatic sync is in development, download the linked quiz JSON files to your working directory and place the note Markdown files in its `knowledge-base/` folder. Clients can discover both editions through the [language catalog](https://cyborgoat.github.io/quizhub/locales.json).
+While automatic sync is in development, download the linked quiz JSON files to your working directory and place the note Markdown files in its `knowledge-base/` folder. Clients can discover all editions through the [language catalog](https://cyborgoat.github.io/quizhub/locales.json).
 
 ## Requirements
 
@@ -69,7 +69,7 @@ npm run build      # write the feed and content to dist/
 `npm run validate` ends with a summary like this:
 
 ```text
-8 quizzes, 12 notes, 0 errors, 0 warnings
+12 quizzes, 18 notes, 0 errors, 0 warnings
 ```
 
 ## Repository layout

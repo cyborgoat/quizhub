@@ -89,23 +89,24 @@ describe("loadContent", () => {
     const root = make({
       "content/en/computer-science/ai/quizzes/ai-x.json": quiz,
       "content/zh/computer-science/ai/quizzes/ai-x.json": quiz,
+      "content/es/computer-science/ai/quizzes/ai-x.json": quiz,
       "content/en/computer-science/ai/quizzes/ai-y.json": JSON.stringify({ ...good(), id: "ai-y" }),
     });
     const { items, issues } = loadContent(root);
     expect(issues).toEqual([]);
-    expect(items.map((item) => item.locale).sort()).toEqual(["en", "en", "zh"]);
+    expect(items.map((item) => item.locale).sort()).toEqual(["en", "en", "es", "zh"]);
   });
   it("rejects duplicate IDs in one locale and translations without a source", () => {
     const root = make({
       "content/en/computer-science/ai/quizzes/ai-x.json": quiz,
       "content/en/computer-science/ai/quizzes/ai-y.json": quiz,
       "content/zh/computer-science/ai/quizzes/ai-z.json": JSON.stringify({ ...good(), id: "ai-z" }),
-      "content/es/computer-science/ai/quizzes/ai-x.json": quiz,
+      "content/fr/computer-science/ai/quizzes/ai-x.json": quiz,
     });
     const messages = loadContent(root).issues.map((issue) => issue.message).join("\n");
     expect(messages).toContain('duplicate quiz id "ai-x"');
     expect(messages).toContain("missing en source for quiz/ai/ai-z");
-    expect(messages).toContain('unknown locale "es"');
+    expect(messages).toContain('unknown locale "fr"');
   });
   it("requires a translated note's quiz to exist in the same locale", () => {
     const linkedNote = note("linkedQuizQuestions:\n  - quizId: ai-x\n    questionId: a\n");

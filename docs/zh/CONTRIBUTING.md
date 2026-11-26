@@ -2,7 +2,7 @@
 
 [English](../CONTRIBUTING.md)
 
-内容存放在 `content/<语言>/<领域>/<类别>/`。目前支持 `en`（英语）和 `zh`（简体中文）。可用领域和类别见[分类配置](../../scripts/lib/categories.ts)。
+内容存放在 `content/<语言>/<领域>/<类别>/`。目前支持 `en`（英语）、`zh`（简体中文）和 `es`（西班牙语）。可用领域和类别见[分类配置](../../scripts/lib/categories.ts)。
 
 ## 测验
 

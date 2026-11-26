@@ -2,7 +2,7 @@
 
 [简体中文](zh/CONTRIBUTING.md)
 
-Content lives under `content/<locale>/<domain>/<category>/`. The current locales are `en` (English) and `zh` (Simplified Chinese). See the [taxonomy registry](../scripts/lib/categories.ts).
+Content lives under `content/<locale>/<domain>/<category>/`. The current locales are `en` (English), `zh` (Simplified Chinese), and `es` (Spanish). See the [taxonomy registry](../scripts/lib/categories.ts).
 
 ## Quizzes
 

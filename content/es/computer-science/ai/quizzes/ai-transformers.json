@@ -1,0 +1,44 @@
+{
+  "id": "ai-transformers",
+  "title": "Transformers y mecanismos de atención",
+  "description": "Cómo funciona la autoatención y por qué los transformers son la base de los modelos de lenguaje actuales.",
+  "tags": ["deep-learning", "transformers", "llm"],
+  "questions": [
+    {
+      "id": "scaling-factor",
+      "type": "single_choice",
+      "prompt": "En la atención por producto escalar escalado $$\\text{Attention}(Q,K,V)=\\text{softmax}\\!\\left(\\frac{QK^\\top}{\\sqrt{d_k}}\\right)V$$ ¿por qué se dividen las puntuaciones por $\\sqrt{d_k}$?",
+      "options": [
+        "Para evitar que los productos escalares crezcan con $d_k$ y saturen la función softmax",
+        "Para que la salida tenga la misma longitud que la entrada",
+        "Para prescindir de la matriz de valores $V$",
+        "Para que la atención sea causal"
+      ],
+      "answerIndex": 0,
+      "explanation": "Si los elementos de la consulta y la clave tienen varianza unitaria, su producto escalar tiene varianza $d_k$. Sin el escalado, las puntuaciones grandes llevan a la función softmax a regiones con gradientes muy pequeños."
+    },
+    {
+      "id": "positional-encoding",
+      "type": "true_false",
+      "prompt": "La autoatención por sí sola es insensible al orden de los tokens. Por eso los transformers añaden información posicional.",
+      "answer": true,
+      "explanation": "Si no hay información posicional, permutar los tokens de entrada solo permuta las salidas. Las codificaciones posicionales, ya sean sinusoidales, aprendidas, rotatorias o de otro tipo, incorporan el orden."
+    },
+    {
+      "id": "causal-mask",
+      "type": "single_choice",
+      "prompt": "Un decodificador construye su máscara de atención así:\n\n```python\nmask = torch.triu(torch.ones(n, n), diagonal=1).bool()\nscores = scores.masked_fill(mask, float(\"-inf\"))\n```\n\n¿A qué posiciones puede prestar atención el token $i$?",
+      "options": ["Solo a las posiciones $j \\le i$", "Solo a las posiciones $j > i$", "A todas las posiciones", "Solo a la posición $i$"],
+      "answerIndex": 0,
+      "explanation": "`triu(..., diagonal=1)` marca todas las posiciones estrictamente por encima de la diagonal, que corresponden a tokens futuros. Se les asigna $-\\infty$, de modo que la función softmax les da peso cero y solo quedan el token actual y los anteriores."
+    },
+    {
+      "id": "transformer-parts",
+      "type": "multiple_choice",
+      "prompt": "¿Qué componentes aparecen en un bloque estándar de un transformer?",
+      "options": ["Atención multicabezal", "Red de propagación hacia delante aplicada a cada posición", "Conexiones residuales con normalización de capa", "Estado oculto recurrente que se pasa de un token a otro"],
+      "answerIndices": [0, 1, 2],
+      "explanation": "Un bloque combina atención, una red de propagación hacia delante y conexiones residuales con normalización. Los transformers procesan los tokens en paralelo y prescinden del estado oculto entre posiciones que usan las redes neuronales recurrentes."
+    }
+  ]
+}

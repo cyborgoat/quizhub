@@ -1,0 +1,52 @@
+{
+  "id": "ai-ml-basics",
+  "title": "Fundamentos del aprendizaje automático",
+  "description": "Conceptos básicos para entrenar y evaluar modelos de aprendizaje automático.",
+  "tags": ["machine-learning", "fundamentals"],
+  "questions": [
+    {
+      "id": "supervised-data",
+      "type": "single_choice",
+      "prompt": "¿Qué necesita el **aprendizaje supervisado** que no necesita el aprendizaje no supervisado?",
+      "options": ["Ejemplos etiquetados", "Una GPU", "Una red neuronal", "Más de una característica"],
+      "answerIndex": 0,
+      "explanation": "El aprendizaje supervisado ajusta una función que relaciona las entradas con resultados conocidos, por lo que cada ejemplo de entrenamiento necesita una etiqueta. Los métodos no supervisados, como el agrupamiento, detectan estructuras sin etiquetas."
+    },
+    {
+      "id": "gradient-descent-step",
+      "type": "single_choice",
+      "prompt": "En el descenso del gradiente con una tasa de aprendizaje $\\eta$, ¿qué actualización mueve los parámetros $\\theta$ en la dirección que reduce la pérdida $L$?",
+      "options": [
+        "$\\theta \\leftarrow \\theta + \\eta \\nabla_\\theta L$",
+        "$\\theta \\leftarrow \\theta - \\eta \\nabla_\\theta L$",
+        "$\\theta \\leftarrow \\theta - \\eta L$",
+        "$\\theta \\leftarrow \\eta \\nabla_\\theta L$"
+      ],
+      "answerIndex": 1,
+      "explanation": "El gradiente indica la dirección en la que la pérdida *aumenta* más rápido. Por eso, la actualización se hace en sentido contrario. $$\\theta \\leftarrow \\theta - \\eta \\nabla_\\theta L(\\theta)$$"
+    },
+    {
+      "id": "regularization-techniques",
+      "type": "multiple_choice",
+      "prompt": "¿Cuáles de las siguientes son técnicas habituales para reducir el sobreajuste?",
+      "options": ["Decaimiento de pesos L2", "Dropout", "Detención temprana", "Entrenar durante más épocas con los mismos datos"],
+      "answerIndices": [0, 1, 2],
+      "explanation": "El decaimiento de pesos, el dropout y la detención temprana limitan cuánto puede ajustarse el modelo al ruido de los datos de entrenamiento. Entrenar durante más tiempo con los mismos datos suele agravar el sobreajuste."
+    },
+    {
+      "id": "test-set-tuning",
+      "type": "true_false",
+      "prompt": "Es una buena práctica ajustar los hiperparámetros consultando repetidamente el rendimiento en el conjunto de prueba.",
+      "answer": false,
+      "explanation": "Ajustar los hiperparámetros con el conjunto de prueba hace que los resultados de ese conjunto influyan en las decisiones y que la puntuación final sea demasiado optimista. Usa un conjunto de validación separado o validación cruzada para el ajuste y reserva el conjunto de prueba para la evaluación final."
+    },
+    {
+      "id": "bias-variance",
+      "type": "single_choice",
+      "prompt": "Un modelo presenta un error de entrenamiento bajo y un error de validación mucho mayor. ¿Cuál es el problema más probable?",
+      "options": ["Varianza alta (sobreajuste)", "Sesgo alto (subajuste)", "Es imposible que haya poca regularización", "Las etiquetas están equilibradas"],
+      "answerIndex": 0,
+      "explanation": "Una gran diferencia entre los errores de entrenamiento y validación es una señal típica de varianza alta. El modelo ha memorizado particularidades de los datos de entrenamiento que no se generalizan."
+    }
+  ]
+}

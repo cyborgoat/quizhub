@@ -16,26 +16,29 @@ describe("build-feed", () => {
     cpSync(join(repo, "content"), join(root, "content"), { recursive: true });
     mkdirSync(join(root, "content/en/computer-science/software-engineering/quizzes"), { recursive: true });
     const read = (path: string) => readFileSync(join(root, "dist", path), "utf8");
+    const locales = [
+      { id: "en", name: "English", feed: "en/atom.xml", manifest: "en/manifest.json" },
+      { id: "zh", name: "简体中文", feed: "zh/atom.xml", manifest: "zh/manifest.json" },
+      { id: "es", name: "Español", feed: "es/atom.xml", manifest: "es/manifest.json" },
+    ] as const;
+    const titles = {
+      en: ["Computer Science", "Behavioral Science", "Artificial Intelligence", "Psychology"],
+      zh: ["计算机科学", "行为科学", "人工智能", "心理学"],
+      es: ["Ciencias de la computación", "Ciencias del comportamiento", "Inteligencia artificial", "Psicología"],
+    };
     const build = () => {
       execFileSync("npx", ["tsx", join(repo, "scripts/build-feed.ts"), root], {
         cwd: repo, stdio: "pipe", env: { ...process.env, QUIZHUB_BASE_URL: baseUrl },
       });
-      return ["locales.json", "en/atom.xml", "en/manifest.json", "zh/atom.xml", "zh/manifest.json"].map(read);
+      return ["locales.json", ...locales.flatMap(({ feed, manifest }) => [feed, manifest])].map(read);
     };
 
     const first = build();
     expect(build()).toEqual(first);
     expect(existsSync(join(root, "dist", "manifest.json"))).toBe(false);
     expect(existsSync(join(root, "dist", "atom.xml"))).toBe(false);
-    const catalog = JSON.parse(read("locales.json"));
-    expect(catalog).toEqual({
-      defaultLocale: "en",
-      locales: [
-        { id: "en", name: "English", feed: "en/atom.xml", manifest: "en/manifest.json" },
-        { id: "zh", name: "简体中文", feed: "zh/atom.xml", manifest: "zh/manifest.json" },
-      ],
-    });
-    for (const locale of catalog.locales) {
+    expect(JSON.parse(read("locales.json"))).toEqual({ defaultLocale: "en", locales });
+    for (const locale of locales) {
       const atom = read(locale.feed);
       const manifest = JSON.parse(read(locale.manifest));
       const prefix = `${locale.id}/`;
@@ -43,14 +46,14 @@ describe("build-feed", () => {
       expect(atom).toContain("<author><name>QuizHub contributors</name></author>");
       expect(atom).toContain(`href="${baseUrl}${locale.feed}"`);
       expect(manifest.schemaVersion).toBe(1);
-      const isEnglish = locale.id === "en";
+      const [computerScience, behavioralScience, ai, psychology] = titles[locale.id];
       expect(manifest.domains).toEqual([
-        { id: "computer-science", title: isEnglish ? "Computer Science" : "计算机科学" },
-        { id: "behavioral-science", title: isEnglish ? "Behavioral Science" : "行为科学" },
+        { id: "computer-science", title: computerScience },
+        { id: "behavioral-science", title: behavioralScience },
       ]);
       expect(manifest.categories).toEqual([
-        { id: "ai", title: isEnglish ? "Artificial Intelligence" : "人工智能", domain: "computer-science", feed: "ai/atom.xml" },
-        { id: "psychology", title: isEnglish ? "Psychology" : "心理学", domain: "behavioral-science", feed: "psychology/atom.xml" },
+        { id: "ai", title: ai, domain: "computer-science", feed: "ai/atom.xml" },
+        { id: "psychology", title: psychology, domain: "behavioral-science", feed: "psychology/atom.xml" },
       ]);
       expect(manifest.items.filter((item: { kind: string }) => item.kind === "quiz")).toHaveLength(4);
       expect(manifest.items.filter((item: { kind: string }) => item.kind === "note")).toHaveLength(6);
@@ -72,9 +75,9 @@ describe("build-feed", () => {
 
     const newQuiz = { ...JSON.parse(read("en/ai/ai-ml-basics-en.json")), id: "ai-new" };
     writeFileSync(join(root, "content/en/computer-science/ai/quizzes/ai-new.json"), JSON.stringify(newQuiz));
-    const [catalogAfter, , englishAfter, , chineseAfter] = build();
+    const [catalogAfter, , englishAfter, ...translationsAfter] = build();
     expect(englishAfter).toContain('"path": "ai/ai-new-en.json"');
-    expect(chineseAfter).toBe(first[4]);
+    expect(translationsAfter).toEqual(first.slice(3));
     expect(catalogAfter).toBe(first[0]);
   }, 60000);
 

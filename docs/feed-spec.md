@@ -13,7 +13,7 @@ Base URL: `https://cyborgoat.github.io/quizhub/`
 | `<locale>/<category>/<quiz-id>.json` | A Quizzy quiz file |
 | `<locale>/<category>/knowledge-base/<note-id>.md` | A Quizzy knowledge note |
 
-Both English (`en`) and Simplified Chinese (`zh`) have their own directory. Each feed and manifest contains items in its own language.
+English (`en`), Simplified Chinese (`zh`), and Spanish (`es`) each have their own directory. Each feed and manifest contains items in its own language.
 
 Copying a category directory into a Quizzy working directory yields the layout Quizzy expects: quiz `.json` files at the top level and notes in `knowledge-base/`.
 
@@ -24,7 +24,8 @@ Copying a category directory into a Quizzy working directory yields the layout Q
   "defaultLocale": "en",
   "locales": [
     { "id": "en", "name": "English", "feed": "en/atom.xml", "manifest": "en/manifest.json" },
-    { "id": "zh", "name": "简体中文", "feed": "zh/atom.xml", "manifest": "zh/manifest.json" }
+    { "id": "zh", "name": "简体中文", "feed": "zh/atom.xml", "manifest": "zh/manifest.json" },
+    { "id": "es", "name": "Español", "feed": "es/atom.xml", "manifest": "es/manifest.json" }
   ]
 }
 ```
@@ -77,4 +78,4 @@ Group categories by their `domain` ID using the manifest's `domains` list. Domai
 3. Resolve the item path relative to the manifest URL and verify the downloaded bytes against `sha256` before installing.
 4. Ignore unknown fields. Reject a `schemaVersion` greater than the one you support.
 
-Published quiz and note IDs include the language suffix (for example, `ai-ml-basics-en` and `ai-ml-basics-zh`). Filenames and note-to-quiz references use these published IDs. Question IDs are scoped to their quiz. Both editions can be installed in one working directory with independent progress.
+Published quiz and note IDs include the language suffix, as in `ai-ml-basics-en`, `ai-ml-basics-zh`, and `ai-ml-basics-es`. Filenames and note-to-quiz references use these published IDs. Question IDs are scoped to their quiz. Multiple editions can be installed in one working directory with independent progress.
