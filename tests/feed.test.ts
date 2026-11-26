@@ -62,6 +62,7 @@ describe("build-feed", () => {
       for (const item of manifest.items) {
         const path = prefix + item.path;
         const bytes = readFileSync(join(root, "dist", path));
+        expect(item.id.endsWith("-" + locale.id)).toBe(true);
         expect(bytes.length).toBe(item.size);
         expect(createHash("sha256").update(bytes).digest("hex")).toBe(item.sha256);
         expect(atom).toContain(`<id>tag:cyborgoat.github.io,2026:quizhub/${prefix}${item.kind}/${item.id}</id>`);
@@ -69,10 +70,10 @@ describe("build-feed", () => {
       }
     }
 
-    const newQuiz = { ...JSON.parse(read("en/ai/ai-ml-basics.json")), id: "ai-new" };
+    const newQuiz = { ...JSON.parse(read("en/ai/ai-ml-basics-en.json")), id: "ai-new" };
     writeFileSync(join(root, "content/en/computer-science/ai/quizzes/ai-new.json"), JSON.stringify(newQuiz));
     const [catalogAfter, , englishAfter, , chineseAfter] = build();
-    expect(englishAfter).toContain('"path": "ai/ai-new.json"');
+    expect(englishAfter).toContain('"path": "ai/ai-new-en.json"');
     expect(chineseAfter).toBe(first[4]);
     expect(catalogAfter).toBe(first[0]);
   }, 60000);

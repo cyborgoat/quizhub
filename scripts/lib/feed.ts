@@ -1,3 +1,4 @@
+import matter from "gray-matter";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { statSync } from "node:fs";
@@ -23,6 +24,22 @@ export interface ManifestItem {
 }
 
 export const sha256 = (b: Buffer) => createHash("sha256").update(b).digest("hex");
+
+/** Publish independent translations while keeping shared authoring IDs. */
+export function publishItem(item: Item): Item {
+  const localized = (id: string) => `${id}-${item.locale}`;
+  if (item.kind === "quiz") {
+    const quiz = { ...item.quiz, id: localized(item.quiz.id) };
+    return { ...item, quiz, raw: Buffer.from(JSON.stringify(quiz, null, 2) + "\n") };
+  }
+  const meta = { ...item.meta, id: localized(item.meta.id) };
+  if (meta.linkedQuizQuestions) {
+    meta.linkedQuizQuestions = meta.linkedQuizQuestions.map(link => ({
+      ...link, quizId: localized(link.quizId),
+    }));
+  }
+  return { ...item, meta, raw: Buffer.from(matter.stringify(item.body, meta)) };
+}
 
 /** Path relative to the item's locale manifest. */
 export const itemPath = (it: Item): string =>

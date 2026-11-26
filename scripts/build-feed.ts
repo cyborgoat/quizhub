@@ -1,7 +1,7 @@
 import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { CATEGORIES, DOMAINS } from "./lib/categories.js";
-import { SCHEMA_VERSION, itemPath, toAtom, toManifestItems } from "./lib/feed.js";
+import { SCHEMA_VERSION, itemPath, publishItem, toAtom, toManifestItems } from "./lib/feed.js";
 import { DEFAULT_LOCALE, isLocale, LOCALES } from "./lib/locales.js";
 import { loadContent } from "./lib/validate.js";
 
@@ -26,7 +26,7 @@ const write = (path: string, data: string | Buffer) => {
 const writeJson = (path: string, data: unknown) => write(path, JSON.stringify(data, null, 2) + "\n");
 const locales = [];
 for (const locale of Object.keys(LOCALES).filter(isLocale)) {
-  const localeItems = items.filter((item) => item.locale === locale);
+  const localeItems = items.filter((item) => item.locale === locale).map(publishItem);
   if (locale !== DEFAULT_LOCALE && localeItems.length === 0) continue;
   const localePrefix = `${locale}/`;
   const atomOptions = { locale, siteUrl: baseUrl };

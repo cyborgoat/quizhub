@@ -46,11 +46,11 @@ Start at `locales.json` and resolve `feed` and `manifest` relative to the catalo
   }],
   "items": [{
     "kind": "quiz",
-    "id": "ai-ml-basics",
+    "id": "ai-ml-basics-en",
     "category": "ai",
     "title": "Machine Learning Basics",
     "tags": ["machine-learning", "fundamentals"],
-    "path": "ai/ai-ml-basics.json",
+    "path": "ai/ai-ml-basics-en.json",
     "sha256": "<hex digest of the file bytes>",
     "size": 3000,
     "updated": "2026-11-14T08:39:13.301Z"
@@ -60,7 +60,7 @@ Start at `locales.json` and resolve `feed` and `manifest` relative to the catalo
 
 Group categories by their `domain` ID using the manifest's `domains` list. Domain and category IDs are shared across locales, and titles are localized. The manifest lists only categories with content in that locale and domains with at least one listed category. Domains affect browsing. Published file and feed paths continue to use the category ID.
 
-`kind` is `quiz` or `note`. Resolve item `path` and category `feed` relative to the manifest URL. For example, `ai/ai-ml-basics.json` from `zh/manifest.json` resolves to `zh/ai/ai-ml-basics.json`. `generatedAt` is the newest `updated` value, so unchanged content produces an identical manifest.
+`kind` is `quiz` or `note`. Resolve item `path` and category `feed` relative to the manifest URL. For example, `ai/ai-ml-basics-zh.json` from `zh/manifest.json` resolves to `zh/ai/ai-ml-basics-zh.json`. `generatedAt` is the newest `updated` value, so unchanged content produces an identical manifest.
 
 ## Atom entries
 
@@ -77,4 +77,4 @@ Group categories by their `domain` ID using the manifest's `domains` list. Domai
 3. Resolve the item path relative to the manifest URL and verify the downloaded bytes against `sha256` before installing.
 4. Ignore unknown fields. Reject a `schemaVersion` greater than the one you support.
 
-Within one locale, IDs for each item kind are unique across categories, so items from several categories can share one working directory. Translations reuse the English quiz, question, and note IDs. Use a separate Quizzy working directory for each language.
+Published quiz and note IDs include the language suffix (for example, `ai-ml-basics-en` and `ai-ml-basics-zh`). Filenames and note-to-quiz references use these published IDs. Question IDs are scoped to their quiz. Both editions can be installed in one working directory with independent progress.
