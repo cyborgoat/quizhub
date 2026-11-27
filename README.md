@@ -23,7 +23,7 @@ Quizzy will connect to the feed URLs below and sync quizzes and notes automatica
 - Quizzes in the [Quizzy quiz format](https://github.com/cyborgoat/quizzy/blob/main/docs/quiz-format.md): single choice, multiple choice and true/false, with Markdown, code and KaTeX.
 - Knowledge notes in the [Quizzy knowledge format](https://github.com/cyborgoat/quizzy/blob/main/docs/knowledge-format.md), each linked to the quiz questions it explains.
 - Topic-focused quizzes across machine learning, deep learning, large language models, natural-language processing, computer systems and networks, and software engineering. Behavioral-science topics include psychology, organizational behavior, decision-making, learning, research methods, and professional practice.
-- New quiz content is authored in English first; Chinese and Spanish editions can follow.
+- English, Simplified Chinese, and Spanish editions are available; the Chinese and Spanish editions currently include AI and psychology content.
 - An Atom feed for each language and category, with a JSON manifest per language so a client can download only what changed. See [the feed specification](docs/feed-spec.md).
 - A validator that applies Quizzy's rules, checks KaTeX, and checks that note links resolve.
 

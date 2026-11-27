@@ -2,7 +2,7 @@
 
 [English](README.md) · [Español](README.es.md)
 
-QuizHub 为 [Quizzy](https://github.com/cyborgoat/quizzy) 提供按语言、领域和类别整理的测验与知识笔记。英文题库扩展了机器学习、深度学习、大语言模型、自然语言处理、计算机系统与网络、软件工程等主题；行为科学则涵盖心理学、组织行为、决策科学、学习科学、研究方法和专业实践。新增内容先以英文发布，中文和西班牙语译文可在后续提供。
+QuizHub 为 [Quizzy](https://github.com/cyborgoat/quizzy) 提供按语言、领域和类别整理的测验与知识笔记，并提供英语、简体中文和西班牙语版本；目前中文和西班牙语版本包含人工智能和心理学内容。
 
 ## 使用方法
 

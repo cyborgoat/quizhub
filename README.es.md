@@ -2,7 +2,7 @@
 
 [English](README.md) · [简体中文](README.zh.md)
 
-QuizHub reúne cuestionarios y notas de estudio para [Quizzy](https://github.com/cyborgoat/quizzy), organizados por idioma, área y categoría. La edición en español mantiene cuatro cuestionarios y seis notas de inteligencia artificial y psicología. La nueva colección en inglés amplía los temas de informática y ciencias del comportamiento; las traducciones al español podrán añadirse más adelante.
+QuizHub reúne cuestionarios y notas de estudio para [Quizzy](https://github.com/cyborgoat/quizzy), organizados por idioma, área y categoría. Hay ediciones en inglés, chino simplificado y español; las ediciones en chino y español incluyen actualmente contenido sobre inteligencia artificial y psicología.
 
 ## Uso
 
