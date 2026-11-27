@@ -8,7 +8,12 @@ import { LOCALES, type Locale } from "./locales.js";
 import type { Item } from "./types.js";
 
 export const SCHEMA_VERSION = 1;
-const NS = "https://cyborgoat.github.io/quizhub/ns";
+
+/** Atom tag authority and extension namespace, derived from the publish base URL. */
+export function feedIdentity(siteUrl: string): { authority: string; ns: string } {
+  const base = siteUrl.replace(/\/?$/, "");
+  return { authority: new URL(base.endsWith("/") ? base : `${base}/`).hostname, ns: `${base}/ns` };
+}
 
 export interface ManifestItem {
   kind: "quiz" | "note";
@@ -100,10 +105,11 @@ export function toAtom(opts: {
   const feedUpdated = entries[0]?.m.updated ?? new Date(0).toISOString();
   const feedPath = `${opts.locale}/${opts.selfPath}`;
   const localeUrl = `${opts.siteUrl}${opts.locale}/`;
+  const { authority, ns } = feedIdentity(opts.siteUrl);
   const x: string[] = [
     `<?xml version="1.0" encoding="utf-8"?>`,
-    `<feed xmlns="http://www.w3.org/2005/Atom" xmlns:quizhub="${NS}" xml:lang="${opts.locale}">`,
-    `  <id>tag:cyborgoat.github.io,2026:quizhub/${esc(feedPath)}</id>`,
+    `<feed xmlns="http://www.w3.org/2005/Atom" xmlns:quizhub="${esc(ns)}" xml:lang="${opts.locale}">`,
+    `  <id>tag:${esc(authority)},2026:quizhub/${esc(feedPath)}</id>`,
     `  <title>${esc(opts.title)}</title>`,
     `  <author><name>QuizHub contributors</name></author>`,
     `  <updated>${feedUpdated}</updated>`,
@@ -115,7 +121,7 @@ export function toAtom(opts: {
     const entryId = `${opts.locale}/${m.kind}/${m.id}`;
     x.push(
       `  <entry>`,
-      `    <id>tag:cyborgoat.github.io,2026:quizhub/${esc(entryId)}</id>`,
+      `    <id>tag:${esc(authority)},2026:quizhub/${esc(entryId)}</id>`,
       `    <title>${esc(m.title)}</title>`,
       `    <updated>${m.updated}</updated>`,
       `    <category term="${esc(m.category)}" label="${esc(CATEGORIES[m.category].titles[opts.locale])}"/>`,

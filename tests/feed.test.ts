@@ -95,7 +95,7 @@ describe("build-feed", () => {
         expect(item.id.endsWith("-" + locale.id)).toBe(true);
         expect(bytes.length).toBe(item.size);
         expect(createHash("sha256").update(bytes).digest("hex")).toBe(item.sha256);
-        expect(atom).toContain(`<id>tag:cyborgoat.github.io,2026:quizhub/${prefix}${item.kind}/${item.id}</id>`);
+        expect(atom).toContain(`<id>tag:example.test,2026:quizhub/${prefix}${item.kind}/${item.id}</id>`);
         expect(atom).toContain(`<link rel="enclosure" type="${item.kind === "quiz" ? "application/json" : "text/markdown"}" length="${item.size}" href="${baseUrl}${path}" quizhub:kind="${item.kind}" quizhub:sha256="${item.sha256}"/>`);
       }
     }

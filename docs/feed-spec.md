@@ -1,6 +1,6 @@
 # Quizhub feed specification (schemaVersion 1)
 
-Base URL: `https://cyborgoat.github.io/quizhub/`
+Base URL: the value of `QUIZHUB_BASE_URL` used when building (must end with `/`). Paths below are relative to that URL.
 
 ## Files
 
@@ -66,10 +66,11 @@ Group categories by their `domain` ID using the manifest's `domains` list. Domai
 ## Atom entries
 
 - The feed sets `xml:lang` to its locale ID.
-- Entry IDs have the form `tag:cyborgoat.github.io,2026:quizhub/<locale>/<kind>/<id>` and are stable for the life of that edition.
+- Entry IDs have the form `tag:<hostname>,2026:quizhub/<locale>/<kind>/<id>`, where `<hostname>` is taken from `QUIZHUB_BASE_URL`. Keep that hostname stable for the life of a published edition.
+- The extension namespace is `<QUIZHUB_BASE_URL without trailing slash>/ns`.
 - The `updated` value comes from the last Git commit that changed the source file, following byte-for-byte renames.
 - `category`: one element for the category (`term`, `label`) plus one per tag.
-- `link rel="enclosure"`: the file URL, with `type`, `length` (bytes), and the extension attributes `quizhub:kind` and `quizhub:sha256` (namespace `https://cyborgoat.github.io/quizhub/ns`).
+- `link rel="enclosure"`: the file URL, with `type`, `length` (bytes), and the extension attributes `quizhub:kind` and `quizhub:sha256`.
 
 ## Client guidance
 

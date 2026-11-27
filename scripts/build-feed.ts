@@ -7,7 +7,12 @@ import { loadContent } from "./lib/validate.js";
 
 const root = resolve(process.argv[2] ?? ".");
 const out = join(root, "dist");
-const baseUrl = (process.env.QUIZHUB_BASE_URL ?? "https://cyborgoat.github.io/quizhub/").replace(/\/?$/, "/");
+const rawBaseUrl = process.env.QUIZHUB_BASE_URL?.trim();
+if (!rawBaseUrl) {
+  console.error("QUIZHUB_BASE_URL is required (e.g. https://example.com/quizhub/).");
+  process.exit(1);
+}
+const baseUrl = rawBaseUrl.replace(/\/?$/, "/");
 
 const { items, issues } = loadContent(root);
 const errors = issues.filter((i) => i.level === "error");

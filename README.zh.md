@@ -8,14 +8,18 @@ QuizHub 为 [Quizzy](https://github.com/cyborgoat/quizzy) 提供按语言、领�
 
 每个 Quizzy 工作目录使用一种语言。如果要使用多种语言学习，请为每种语言设置单独的工作目录。各版本共用测验、题目和笔记 ID。
 
-| 内容 | 简体中文 | English | Español |
-|---|---|---|---|
-| 全部类别 | [Atom](https://cyborgoat.github.io/quizhub/zh/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/en/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/es/atom.xml) |
-| 人工智能 | [Atom](https://cyborgoat.github.io/quizhub/zh/ai/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/en/ai/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/es/ai/atom.xml) |
-| 心理学 | [Atom](https://cyborgoat.github.io/quizhub/zh/psychology/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/en/psychology/atom.xml) | [Atom](https://cyborgoat.github.io/quizhub/es/psychology/atom.xml) |
-| 文件清单 | [JSON](https://cyborgoat.github.io/quizhub/zh/manifest.json) | [JSON](https://cyborgoat.github.io/quizhub/en/manifest.json) | [JSON](https://cyborgoat.github.io/quizhub/es/manifest.json) |
+构建并将 `dist/` 发布到你自己的站点后，客户端使用 `QUIZHUB_BASE_URL` 下的路径：
 
-Quizzy 的自动同步功能仍在开发中。目前可以打开订阅源，下载条目链接的文件。将测验 JSON 文件放在工作目录中，将 Markdown 笔记放在该目录的 `knowledge-base/` 子目录中。客户端可以通过[语言索引](https://cyborgoat.github.io/quizhub/locales.json)发现各个版本。
+| 内容 | 路径 |
+|---|---|
+| 语言索引 | `locales.json` |
+| 语言 Atom 订阅源 | `<语言>/atom.xml` |
+| 语言清单 | `<语言>/manifest.json` |
+| 类别 Atom 订阅源 | `<语言>/<类别>/atom.xml` |
+
+示例：`zh/atom.xml`、`en/ai/atom.xml`、`es/manifest.json`。
+
+Quizzy 的自动同步功能仍在开发中。目前可以打开订阅源，下载条目链接的文件。将测验 JSON 文件放在工作目录中，将 Markdown 笔记放在该目录的 `knowledge-base/` 子目录中。客户端通过 `locales.json` 发现各个版本。
 
 ## 本地开发
 
@@ -28,10 +32,10 @@ npm ci
 npm run typecheck
 npm run validate
 npm test
-npm run build
+QUIZHUB_BASE_URL=https://example.com/quizhub/ npm run build
 ```
 
-内容按 `content/<语言>/<领域>/<类别>/` 组织，英文使用 `en`，简体中文使用 `zh`，西班牙语使用 `es`。测验存放在 `quizzes/`，笔记存放在 `knowledge-base/`。构建产物位于 `dist/`。可以通过环境变量 `QUIZHUB_BASE_URL` 设置构建产物中的站点地址。
+内容按 `content/<语言>/<领域>/<类别>/` 组织，英文使用 `en`，简体中文使用 `zh`，西班牙语使用 `es`。测验存放在 `quizzes/`，笔记存放在 `knowledge-base/`。构建产物位于 `dist/`。构建时必须设置环境变量 `QUIZHUB_BASE_URL`（写入订阅源的站点地址）。不要把个人域名提交进本仓库。
 
 ## 贡献
 
@@ -39,4 +43,4 @@ npm run build
 
 ## 许可证
 
-[MIT](LICENSE) © 2026 Junxiao Guo
+[MIT](LICENSE)

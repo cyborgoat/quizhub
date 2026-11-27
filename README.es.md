@@ -8,14 +8,18 @@ QuizHub reúne cuestionarios y notas de estudio para [Quizzy](https://github.com
 
 Elige un idioma por directorio de trabajo de Quizzy. Si quieres estudiar con varias ediciones, usa un directorio para cada idioma. Las traducciones comparten los identificadores de origen de los cuestionarios, las preguntas y las notas.
 
-| Contenido | Español |
-|---|---|
-| Todas las categorías | [Atom](https://cyborgoat.github.io/quizhub/es/atom.xml) |
-| Inteligencia artificial | [Atom](https://cyborgoat.github.io/quizhub/es/ai/atom.xml) |
-| Psicología | [Atom](https://cyborgoat.github.io/quizhub/es/psychology/atom.xml) |
-| Manifiesto | [JSON](https://cyborgoat.github.io/quizhub/es/manifest.json) |
+Después de compilar y publicar `dist/` en tu propio alojamiento, los clientes usan rutas bajo tu `QUIZHUB_BASE_URL`:
 
-La sincronización automática de Quizzy sigue en desarrollo. Para importar el contenido manualmente, abre el feed y descarga los archivos enlazados. Guarda los cuestionarios JSON en el directorio de trabajo y las notas Markdown en su subdirectorio `knowledge-base/`. Los clientes pueden encontrar las ediciones disponibles en el [catálogo de idiomas](https://cyborgoat.github.io/quizhub/locales.json).
+| Contenido | Ruta |
+|---|---|
+| Catálogo de idiomas | `locales.json` |
+| Feed Atom del idioma | `<idioma>/atom.xml` |
+| Manifiesto del idioma | `<idioma>/manifest.json` |
+| Feed Atom de categoría | `<idioma>/<categoría>/atom.xml` |
+
+Ejemplos: `es/atom.xml`, `en/ai/atom.xml`, `zh/manifest.json`.
+
+La sincronización automática de Quizzy sigue en desarrollo. Para importar el contenido manualmente, abre el feed y descarga los archivos enlazados. Guarda los cuestionarios JSON en el directorio de trabajo y las notas Markdown en su subdirectorio `knowledge-base/`. Los clientes descubren las ediciones a través de `locales.json`.
 
 ## Instalación local
 
@@ -28,10 +32,10 @@ npm ci
 npm run validate
 npm run typecheck
 npm test
-npm run build
+QUIZHUB_BASE_URL=https://example.com/quizhub/ npm run build
 ```
 
-El contenido en español está en `content/es/` y la compilación genera los archivos publicables en `dist/`. La variable de entorno `QUIZHUB_BASE_URL` permite cambiar la URL base que se escribe en los feeds.
+El contenido en español está en `content/es/` y la compilación genera los archivos publicables en `dist/`. La variable de entorno `QUIZHUB_BASE_URL` es obligatoria y define la URL base que se escribe en los feeds. No envíes nombres de dominio personales a este repositorio.
 
 ## Contribuir
 
@@ -39,4 +43,4 @@ Añade los contenidos nuevos primero a la edición en inglés. Las traducciones 
 
 ## Licencia
 
-[MIT](LICENSE) © 2026 Junxiao Guo
+[MIT](LICENSE)
